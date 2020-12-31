@@ -1,3 +1,10 @@
+;;;; package --- Sumary:
+;;;; Emacs Configuration
+
+;;;; Commentary:
+;;;; Emuvs Style
+
+;;;; Code:
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -6,6 +13,9 @@
  '(bookmark-save-flag 1)
  '(display-fill-column-indicator t)
  '(fill-column 84)
+ '(ido-enable-flex-matching t)
+ '(ido-everywhere t)
+ '(ido-mode 'both nil (ido))
  '(inhibit-startup-screen nil)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
@@ -54,10 +64,6 @@
   :ensure t
   :config (powerline-default-theme))
 
-(setq ido-everywhere t)
-(setq ido-enable-flex-matching t)
-(ido-mode t)
-
 (use-package projectile
   :ensure t
   :config
@@ -94,6 +100,7 @@
   ("C--" . er/contract-region))
 
 (use-package centaur-tabs
+  :after projectile
   :ensure t
   :config
   (setq centaur-tabs-set-bar 'over)
@@ -115,3 +122,6 @@
   :ensure t
   :init
   (global-flycheck-mode))
+
+(provide '.emacs)
+;;; .emacs ends here
