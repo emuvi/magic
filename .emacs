@@ -13,15 +13,12 @@
  '(bookmark-save-flag 1)
  '(display-fill-column-indicator t)
  '(fill-column 84)
- '(ido-enable-flex-matching t)
- '(ido-everywhere t)
- '(ido-mode 'both nil (ido))
  '(inhibit-startup-screen nil)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
  '(org-support-shift-select t)
  '(package-selected-packages
-   '(flycheck company treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile powerline popup dashboard auto-package-update async))
+   '(ivy flycheck company treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile powerline popup dashboard auto-package-update async))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 
@@ -59,9 +56,11 @@
 (use-package solarized-theme
   :ensure t
   :config
-  (load-theme 'solarized-light-high-contrast t))
+  (load-theme 'solarized-light t))
 
-(load-theme 'adwaita t)
+(use-package ivy
+  :ensure t
+  :config (ivy-mode t))
 
 (use-package which-key
   :ensure t
