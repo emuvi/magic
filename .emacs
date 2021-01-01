@@ -18,7 +18,7 @@
  '(menu-bar-mode nil)
  '(org-support-shift-select t)
  '(package-selected-packages
-   '(ivy flycheck company treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile powerline popup dashboard auto-package-update async))
+   '(flycheck ivy company treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile powerline popup dashboard auto-package-update async))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 
@@ -60,11 +60,17 @@
 
 (use-package ivy
   :ensure t
-  :config (ivy-mode t))
+  :config (ivy-mode))
 
 (use-package which-key
   :ensure t
   :config (which-key-mode))
+
+(use-package expand-region
+  :ensure t
+  :bind
+  ("C-=" . er/expand-region)
+  ("C--" . er/contract-region))
 
 (use-package powerline
   :ensure t
@@ -99,12 +105,6 @@
   :after treemacs projectile
   :ensure t)
 
-(use-package expand-region
-  :ensure t
-  :bind
-  ("C-=" . er/expand-region)
-  ("C--" . er/contract-region))
-
 (use-package centaur-tabs
   :after projectile
   :ensure t
@@ -131,3 +131,4 @@
 
 (provide '.emacs)
 ;;; .emacs ends here
+
