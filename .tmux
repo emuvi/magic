@@ -10,5 +10,3 @@ export TERM=xterm-256color
 
 set -g default-terminal "screen-256color"
 
-set -g status-bg black
-set -g status-fg white
