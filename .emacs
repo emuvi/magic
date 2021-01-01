@@ -56,6 +56,13 @@
    (setq auto-package-update-interval 4)
    (auto-package-update-maybe))
 
+(use-package solarized-theme
+  :ensure t
+  :config
+  (load-theme 'solarized-light-high-contrast t))
+
+(load-theme 'adwaita t)
+
 (use-package which-key
   :ensure t
   :config (which-key-mode))
