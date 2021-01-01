@@ -53,10 +53,10 @@
    (setq auto-package-update-interval 4)
    (auto-package-update-maybe))
 
-(use-package solarized-theme
+(use-package leuven-theme
   :ensure t
   :config
-  (load-theme 'solarized-light t))
+  (load-theme 'leuven t))
 
 (use-package ivy
   :ensure t
