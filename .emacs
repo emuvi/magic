@@ -93,7 +93,7 @@
   :bind
   (:map global-map
 	([f8] . treemacs)
-	("C-c t" . treemacs-select-window)))
+	("M-g M-t" . treemacs-select-window)))
 
 (use-package treemacs-projectile
   :after treemacs projectile
@@ -116,8 +116,8 @@
   (centaur-tabs-mode t)
   :bind
   (:map global-map
-	("C-c b" . 'centaur-tabs-backward)
-	("C-c f" . 'centaur-tabs-forward)))
+	("M-g M-b" . 'centaur-tabs-backward)
+	("M-g M-f" . 'centaur-tabs-forward)))
 
 (use-package company
   :ensure t
