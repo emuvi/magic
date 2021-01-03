@@ -19,9 +19,11 @@
  '(menu-bar-mode nil)
  '(org-support-shift-select t)
  '(package-selected-packages
-   '(flycheck ivy company treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile powerline popup dashboard auto-package-update async))
+	 '(magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile powerline popup dashboard auto-package-update async))
  '(show-paren-mode t)
- '(tool-bar-mode nil))
+ '(tab-width 2)
+ '(tool-bar-mode nil)
+ '(visible-bell t))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -39,7 +41,9 @@
 (setq package-enable-at-startup nil)
 
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
+						 '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
 
 (package-initialize)
 
@@ -47,44 +51,38 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(require 'use-package-ensure)
+(setq use-package-always-ensure t)
+
 (use-package auto-package-update
-   :ensure t
-   :config
-   (setq auto-package-update-delete-old-versions t)
-   (setq auto-package-update-interval 4)
-   (auto-package-update-maybe))
+  :config
+  (setq auto-package-update-delete-old-versions t)
+  (setq auto-package-update-interval 4)
+  (auto-package-update-maybe))
 
 (use-package leuven-theme
-  :ensure t
   :config
   (load-theme 'leuven t))
 
-(use-package ivy
-  :ensure t
-  :config (ivy-mode))
-
 (use-package which-key
-  :ensure t
-  :config (which-key-mode))
+  :config
+  (which-key-setup-side-window-right-bottom)
+  (which-key-mode))
 
 (use-package expand-region
-  :ensure t
   :bind
   ("C-=" . er/expand-region)
   ("C--" . er/contract-region))
 
 (use-package powerline
-  :ensure t
   :config (powerline-default-theme))
 
 (use-package projectile
-  :ensure t
   :config
   (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
   (projectile-mode +1))
 
 (use-package dashboard
-  :ensure t
   :config
   (setq dashboard-items '((projects . 5)
 			  (recents  . 5)
@@ -94,7 +92,6 @@
   (dashboard-setup-startup-hook))
 
 (use-package treemacs
-  :ensure t
   :config
   (setq treemacs-is-never-other-window t)
   :bind
@@ -103,12 +100,10 @@
 	("M-g M-t" . treemacs-select-window)))
 
 (use-package treemacs-projectile
-  :after treemacs projectile
-  :ensure t)
+  :after treemacs projectile)
 
 (use-package centaur-tabs
   :after projectile
-  :ensure t
   :config
   (setq centaur-tabs-set-bar 'over)
   (setq centaur-tabs-set-modified-marker t)
@@ -120,16 +115,74 @@
 	("M-g M-b" . 'centaur-tabs-backward)
 	("M-g M-f" . 'centaur-tabs-forward)))
 
-(use-package company
-  :ensure t
+(use-package windmove
+  :bind
+  ("C-x <up>" . windmove-up)
+  ("C-x <down>" . windmove-down)
+  ("C-x <left>" . windmove-left)
+  ("C-x <right>" . windmove-right))
+
+(use-package helm
   :init
-  (add-hook 'after-init-hook 'global-company-mode))
+  (require 'helm-config)
+  :config
+  (setq helm-split-window-inside-p t)
+  (setq helm-split-window-default-side 'below)
+  (setq helm-input-idle-delay 0.01)
+  (helm-mode 1)
+  :bind (("M-x" . helm-M-x)
+         ("C-x C-m" . helm-M-x)
+         ("C-x C-f" . helm-find-files)
+	 ("C-x f" . helm-recentf)
+         ("C-x v" . helm-projectile)
+         ("C-x c o" . helm-occur)
+         ("C-x c p" . helm-projectile-ag)
+         ("C-x c k" . helm-show-kill-ring)
+         :map helm-map
+         ("<tab>" . helm-execute-persistent-action)))
+
+(use-package ag)
+
+(use-package helm-ag
+  :after (ag helm)
+  :init (setq helm-ag-fuzzy-match t))
+
+(use-package helm-projectile
+  :bind ("M-t" . helm-projectile-find-file)
+  :config
+  (helm-projectile-on))
+
+(use-package helm-swoop
+  :bind
+  ("C-x c s" . helm-swoop))
 
 (use-package flycheck
-  :ensure t
-  :init
-  (global-flycheck-mode))
+  :init (global-flycheck-mode)
+  :config
+  (setq flycheck-display-errors-delay 1)
+  (setq flycheck-highlighting-mode 'lines)
+  (setq  flycheck-check-syntax-automatically '(save))
+  (set-face-attribute 'flycheck-error nil :underline '(:color "red3" :style wave))
+  (set-face-attribute 'flycheck-warning nil :underline '(:color "orange2" :style wave)))
+
+(use-package magit
+  :config
+  :bind
+  ("C-x g s" . magit-status)
+  ("C-x g x" . magit-checkout)
+  ("C-x g c" . magit-commit)
+  ("C-x g h" . magit-push)
+  ("C-x g l" . magit-pull)
+  ("C-x g e" . magit-ediff-resolve)
+  ("C-x g r" . magit-rebase-interactive))
+
+(defun indent-buffer ()
+	"Indent the contents of a buffer."
+  (interactive)
+  (save-excursion
+    (delete-trailing-whitespace)
+    (indent-region (point-min) (point-max) nil)
+    (untabify (point-min) (point-max))))
 
 (provide '.emacs)
 ;;; .emacs ends here
-
