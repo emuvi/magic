@@ -11,6 +11,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(bookmark-save-flag 1)
+ '(dired-listing-switches "-alh")
  '(display-fill-column-indicator t)
  '(fill-column 84)
  '(inhibit-startup-screen nil)
