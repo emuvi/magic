@@ -19,7 +19,7 @@
  '(menu-bar-mode nil)
  '(org-support-shift-select t)
  '(package-selected-packages
-	 '(magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile powerline popup dashboard auto-package-update async))
+	 '(highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
  '(show-paren-mode t)
  '(tab-width 2)
  '(tool-bar-mode nil)
@@ -74,8 +74,21 @@
   ("C-=" . er/expand-region)
   ("C--" . er/contract-region))
 
-(use-package powerline
-  :config (powerline-default-theme))
+(use-package beacon
+  :config
+  (beacon-mode t))
+
+(use-package rainbow-mode
+  :config
+	(add-hook 'after-init-hook #'rainbow-mode))
+
+(use-package highlight-parentheses
+  :config
+  (highlight-parentheses-mode t))
+
+(use-package telephone-line
+  :config
+  (telephone-line-mode 1))
 
 (use-package projectile
   :config
@@ -133,7 +146,7 @@
   :bind (("M-x" . helm-M-x)
          ("C-x C-m" . helm-M-x)
          ("C-x C-f" . helm-find-files)
-	 ("C-x f" . helm-recentf)
+				 ("C-x f" . helm-recentf)
          ("C-x v" . helm-projectile)
          ("C-x c o" . helm-occur)
          ("C-x c p" . helm-projectile-ag)
@@ -166,7 +179,6 @@
   (set-face-attribute 'flycheck-warning nil :underline '(:color "orange2" :style wave)))
 
 (use-package magit
-  :config
   :bind
   ("C-x g s" . magit-status)
   ("C-x g x" . magit-checkout)
