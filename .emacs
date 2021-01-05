@@ -21,7 +21,7 @@
  '(menu-bar-mode nil)
  '(org-support-shift-select t)
  '(package-selected-packages
-	 '(lsp-treemacs rainbow-mode yasnippet lsp-java dap-mode lsp-ui lsp-mode company highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
+	 '(dap-firefox dap-chrome dap-node dap-php dap-go dap-lldb dap-python dap-java helm-lsp lsp-treemacs rainbow-mode yasnippet lsp-java dap-mode lsp-ui lsp-mode company highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
  '(show-paren-mode t)
  '(tab-width 2)
  '(tool-bar-mode nil)
@@ -210,10 +210,16 @@
   :after projectile
   :commands lsp
   :hook((python-mode . lsp)
-        (java-mode . lsp))
+        (java-mode . lsp)
+				(lsp-mode . lsp-enable-which-key-integration))
+	:init
+	(setq lsp-keymap-prefix "C-c l")
+	(setq lsp-enable-snippet t)
   :bind (:map lsp-mode-map
-              ("C-c l a" . lsp-execute-code-action)
-              ("C-c l r" . lsp-rename)))
+							("C-c l A" . helm-lsp-code-actions)
+							("C-c l w" . helm-lsp-workspace-symbol)
+              ("C-c l W" . helm-lsp-global-workspace-symbol)))
+
 
 (use-package lsp-ui
   :commands lsp-ui-mode
@@ -233,14 +239,47 @@
 (use-package lsp-treemacs
 	:commands lsp-treemacs-errors-list)
 
+(use-package helm-lsp)
+
+(use-package lsp-java
+	:config
+	(add-to-list 'lsp-java-vmargs "--enable-preview"))
+
 (use-package dap-mode
   :after lsp-mode
-  :config (dap-auto-configure-mode))
-
-(use-package lsp-java)
+  :config
+	(dap-auto-configure-mode)
+	(dap-register-debug-template "Java Runner"
+                             (list :type "java"
+                                   :request "launch"
+                                   :args ""
+                                   :vmArgs "--enable-preview"
+                                   :projectName nil
+                                   :mainClass nil)))
 
 (use-package dap-java
-  :ensure nil)
+	:ensure nil)
+
+(use-package dap-python
+	:ensure nil)
+
+(use-package dap-lldb
+	:ensure nil)
+
+(use-package dap-go
+	:ensure nil)
+
+(use-package dap-php
+	:ensure nil)
+
+(use-package dap-node
+	:ensure nil)
+
+(use-package dap-chrome
+	:ensure nil)
+
+(use-package dap-firefox
+	:ensure nil)
 
 (use-package yasnippet
 	:config (yas-global-mode))
