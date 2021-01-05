@@ -21,7 +21,7 @@
  '(menu-bar-mode nil)
  '(org-support-shift-select t)
  '(package-selected-packages
-	 '(lsp-java dap-mode lsp-ui lsp-mode company highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
+	 '(lsp-treemacs rainbow-mode yasnippet lsp-java dap-mode lsp-ui lsp-mode company highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
  '(show-paren-mode t)
  '(tab-width 2)
  '(tool-bar-mode nil)
@@ -34,16 +34,19 @@
  ;; If there is more than one, they won't work right.
  )
 
-(prefer-coding-system 'utf-8)
+(setq locale-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 (set-language-environment 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
 
 (require 'package)
 (setq package-enable-at-startup nil)
 
 (add-to-list 'package-archives
-						 '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
 
@@ -82,7 +85,7 @@
 
 (use-package rainbow-mode
   :config
-	(add-hook 'after-init-hook #'rainbow-mode))
+  (add-hook 'after-init-hook #'rainbow-mode))
 
 (use-package highlight-parentheses
   :config
@@ -100,9 +103,9 @@
 (use-package dashboard
   :config
   (setq dashboard-items '((projects . 5)
-			  (recents  . 5)
-			  (bookmarks . 5)
-			  (agenda . 5)))
+                          (recents  . 5)
+                          (bookmarks . 5)
+                          (agenda . 5)))
   (setq dashboard-center-content t)
   (dashboard-setup-startup-hook))
 
@@ -111,8 +114,8 @@
   (setq treemacs-is-never-other-window t)
   :bind
   (:map global-map
-	([f8] . treemacs)
-	("M-g M-t" . treemacs-select-window)))
+        ([f8] . treemacs)
+        ("M-g M-t" . treemacs-select-window)))
 
 (use-package treemacs-projectile
   :after treemacs projectile)
@@ -127,8 +130,8 @@
   (centaur-tabs-mode t)
   :bind
   (:map global-map
-	("M-g M-b" . 'centaur-tabs-backward)
-	("M-g M-f" . 'centaur-tabs-forward)))
+        ("M-g M-b" . 'centaur-tabs-backward)
+        ("M-g M-f" . 'centaur-tabs-forward)))
 
 (use-package windmove
   :bind
@@ -148,7 +151,7 @@
   :bind (("M-x" . helm-M-x)
          ("C-x C-m" . helm-M-x)
          ("C-x C-f" . helm-find-files)
-				 ("C-x f" . helm-recentf)
+         ("C-x f" . helm-recentf)
          ("C-x v" . helm-projectile)
          ("C-x c o" . helm-occur)
          ("C-x c p" . helm-projectile-ag)
@@ -172,11 +175,15 @@
   ("C-x c s" . helm-swoop))
 
 (use-package flycheck
-  :init (global-flycheck-mode)
+  :init
+	(global-flycheck-mode)
+	:bind
+  ("M-s n" . flycheck-next-error)
+  ("M-s p" . flycheck-previous-error)
   :config
   (setq flycheck-display-errors-delay 1)
   (setq flycheck-highlighting-mode 'lines)
-  (setq  flycheck-check-syntax-automatically '(save))
+  (setq flycheck-check-syntax-automatically '(save))
   (set-face-attribute 'flycheck-error nil :underline '(:color "red3" :style wave))
   (set-face-attribute 'flycheck-warning nil :underline '(:color "orange2" :style wave)))
 
@@ -191,33 +198,55 @@
   ("C-x g r" . magit-rebase-interactive))
 
 (use-package company
-	:init
-	(setq company-tooltip-align-annotations t)
-	(setq company-idle-delay 0.1)
-	(add-hook 'after-init-hook 'global-company-mode))
+  :init
+  (setq company-echo-delay 0)
+  (setq company-idle-delay 0.1)
+	(setq company-tooltip-limit 12)
+	(setq company-minimum-prefix-length 1)
+  (setq company-tooltip-align-annotations t)	
+  (add-hook 'after-init-hook 'global-company-mode))
 
 (use-package lsp-mode
-	:after projectile
-	:commands lsp
-	:hook((python-mode . lsp)
-				(java-mode . lsp))
-	:bind (:map lsp-mode-map
-							("C-c l a" . lsp-execute-code-action)
-							("C-c l r" . lsp-rename)))
+  :after projectile
+  :commands lsp
+  :hook((python-mode . lsp)
+        (java-mode . lsp))
+  :bind (:map lsp-mode-map
+              ("C-c l a" . lsp-execute-code-action)
+              ("C-c l r" . lsp-rename)))
 
-(use-package lsp-ui)
+(use-package lsp-ui
+  :commands lsp-ui-mode
+  :config
+  (setq lsp-ui-doc-show-with-mouse nil)
+  (setq lsp-ui-doc-show-with-cursor nil)
+	(setq lsp-ui-sideline-show-code-actions nil)
+  (setq lsp-ui-doc-position 'bottom)
+  :bind
+  ("M-s d" . lsp-ui-doc-show)
+  ("M-s D" . lsp-ui-doc-hide)
+  ("M-s f" . lsp-ui-doc-focus-frame)
+  ("M-s F" . lsp-ui-doc-unfocus-frame)
+  ("M-s m" . lsp-ui-imenu)
+  ("M-s M" . lsp-ui-imenu--kill))
+
+(use-package lsp-treemacs
+	:commands lsp-treemacs-errors-list)
 
 (use-package dap-mode
-	:after lsp-mode
-	:config (dap-auto-configure-mode))
+  :after lsp-mode
+  :config (dap-auto-configure-mode))
 
 (use-package lsp-java)
 
 (use-package dap-java
-	:ensure nil)
+  :ensure nil)
+
+(use-package yasnippet
+	:config (yas-global-mode))
 
 (defun indent-buffer ()
-	"Indent the contents of a buffer."
+  "Indent the contents of a buffer."
   (interactive)
   (save-excursion
     (delete-trailing-whitespace)
