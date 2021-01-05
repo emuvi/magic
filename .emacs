@@ -21,7 +21,7 @@
  '(menu-bar-mode nil)
  '(org-support-shift-select t)
  '(package-selected-packages
-	 '(dap-firefox dap-chrome dap-node dap-php dap-go dap-lldb dap-python dap-java helm-lsp lsp-treemacs rainbow-mode yasnippet lsp-java dap-mode lsp-ui lsp-mode company highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
+	 '(go-mode dap-firefox dap-chrome dap-node dap-php dap-go dap-lldb dap-python dap-java helm-lsp lsp-treemacs rainbow-mode yasnippet lsp-java dap-mode lsp-ui lsp-mode company highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
  '(show-paren-mode t)
  '(tab-width 2)
  '(tool-bar-mode nil)
@@ -211,6 +211,7 @@
   :commands lsp
   :hook((python-mode . lsp)
         (java-mode . lsp)
+				(go-mode . lsp)
 				(lsp-mode . lsp-enable-which-key-integration))
 	:init
 	(setq lsp-keymap-prefix "C-c l")
@@ -219,7 +220,6 @@
 							("C-c l A" . helm-lsp-code-actions)
 							("C-c l w" . helm-lsp-workspace-symbol)
               ("C-c l W" . helm-lsp-global-workspace-symbol)))
-
 
 (use-package lsp-ui
   :commands lsp-ui-mode
@@ -244,6 +244,11 @@
 (use-package lsp-java
 	:config
 	(add-to-list 'lsp-java-vmargs "--enable-preview"))
+
+(use-package go-mode
+	:hook ((go-mode . lsp)))
+
+(add-hook 'go-mode-hook 'lsp-deferred)
 
 (use-package dap-mode
   :after lsp-mode
