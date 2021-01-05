@@ -10,8 +10,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode t)
  '(bookmark-save-flag 1)
- '(dired-listing-switches "-alh")
+ '(delete-selection-mode t)
+ '(dired-listing-switches "-lah")
  '(display-fill-column-indicator t)
  '(fill-column 84)
  '(inhibit-startup-screen nil)
@@ -19,7 +21,7 @@
  '(menu-bar-mode nil)
  '(org-support-shift-select t)
  '(package-selected-packages
-	 '(highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
+	 '(lsp-java dap-mode lsp-ui lsp-mode company highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
  '(show-paren-mode t)
  '(tab-width 2)
  '(tool-bar-mode nil)
@@ -187,6 +189,32 @@
   ("C-x g l" . magit-pull)
   ("C-x g e" . magit-ediff-resolve)
   ("C-x g r" . magit-rebase-interactive))
+
+(use-package company
+	:init
+	(setq company-tooltip-align-annotations t)
+	(setq company-idle-delay 0.1)
+	(add-hook 'after-init-hook 'global-company-mode))
+
+(use-package lsp-mode
+	:after projectile
+	:commands lsp
+	:hook((python-mode . lsp)
+				(java-mode . lsp))
+	:bind (:map lsp-mode-map
+							("C-c l a" . lsp-execute-code-action)
+							("C-c l r" . lsp-rename)))
+
+(use-package lsp-ui)
+
+(use-package dap-mode
+	:after lsp-mode
+	:config (dap-auto-configure-mode))
+
+(use-package lsp-java)
+
+(use-package dap-java
+	:ensure nil)
 
 (defun indent-buffer ()
 	"Indent the contents of a buffer."
