@@ -21,9 +21,8 @@
  '(menu-bar-mode nil)
  '(org-support-shift-select t)
  '(package-selected-packages
-	 '(go-mode dap-firefox dap-chrome dap-node dap-php dap-go dap-lldb dap-python dap-java helm-lsp lsp-treemacs rainbow-mode yasnippet lsp-java dap-mode lsp-ui lsp-mode company highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
+   '(vue-mode typescript-mode go-mode dap-firefox dap-chrome dap-node dap-php dap-go dap-lldb dap-python dap-java helm-lsp lsp-treemacs rainbow-mode yasnippet lsp-java dap-mode lsp-ui lsp-mode company highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
  '(show-paren-mode t)
- '(tab-width 2)
  '(tool-bar-mode nil)
  '(visible-bell t))
 
@@ -41,6 +40,10 @@
 (set-keyboard-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq indent-line-function 'insert-tab)
 
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -209,7 +212,9 @@
 (use-package lsp-mode
   :after projectile
   :commands lsp
-  :hook((python-mode . lsp)
+  :hook((vue-mode . lsp)
+				(typescript-mode . lsp)
+				(python-mode . lsp)
         (java-mode . lsp)
 				(go-mode . lsp)
 				(lsp-mode . lsp-enable-which-key-integration))
@@ -241,14 +246,29 @@
 
 (use-package helm-lsp)
 
+(use-package vue-mode
+  :mode "\\.vue\\'"
+  :hook (vue-mode . lsp))
+
+(add-hook 'mmm-mode-hook
+          (lambda ()
+            (set-face-background 'mmm-default-submode-face nil)))
+
+(use-package typescript-mode
+  :hook (typescript-mode . lsp)
+  :mode (("\\.js\\'" . typescript-mode)
+				 ("\\.jsx\\'" . typescript-mode)
+				 ("\\.ts\\'" . typescript-mode)
+         ("\\.tsx\\'" . typescript-mode))
+  :config
+  (setq-default typescript-indent-level 2))
+
 (use-package lsp-java
 	:config
 	(add-to-list 'lsp-java-vmargs "--enable-preview"))
 
 (use-package go-mode
 	:hook ((go-mode . lsp)))
-
-(add-hook 'go-mode-hook 'lsp-deferred)
 
 (use-package dap-mode
   :after lsp-mode
@@ -262,28 +282,28 @@
                                    :projectName nil
                                    :mainClass nil)))
 
-(use-package dap-java
-	:ensure nil)
-
-(use-package dap-python
-	:ensure nil)
-
-(use-package dap-lldb
-	:ensure nil)
-
-(use-package dap-go
-	:ensure nil)
-
-(use-package dap-php
-	:ensure nil)
-
-(use-package dap-node
+(use-package dap-firefox
 	:ensure nil)
 
 (use-package dap-chrome
 	:ensure nil)
 
-(use-package dap-firefox
+(use-package dap-node
+	:ensure nil)
+
+(use-package dap-php
+	:ensure nil)
+
+(use-package dap-python
+	:ensure nil)
+
+(use-package dap-java
+	:ensure nil)
+
+(use-package dap-go
+	:ensure nil)
+
+(use-package dap-lldb
 	:ensure nil)
 
 (use-package yasnippet
