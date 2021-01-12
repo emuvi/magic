@@ -18,6 +18,7 @@
  '(dired-listing-switches "-lah")
  '(display-fill-column-indicator t)
  '(fill-column 84)
+ '(global-linum-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen nil)
  '(make-backup-files nil)
@@ -44,6 +45,8 @@
 (set-keyboard-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
+
+(define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
 
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -213,7 +216,9 @@
 (use-package lsp-mode
   :after projectile
   :commands lsp
-  :hook((php-mode . lsp)
+  :hook((css-mode . lsp)
+        (web-mode . lsp)
+        (php-mode . lsp)
         (vue-mode . lsp)
         (typescript-mode . lsp)
         (python-mode . lsp)
@@ -256,6 +261,9 @@
          ("\\.html\\'" . web-mode)
          ("\\.phtm\\'" . web-mode)
          ("\\.phtml\\'" . web-mode))
+  :hook
+  (web-mode . lsp)
+  (web-mode . flycheck-mode)
   :config
   (setq web-mode-enable-current-element-highlight t)
   (setq web-mode-markup-indent-offset 2)
@@ -263,6 +271,10 @@
   (setq web-mode-code-indent-offset 2))
 
 (use-package css-mode
+  :mode "\\.css\\'"
+  :hook
+  (css-mode . lsp)
+  (css-mode . flycheck-mode)
   :config
   (setq css-indent-offset 2))
 
@@ -276,33 +288,45 @@
 
 (use-package php-mode
   :mode "\\.php\\'"
-  :hook (php-mode . lsp))
+  :hook
+  (php-mode . lsp)
+  (php-mode . flycheck-mode))
 
 (use-package vue-mode
   :mode "\\.vue\\'"
-  :hook (vue-mode . lsp))
+  :hook
+  (vue-mode . lsp)
+  (web-mode . flycheck-mode))
 
 (add-hook 'mmm-mode-hook
           (lambda ()
             (set-face-background 'mmm-default-submode-face nil)))
 
 (use-package typescript-mode
-  :hook (typescript-mode . lsp)
   :mode (("\\.js\\'" . typescript-mode)
          ("\\.jsx\\'" . typescript-mode)
          ("\\.ts\\'" . typescript-mode)
          ("\\.tsx\\'" . typescript-mode))
+  :hook
+  (typescript-mode . lsp)
+  (typescript-mode . flycheck-mode)
   :config
   (setq-default typescript-indent-level 2))
 
 (use-package lsp-java
+  :hook
+  (java-mode . lsp)
+  (java-mode . flycheck-mode)
   :config
   (setq lsp-java-format-settings-url (lsp--path-to-uri "~/java-pointel-style.xml"))
   (setq lsp-java-format-settings-profile "PointelStyle")
   (add-to-list 'lsp-java-vmargs "--enable-preview"))
 
 (use-package go-mode
-  :hook ((go-mode . lsp)))
+  :mode "\\.go\\'"
+  :hook
+  (go-mode . lsp)
+  (go-mode . flycheck-mode))
 
 (use-package cmake-mode
   :mode (("CMakeLists\\.txt\\'" . cmake-mode)
@@ -418,6 +442,16 @@
 
 (global-set-key [(control shift up)]  'move-line-up)
 (global-set-key [(control shift down)]  'move-line-down)
+
+(defun query-replace-from-top ()
+  (interactive)
+  (let ((orig-point (point)))
+    (save-excursion
+      (goto-char (point-min))
+      (call-interactively 'query-replace))
+    (goto-char orig-point)))
+
+(bind-key* "C-M-%" 'query-replace-from-top)
 
 (provide '.emacs)
 ;;; .emacs ends here
