@@ -37,6 +37,19 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; Eval entire buffer with one keybind.
+(global-set-key (kbd "C-x e") 'eval-buffer)
+;; Eval the raise buffer for build and execute.
+(global-set-key (kbd "C-x r e") (lambda () (interactive) (eval-buffer "raise.el")))
+
+;; Start eshell or switch to it if it's active.
+(global-set-key (kbd "C-x m") 'eshell)
+;; Start a new eshell even if one is active.
+(global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
+;; Start a regular shell if you prefer that.
+(global-set-key (kbd "C-x M-m") 'shell)
+
+;; Shift and click with mouse select the region.
 (define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
 
 (require 'package)
