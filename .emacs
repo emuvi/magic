@@ -139,7 +139,7 @@
   :bind
   (:map global-map
         ("M-g M-b" . 'centaur-tabs-backward)
-        ("M-g M-f" . 'centaur-tabs-forward)))
+        ("M-g M-y" . 'centaur-tabs-forward)))
 
 (use-package windmove
   :bind
