@@ -183,9 +183,8 @@
   ("C-x c s" . helm-swoop))
 
 (use-package flycheck
-  :init
-  (global-flycheck-mode)
   :bind
+  ("M-s c" . flycheck-mode)
   ("M-s n" . flycheck-next-error)
   ("M-s p" . flycheck-previous-error)
   :config
@@ -265,7 +264,6 @@
          ("\\.phtml\\'" . web-mode))
   :hook
   (web-mode . lsp)
-  (web-mode . flycheck-mode)
   :config
   (setq web-mode-enable-current-element-highlight t)
   (setq web-mode-markup-indent-offset 2)
@@ -276,7 +274,6 @@
   :mode "\\.css\\'"
   :hook
   (css-mode . lsp)
-  (css-mode . flycheck-mode)
   :config
   (setq css-indent-offset 2))
 
@@ -291,14 +288,12 @@
 (use-package php-mode
   :mode "\\.php\\'"
   :hook
-  (php-mode . lsp)
-  (php-mode . flycheck-mode))
+  (php-mode . lsp))
 
 (use-package vue-mode
   :mode "\\.vue\\'"
   :hook
-  (vue-mode . lsp)
-  (web-mode . flycheck-mode))
+  (vue-mode . lsp))
 
 (add-hook 'mmm-mode-hook
           (lambda ()
@@ -311,14 +306,12 @@
          ("\\.tsx\\'" . typescript-mode))
   :hook
   (typescript-mode . lsp)
-  (typescript-mode . flycheck-mode)
   :config
   (setq-default typescript-indent-level 2))
 
 (use-package lsp-java
   :hook
   (java-mode . lsp)
-  (java-mode . flycheck-mode)
   :config
   (setq lsp-java-format-settings-url (lsp--path-to-uri "~/java-pointel-style.xml"))
   (setq lsp-java-format-settings-profile "PointelStyle")
@@ -327,8 +320,7 @@
 (use-package go-mode
   :mode "\\.go\\'"
   :hook
-  (go-mode . lsp)
-  (go-mode . flycheck-mode))
+  (go-mode . lsp))
 
 (use-package cmake-mode
   :mode (("CMakeLists\\.txt\\'" . cmake-mode)
