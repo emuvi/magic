@@ -208,8 +208,9 @@
   (setq company-tooltip-limit 12)
   (setq company-minimum-prefix-length 1)
   (setq company-tooltip-align-annotations t)
-  (global-company-mode 1)
-  (global-set-key (kbd "C-<tab>") 'company-complete))
+  (global-company-mode 1) 
+  (global-set-key (kbd "C-.") 'company-complete)
+  (global-set-key (kbd "C-<tab>") 'company-abort))
 
 (use-package lsp-mode
   :after projectile
