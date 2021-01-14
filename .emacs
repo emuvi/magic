@@ -39,9 +39,6 @@
 
 ;; Eval entire buffer with one keybind.
 (global-set-key (kbd "C-x e") 'eval-buffer)
-;; Eval the raise buffer for build and execute.
-(global-set-key (kbd "C-x r e") (lambda () (interactive) (eval-buffer "raise.el")))
-
 ;; Start eshell or switch to it if it's active.
 (global-set-key (kbd "C-x m") 'eshell)
 ;; Start a new eshell even if one is active.
