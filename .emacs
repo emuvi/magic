@@ -312,8 +312,7 @@
   (java-mode . lsp)
   :config
   (setq lsp-java-format-settings-url (lsp--path-to-uri "~/java-pointel-style.xml"))
-  (setq lsp-java-format-settings-profile "PointelStyle")
-  (add-to-list 'lsp-java-vmargs "--enable-preview"))
+  (setq lsp-java-format-settings-profile "PointelStyle"))
 
 (use-package go-mode
   :mode "\\.go\\'"
@@ -335,14 +334,7 @@
 (use-package dap-mode
   :after lsp-mode
   :config
-  (dap-auto-configure-mode)
-  (dap-register-debug-template "Java Runner"
-                               (list :type "java"
-                                     :request "launch"
-                                     :args ""
-                                     :vmArgs "--enable-preview"
-                                     :projectName nil
-                                     :mainClass nil)))
+  (dap-auto-configure-mode))
 
 (use-package dap-firefox
   :ensure nil)
@@ -444,6 +436,17 @@
     (goto-char orig-point)))
 
 (bind-key* "C-M-%" 'query-replace-from-top)
+
+(defun replace-from-top ()
+  (interactive)
+  (let ((orig-point (point)))
+    (save-excursion
+      (goto-char (point-min))
+      (call-interactively 'replace-string))
+    (goto-char orig-point)))
+
+(bind-key* "C-M-&" 'replace-from-top)
+
 
 (provide '.emacs)
 ;;; .emacs ends here
