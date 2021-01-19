@@ -24,7 +24,7 @@
  '(menu-bar-mode nil)
  '(org-support-shift-select t)
  '(package-selected-packages
-   '(emmet-mode company-web json-mode web-mode php-mode cmake-mode clang-format modern-cpp-font-lock cmake-font-lock vue-mode typescript-mode go-mode dap-firefox dap-chrome dap-node dap-php dap-go dap-lldb dap-python dap-java helm-lsp lsp-treemacs rainbow-mode yasnippet lsp-java dap-mode lsp-ui lsp-mode company highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
+   '(python-mode emmet-mode company-web json-mode web-mode php-mode cmake-mode clang-format modern-cpp-font-lock cmake-font-lock vue-mode typescript-mode go-mode dap-firefox dap-chrome dap-node dap-php dap-go dap-lldb dap-python dap-java helm-lsp rainbow-mode yasnippet lsp-java dap-mode lsp-ui lsp-mode company highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
  '(php-mode-force-pear t)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
@@ -306,6 +306,12 @@
   (typescript-mode . lsp)
   :config
   (setq-default typescript-indent-level 2))
+
+(use-package python-mode
+  :mode ("\\.py\\'" . python-mode)
+  :config
+  (setq indent-tabs-mode nil)
+  (setq python-indent-offset 4))
 
 (use-package lsp-java
   :hook
