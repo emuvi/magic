@@ -438,6 +438,9 @@
 (global-set-key [(control shift up)]  'move-line-up)
 (global-set-key [(control shift down)]  'move-line-down)
 
+(global-set-key [(meta g)(meta c)] 'comment-region)
+(global-set-key [(meta g)(meta u)] 'uncomment-region)
+
 (defun query-replace-from-top ()
   (interactive)
   (let ((orig-point (point)))
