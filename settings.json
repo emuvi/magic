@@ -1,0 +1,86 @@
+{
+  "editor.tabSize": 2,
+  "editor.lineHeight": 24,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.suggestSelection": "first",
+  "editor.wordWrap": "on",
+  "editor.wrappingIndent": "deepIndent",
+  "workbench.startupEditor": "none",
+  "git.enableSmartCommit": true,
+  "prettier.printWidth": 100,
+  "html.format.wrapLineLength": 100,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "extensions.ignoreRecommendations": true,
+  "go.useLanguageServer": true,
+  "go.autocompleteUnimportedPackages": true,
+  "java.project.importOnFirstTimeStartup": "automatic",
+  "java.configuration.checkProjectSettingsExclusions": false,
+  "java.semanticHighlighting.enabled": true,
+  "java.refactor.renameFromFileExplorer": "autoApply",
+  "dart.checkForSdkUpdates": false,
+  "git.confirmSync": false,
+  "python.showStartPage": false,
+  "explorer.confirmDelete": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "explorer.confirmDragAndDrop": false,
+  "workbench.sideBar.location": "left",
+  "workbench.iconTheme": "vscode-icons",
+  "errorLens.errorColor": "rgba(240,0,0,0.1)",
+  "errorLens.errorTextColor": "rgba(240,240,240,0.3)",
+  "errorLens.warningColor": "rgba(180,180,0,0.1)",
+  "errorLens.warningTextColor": "rgba(240,240,240,0.3)",
+  "errorLens.hintColor": "rgba(20,140,140,0.1)",
+  "errorLens.hintTextColor": "rgba(240,240,240,0.3)",
+  "errorLens.infoColor": "rgba(0,200,0,0.1)",
+  "errorLens.infoTextColor": "rgba(240,240,240,0.3)",
+  "remote.SSH.remotePlatform": {
+    "LocalServer": "linux"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[go]" : {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[php]": {
+    "editor.defaultFormatter": "kokororin.vscode-phpfmt"
+  },
+  "[cmake]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[java]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  "[dart]": {
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "cSpell.language": "en,pt,pt_BR",
+  "cSpell.userWords": [
+    "Everton",
+    "Pointel",
+    "muvi",
+    "postgres",
+    "thonvieira"
+  ]
+}

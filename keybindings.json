@@ -1,0 +1,87 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "ctrl+alt+s",
+    "command": "git.sync"
+  },
+  {
+    "key": "ctrl+alt+b",
+    "command": "workbench.action.tasks.build"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "-workbench.action.tasks.build"
+  },
+  {
+    "key": "ctrl+alt+t",
+    "command": "workbench.action.tasks.test"
+  },
+  {
+    "key": "ctrl+alt+o",
+    "command": "workbench.action.gotoSymbol"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "-workbench.action.gotoSymbol"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+alt+p",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "-workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "outline.focus"
+  },
+  {
+    "key": "ctrl+alt+r",
+    "command": "workbench.action.tasks.reRunTask"
+  },
+  {
+    "key": "ctrl+alt+oem_period",
+    "command": "editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+f8",
+    "command": "-editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+alt+oem_comma",
+    "command": "editor.action.marker.prev",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+alt+f8",
+    "command": "-editor.action.marker.prev",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+oem_period",
+    "command": "editor.action.marker.nextInFiles",
+    "when": "editorFocus"
+  },
+  {
+    "key": "f8",
+    "command": "-editor.action.marker.nextInFiles",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+oem_comma",
+    "command": "editor.action.marker.prevInFiles",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+f8",
+    "command": "-editor.action.marker.prevInFiles",
+    "when": "editorFocus"
+  }
+]
