@@ -168,7 +168,10 @@
 
 (use-package helm-ag
   :after (ag helm)
-  :init (setq helm-ag-fuzzy-match t))
+  :init (setq helm-ag-fuzzy-match t)
+  :bind
+  (:map global-map
+        ("M-g M-s" . helm-ag)))
 
 (use-package helm-projectile
   :bind ("M-t" . helm-projectile-find-file)
@@ -208,7 +211,7 @@
   (setq company-tooltip-limit 12)
   (setq company-minimum-prefix-length 1)
   (setq company-tooltip-align-annotations t)
-  (global-company-mode 1) 
+  (global-company-mode 1)
   (global-set-key (kbd "C-.") 'company-complete)
   (global-set-key (kbd "C-<tab>") 'company-abort))
 
@@ -414,6 +417,8 @@
     (delete-trailing-whitespace)
     (indent-region (point-min) (point-max) nil)
     (untabify (point-min) (point-max))))
+
+(global-set-key [(meta g)(meta i)] 'indent-buffer)
 
 (defun move-line-up ()
   "Move up the current line."
