@@ -206,8 +206,8 @@
 
 (use-package company
   :config
-  (setq company-echo-delay 0)
-  (setq company-idle-delay 0.3)
+  (setq company-echo-delay 1)
+  (setq company-idle-delay 2)
   (setq company-tooltip-limit 12)
   (setq company-minimum-prefix-length 1)
   (setq company-tooltip-align-annotations t)
@@ -343,7 +343,10 @@
 (use-package dap-mode
   :after lsp-mode
   :config
-  (dap-auto-configure-mode))
+  (dap-auto-configure-mode)
+  :bind
+  (:map global-map
+        ("<f5>" . 'dap-debug-last)))
 
 (use-package dap-firefox
   :ensure nil)
