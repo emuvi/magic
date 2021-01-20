@@ -102,8 +102,8 @@
 
 (use-package projectile
   :config
-  (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
-  (projectile-mode +1))
+  (projectile-mode +1)
+  (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map))
 
 (use-package dashboard
   :config
@@ -195,10 +195,10 @@
   ("C-x g x" . magit-checkout)
   ("C-x g l" . magit-pull)
   ("C-x g s" . magit-status)
-  ("C-x g S" . 'magit-stage)
-  ("C-x g f" . 'magit-stage-file)
-  ("C-x g m" . 'magit-stage-modified)
-  ("C-x g u" . 'magit-stage-untracked)
+  ("C-x g S" . magit-stage)
+  ("C-x g f" . magit-stage-file)
+  ("C-x g m" . magit-stage-modified)
+  ("C-x g u" . magit-stage-untracked)
   ("C-x g c" . magit-commit)
   ("C-x g h" . magit-push)
   ("C-x g e" . magit-ediff-resolve)
@@ -206,10 +206,10 @@
 
 (use-package company
   :config
-  (setq company-echo-delay 1)
-  (setq company-idle-delay 2)
+  (setq company-echo-delay 0)
+  (setq company-idle-delay 1)
   (setq company-tooltip-limit 12)
-  (setq company-minimum-prefix-length 1)
+  (setq company-minimum-prefix-length 3)
   (setq company-tooltip-align-annotations t)
   (global-company-mode 1)
   (global-set-key (kbd "C-<tab>") 'company-complete)
@@ -233,7 +233,8 @@
   :init
   (setq lsp-keymap-prefix "C-c l")
   (setq lsp-enable-snippet t)
-  (setq lsp-enable-eldoc nil)
+  (setq lsp-signature-auto-activate t)
+  (setq lsp-signature-doc-lines 1)
   :bind (:map lsp-mode-map
               ("C-c l A" . helm-lsp-code-actions)
               ("C-c l w" . helm-lsp-workspace-symbol)
@@ -251,14 +252,15 @@
   ("M-s M-a" . 'lsp-ui-sideline-apply-code-actions)
   ("M-s M-d" . lsp-ui-doc-show)
   ("M-s M-f" . lsp-ui-doc-focus-frame)
-  ("M-s F" . lsp-ui-doc-unfocus-frame)
+  ("M-s M-F" . lsp-ui-doc-unfocus-frame)
   ("M-s M-m" . lsp-ui-imenu)
-  ("M-s M" . lsp-ui-imenu--kill))
+  ("M-s M-M" . lsp-ui-imenu--kill))
 
 (use-package lsp-treemacs
   :commands lsp-treemacs-errors-list)
 
-(use-package helm-lsp)
+(use-package helm-lsp
+  :commands helm-lsp-workspace-symbol)
 
 (use-package web-mode
   :mode (("\\.htm\\'" . web-mode)
@@ -315,7 +317,6 @@
 (use-package python-mode
   :mode ("\\.py\\'" . python-mode)
   :config
-  (setq indent-tabs-mode nil)
   (setq python-indent-offset 4))
 
 (use-package lsp-java
@@ -411,9 +412,10 @@
                   emmet-hippie-try-expand-line)))
 
 (defun emmet-hippie-try-expand-line (args)
+  "Includes another emmet handler with ARGS."
   (interactive "P")
   (when emmet-mode
-    (emmet-exand-line args)))
+    (emmet-expand-line args)))
 
 (defun indent-buffer ()
   "Indent the contents of a buffer."
@@ -447,6 +449,7 @@
 (global-set-key [(meta s)(meta u)] 'uncomment-region)
 
 (defun query-replace-from-top ()
+  "Replace with query on entire buffer."
   (interactive)
   (let ((orig-point (point)))
     (save-excursion
@@ -457,6 +460,7 @@
 (bind-key* "C-M-%" 'query-replace-from-top)
 
 (defun replace-from-top ()
+  "Replace on entire buffer."
   (interactive)
   (let ((orig-point (point)))
     (save-excursion
