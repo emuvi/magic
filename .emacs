@@ -320,7 +320,7 @@
   :hook
   (java-mode . lsp)
   :config
-  (setq lsp-java-format-settings-url (lsp--path-to-uri "~/java-pointel-style.xml"))
+  (setq lsp-java-format-settings-url (lsp--path-to-uri "~/.java-pointel-style.xml"))
   (setq lsp-java-format-settings-profile "PointelStyle"))
 
 (use-package go-mode
