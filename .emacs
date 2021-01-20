@@ -38,13 +38,13 @@
  )
 
 ;; Eval entire buffer with one keybind.
-(global-set-key (kbd "C-x e") 'eval-buffer)
+(global-set-key (kbd "C-x x b") 'eval-buffer)
 ;; Start eshell or switch to it if it's active.
-(global-set-key (kbd "C-x m") 'eshell)
+(global-set-key (kbd "C-x x e") 'eshell)
 ;; Start a new eshell even if one is active.
-(global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
+(global-set-key (kbd "C-x x x") (lambda () (interactive) (eshell t)))
 ;; Start a regular shell if you prefer that.
-(global-set-key (kbd "C-x M-m") 'shell)
+(global-set-key (kbd "C-x x s") 'shell)
 
 ;; Shift and click with mouse select the region.
 (define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
@@ -120,7 +120,7 @@
   :bind
   (:map global-map
         ([f8] . treemacs)
-        ("M-g M-t" . treemacs-select-window)))
+        ("M-s M-t" . treemacs-select-window)))
 
 (use-package treemacs-projectile
   :after treemacs projectile)
@@ -135,8 +135,8 @@
   (centaur-tabs-mode t)
   :bind
   (:map global-map
-        ("M-g M-b" . 'centaur-tabs-backward)
-        ("M-g M-y" . 'centaur-tabs-forward)))
+        ("M-s M-b" . 'centaur-tabs-backward)
+        ("M-s M-y" . 'centaur-tabs-forward)))
 
 (use-package windmove
   :bind
@@ -171,16 +171,12 @@
   :init (setq helm-ag-fuzzy-match t)
   :bind
   (:map global-map
-        ("M-g M-s" . helm-ag)))
+        ("M-s M-g" . helm-ag)))
 
 (use-package helm-projectile
   :bind ("M-t" . helm-projectile-find-file)
   :config
   (helm-projectile-on))
-
-(use-package helm-swoop
-  :bind
-  ("C-x c s" . helm-swoop))
 
 (use-package flycheck
   :bind
@@ -188,7 +184,7 @@
   ("M-s n" . flycheck-next-error)
   ("M-s p" . flycheck-previous-error)
   :config
-  (setq flycheck-display-errors-delay 1)
+  (setq flycheck-display-errors-delay 0.1)
   (setq flycheck-highlighting-mode 'lines)
   (setq flycheck-check-syntax-automatically '(save))
   (set-face-attribute 'flycheck-error nil :underline '(:color "red3" :style wave))
@@ -196,11 +192,15 @@
 
 (use-package magit
   :bind
-  ("C-x g s" . magit-status)
   ("C-x g x" . magit-checkout)
+  ("C-x g l" . magit-pull)
+  ("C-x g s" . magit-status)
+  ("C-x g S" . 'magit-stage)
+  ("C-x g f" . 'magit-stage-file)
+  ("C-x g m" . 'magit-stage-modified)
+  ("C-x g u" . 'magit-stage-untracked)
   ("C-x g c" . magit-commit)
   ("C-x g h" . magit-push)
-  ("C-x g l" . magit-pull)
   ("C-x g e" . magit-ediff-resolve)
   ("C-x g r" . magit-rebase-interactive))
 
@@ -212,8 +212,8 @@
   (setq company-minimum-prefix-length 1)
   (setq company-tooltip-align-annotations t)
   (global-company-mode 1)
-  (global-set-key (kbd "C-.") 'company-complete)
-  (global-set-key (kbd "C-<tab>") 'company-abort))
+  (global-set-key (kbd "C-<tab>") 'company-complete)
+  (global-set-key (kbd "C-q") 'company-abort))
 
 (use-package lsp-mode
   :after projectile
@@ -233,6 +233,7 @@
   :init
   (setq lsp-keymap-prefix "C-c l")
   (setq lsp-enable-snippet t)
+  (setq lsp-enable-eldoc nil)
   :bind (:map lsp-mode-map
               ("C-c l A" . helm-lsp-code-actions)
               ("C-c l w" . helm-lsp-workspace-symbol)
@@ -241,16 +242,17 @@
 (use-package lsp-ui
   :commands lsp-ui-mode
   :config
+  (setq lsp-ui-sideline-enable nil)
   (setq lsp-ui-doc-show-with-mouse nil)
   (setq lsp-ui-doc-show-with-cursor nil)
-  (setq lsp-ui-sideline-show-code-actions nil)
-  (setq lsp-ui-doc-position 'bottom)
+  (setq lsp-ui-doc-position 'top)
   :bind
-  ("M-s d" . lsp-ui-doc-show)
-  ("M-s D" . lsp-ui-doc-hide)
-  ("M-s f" . lsp-ui-doc-focus-frame)
+  ("M-s M-s" . lsp-ui-sideline-mode)
+  ("M-s M-a" . 'lsp-ui-sideline-apply-code-actions)
+  ("M-s M-d" . lsp-ui-doc-show)
+  ("M-s M-f" . lsp-ui-doc-focus-frame)
   ("M-s F" . lsp-ui-doc-unfocus-frame)
-  ("M-s m" . lsp-ui-imenu)
+  ("M-s M-m" . lsp-ui-imenu)
   ("M-s M" . lsp-ui-imenu--kill))
 
 (use-package lsp-treemacs
@@ -421,7 +423,7 @@
     (indent-region (point-min) (point-max) nil)
     (untabify (point-min) (point-max))))
 
-(global-set-key [(meta g)(meta i)] 'indent-buffer)
+(global-set-key [(meta s)(meta i)] 'indent-buffer)
 
 (defun move-line-up ()
   "Move up the current line."
@@ -441,8 +443,8 @@
 (global-set-key [(control shift up)]  'move-line-up)
 (global-set-key [(control shift down)]  'move-line-down)
 
-(global-set-key [(meta g)(meta c)] 'comment-region)
-(global-set-key [(meta g)(meta u)] 'uncomment-region)
+(global-set-key [(meta s)(meta c)] 'comment-region)
+(global-set-key [(meta s)(meta u)] 'uncomment-region)
 
 (defun query-replace-from-top ()
   (interactive)
