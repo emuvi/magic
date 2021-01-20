@@ -118,9 +118,8 @@
   :config
   (setq treemacs-is-never-other-window t)
   :bind
-  (:map global-map
-        ([f8] . treemacs)
-        ("M-s M-t" . treemacs-select-window)))
+  ("<f12>" . treemacs)
+  ("M-s M-t" . treemacs-select-window))
 
 (use-package treemacs-projectile
   :after treemacs projectile)
@@ -347,8 +346,12 @@
   :config
   (dap-auto-configure-mode)
   :bind
-  (:map global-map
-        ("<f5>" . 'dap-debug-last)))
+  ("<f5>" . 'dap-debug-last)
+  ("<C-f5>" . 'dap-disconnect)
+  ("<f6>" . 'dap-continue)
+  ("<f7>" . 'dap-next)
+  ("<f8>" . 'dap-step-in)
+  ("<C-f8>" . 'dap-step-out))
 
 (use-package dap-firefox
   :ensure nil)
