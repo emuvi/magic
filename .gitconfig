@@ -3,3 +3,5 @@
 	email = emuvs@pointel.com.br
 [pull]
 	ff = only
+[core]
+	autocrlf = input
