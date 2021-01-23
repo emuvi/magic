@@ -24,7 +24,7 @@
  '(menu-bar-mode nil)
  '(org-support-shift-select t)
  '(package-selected-packages
-   '(groovy-mode lsp-treemacs python-mode emmet-mode company-web json-mode web-mode php-mode cmake-mode clang-format modern-cpp-font-lock cmake-font-lock vue-mode typescript-mode go-mode dap-firefox dap-chrome dap-node dap-php dap-go dap-lldb dap-python dap-java helm-lsp rainbow-mode yasnippet lsp-java dap-mode lsp-ui lsp-mode company highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
+   '(yasnippet-snippets groovy-mode lsp-treemacs python-mode emmet-mode company-web json-mode web-mode php-mode cmake-mode clang-format modern-cpp-font-lock cmake-font-lock vue-mode typescript-mode go-mode dap-firefox dap-chrome dap-node dap-php dap-go dap-lldb dap-python dap-java helm-lsp rainbow-mode yasnippet lsp-java dap-mode lsp-ui lsp-mode company highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
  '(php-mode-force-pear t)
  '(show-paren-mode t)
  '(tab-width 2)
@@ -415,6 +415,15 @@
 
 (use-package yasnippet
   :config (yas-global-mode))
+
+(use-package yasnippet-snippets
+  :after yasnippet
+  :demand t
+  :config
+  (yas-reload-all))
+
+(with-eval-after-load 'company-mode
+    (add-to-list 'company-backends '(company-yasnippet)))
 
 (use-package emmet-mode
   :hook ((css-mode  . emmet-mode)
