@@ -3,9 +3,10 @@
   "editor.lineHeight": 24,
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
-  "editor.suggestSelection": "first",
   "editor.wordWrap": "on",
+  "editor.suggestSelection": "first",
   "editor.wrappingIndent": "deepIndent",
+  "workbench.colorTheme": "Default Light+",
   "workbench.startupEditor": "none",
   "git.enableSmartCommit": true,
   "prettier.printWidth": 100,
@@ -82,5 +83,6 @@
     "muvi",
     "postgres",
     "thonvieira"
-  ]
+  ],
+  "python.languageServer": "Microsoft"
 }

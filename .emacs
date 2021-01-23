@@ -24,9 +24,10 @@
  '(menu-bar-mode nil)
  '(org-support-shift-select t)
  '(package-selected-packages
-   '(lsp-treemacs python-mode emmet-mode company-web json-mode web-mode php-mode cmake-mode clang-format modern-cpp-font-lock cmake-font-lock vue-mode typescript-mode go-mode dap-firefox dap-chrome dap-node dap-php dap-go dap-lldb dap-python dap-java helm-lsp rainbow-mode yasnippet lsp-java dap-mode lsp-ui lsp-mode company highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
+   '(groovy-mode lsp-treemacs python-mode emmet-mode company-web json-mode web-mode php-mode cmake-mode clang-format modern-cpp-font-lock cmake-font-lock vue-mode typescript-mode go-mode dap-firefox dap-chrome dap-node dap-php dap-go dap-lldb dap-python dap-java helm-lsp rainbow-mode yasnippet lsp-java dap-mode lsp-ui lsp-mode company highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
  '(php-mode-force-pear t)
  '(show-paren-mode t)
+ '(tab-width 2)
  '(tool-bar-mode nil)
  '(visible-bell t))
 
@@ -84,6 +85,13 @@
   ("C-=" . er/expand-region)
   ("C--" . er/contract-region))
 
+(use-package windmove
+  :bind
+  ("C-x <up>" . windmove-up)
+  ("C-x <down>" . windmove-down)
+  ("C-x <left>" . windmove-left)
+  ("C-x <right>" . windmove-right))
+
 (use-package beacon
   :config
   (beacon-mode t))
@@ -105,7 +113,19 @@
   (projectile-mode +1)
   (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map))
 
+(use-package treemacs
+  :after projectile
+  :config
+  (setq treemacs-is-never-other-window t)
+  :bind
+  ("<f12>" . treemacs)
+  ("M-s M-t" . treemacs-select-window))
+
+(use-package treemacs-projectile
+  :after treemacs)
+
 (use-package dashboard
+  :after treemacs
   :config
   (setq dashboard-items '((projects . 5)
                           (recents  . 5)
@@ -114,18 +134,8 @@
   (setq dashboard-center-content t)
   (dashboard-setup-startup-hook))
 
-(use-package treemacs
-  :config
-  (setq treemacs-is-never-other-window t)
-  :bind
-  ("<f12>" . treemacs)
-  ("M-s M-t" . treemacs-select-window))
-
-(use-package treemacs-projectile
-  :after treemacs projectile)
-
 (use-package centaur-tabs
-  :after projectile
+  :after dashboard
   :config
   (setq centaur-tabs-set-bar 'over)
   (setq centaur-tabs-set-modified-marker t)
@@ -134,15 +144,8 @@
   (centaur-tabs-mode t)
   :bind
   (:map global-map
-        ("M-s M-b" . 'centaur-tabs-backward)
-        ("M-s M-y" . 'centaur-tabs-forward)))
-
-(use-package windmove
-  :bind
-  ("C-x <up>" . windmove-up)
-  ("C-x <down>" . windmove-down)
-  ("C-x <left>" . windmove-left)
-  ("C-x <right>" . windmove-right))
+        ("M-s M-q" . 'centaur-tabs-backward)
+        ("M-s M-e" . 'centaur-tabs-forward)))
 
 (use-package helm
   :init
@@ -213,6 +216,12 @@
   (global-company-mode 1)
   (global-set-key (kbd "C-<tab>") 'company-complete))
 
+(use-package company-web
+  :config
+  (add-to-list 'company-backends 'company-web-html)
+  (add-to-list 'company-backends 'company-web-jade)
+  (add-to-list 'company-backends 'company-web-slim))
+
 (use-package lsp-mode
   :after projectile
   :commands lsp
@@ -220,8 +229,10 @@
         (web-mode . lsp)
         (php-mode . lsp)
         (vue-mode . lsp)
+        (json-mode. lsp)
         (typescript-mode . lsp)
         (python-mode . lsp)
+        (groovy-mode . lsp)
         (java-mode . lsp)
         (go-mode . lsp)
         (c-mode . lsp)
@@ -280,14 +291,6 @@
   :config
   (setq css-indent-offset 2))
 
-(use-package json-mode)
-
-(use-package company-web
-  :config
-  (add-to-list 'company-backends 'company-web-html)
-  (add-to-list 'company-backends 'company-web-jade)
-  (add-to-list 'company-backends 'company-web-slim))
-
 (use-package php-mode
   :mode "\\.php\\'"
   :hook
@@ -301,6 +304,11 @@
 (add-hook 'mmm-mode-hook
           (lambda ()
             (set-face-background 'mmm-default-submode-face nil)))
+
+(use-package json-mode
+  :mode "\\.json\\'"
+  :hook
+  (json-mode . lsp))
 
 (use-package typescript-mode
   :mode (("\\.js\\'" . typescript-mode)
@@ -316,6 +324,15 @@
   :mode ("\\.py\\'" . python-mode)
   :config
   (setq python-indent-offset 4))
+
+(use-package groovy-mode
+  :mode (("\\.groovy\\'" . groovy-mode)
+         ("\\.gradle\\'" . groovy-mode))
+  :hook
+  (groovy-mode . lsp)
+  :config
+  (setq groovy-indent-offset 2)
+  (setq lsp-groovy-server-file "~/.emacs.d/libs/groovy-language-server-all.jar"))
 
 (use-package lsp-java
   :hook
