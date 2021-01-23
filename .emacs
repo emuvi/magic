@@ -38,6 +38,8 @@
  ;; If there is more than one, they won't work right.
  )
 
+(setq-default buffer-file-coding-system 'utf-8-unix)
+
 ;; Eval entire buffer with one keybind.
 (global-set-key (kbd "C-x x b") 'eval-buffer)
 ;; Start eshell or switch to it if it's active.
