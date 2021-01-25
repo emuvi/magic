@@ -43,11 +43,11 @@
      showgrid="false"
      inkscape:zoom="1.336"
      inkscape:cx="549.66301"
-     inkscape:cy="513.01673"
+     inkscape:cy="213.61553"
      inkscape:window-x="1911"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g966"
+     inkscape:current-layer="g880"
      inkscape:document-rotation="0" />
   <g
      inkscape:groupmode="layer"
@@ -109,7 +109,7 @@
            x="20.958082"
            y="44.910183">cursor</tspan></text>
       <rect
-         style="fill:#727a87;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
+         style="fill:#b3c5e5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
          id="rect878"
          width="184.13173"
          height="127.24551"
