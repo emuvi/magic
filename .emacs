@@ -38,6 +38,10 @@
  ;; If there is more than one, they won't work right.
  )
 
+(prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-language-environment 'utf-8)
+(set-selection-coding-system 'utf-8)
 (setq-default buffer-file-coding-system 'utf-8-unix)
 
 ;; Eval entire buffer with one keybind.
@@ -190,9 +194,7 @@
   :config
   (setq flycheck-display-errors-delay 0.1)
   (setq flycheck-highlighting-mode 'lines)
-  (setq flycheck-check-syntax-automatically '(save))
-  (set-face-attribute 'flycheck-error nil :underline '(:color "red3" :style wave))
-  (set-face-attribute 'flycheck-warning nil :underline '(:color "orange2" :style wave)))
+  (setq flycheck-check-syntax-automatically '(save)))
 
 (use-package magit
   :bind

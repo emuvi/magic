@@ -3,7 +3,11 @@
 	email = emuvs@pointel.com.br
 [core]
 	autocrlf = input
+	fscache = true
+	symlinks = false
 [pull]
 	rebase = false
 [credential]
-	helper = 'cache
+	helper = manager-core
+[init]
+	defaultBranch = master
