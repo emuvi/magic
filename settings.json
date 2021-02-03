@@ -1,7 +1,6 @@
 {
   "editor.tabSize": 2,
   "editor.lineHeight": 24,
-  "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.wordWrap": "on",
   "editor.suggestSelection": "first",
@@ -16,6 +15,7 @@
   "extensions.ignoreRecommendations": true,
   "go.useLanguageServer": true,
   "go.autocompleteUnimportedPackages": true,
+  "python.languageServer": "Pylance",
   "java.project.importOnFirstTimeStartup": "automatic",
   "java.configuration.checkProjectSettingsExclusions": false,
   "java.semanticHighlighting.enabled": true,
@@ -75,14 +75,5 @@
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
-  },
-  "cSpell.language": "en,pt,pt_BR",
-  "cSpell.userWords": [
-    "Everton",
-    "Pointel",
-    "muvi",
-    "postgres",
-    "thonvieira"
-  ],
-  "python.languageServer": "Microsoft"
+  }
 }
