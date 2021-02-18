@@ -1,11 +1,11 @@
 {
+  // Teste
   "editor.tabSize": 2,
   "editor.lineHeight": 24,
   "editor.minimap.enabled": false,
   "editor.wordWrap": "on",
   "editor.suggestSelection": "first",
   "editor.wrappingIndent": "deepIndent",
-  "workbench.colorTheme": "Default Light+",
   "workbench.startupEditor": "none",
   "git.enableSmartCommit": true,
   "prettier.printWidth": 100,
@@ -20,14 +20,17 @@
   "java.configuration.checkProjectSettingsExclusions": false,
   "java.semanticHighlighting.enabled": true,
   "java.refactor.renameFromFileExplorer": "autoApply",
+  "java.format.settings.url": "https://github.com/emuvi/dotfiles/raw/master/java-pointel-style.xml",
+  "java.format.settings.profile": "PointelStyle",
   "dart.checkForSdkUpdates": false,
+  "dart.previewLsp": true,
   "git.confirmSync": false,
   "python.showStartPage": false,
   "explorer.confirmDelete": true,
   "vsicons.dontShowNewVersionMessage": true,
   "explorer.confirmDragAndDrop": false,
   "workbench.sideBar.location": "left",
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "bearded-icons",
   "errorLens.errorColor": "rgba(240,0,0,0.1)",
   "errorLens.errorTextColor": "rgba(240,240,240,0.3)",
   "errorLens.warningColor": "rgba(180,180,0,0.1)",
@@ -79,5 +82,5 @@
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
   },
-  "dart.previewLsp": true
+  "workbench.colorTheme": "BeardedTheme Black & Ruby"
 }

@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import os
 
 del_process = os.popen('code --list-extensions')
