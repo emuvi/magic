@@ -81,5 +81,6 @@
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
-  }
+  },
+  "cmake.configureOnOpen": false
 }
