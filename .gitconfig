@@ -1,18 +1,2 @@
 [user]
-	name = Everton Murilo Vieira
-	email = emuvs@pointel.com.br
-[core]
-	autocrlf = input
-	fscache = true
-	symlinks = false
-[pull]
-	rebase = false
-[credential]
-	helper = manager-core
-[init]
-	defaultBranch = master
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+	name = Everton M. Vieira

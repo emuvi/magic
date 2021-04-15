@@ -1,20 +1,30 @@
 {
   "editor.tabSize": 2,
-  "editor.lineHeight": 24,
+  "editor.fontSize": 15,
+  "editor.lineHeight": 27,
   "editor.minimap.enabled": false,
   "editor.wordWrap": "on",
   "editor.suggestSelection": "first",
   "editor.wrappingIndent": "deepIndent",
   "workbench.startupEditor": "none",
   "git.enableSmartCommit": true,
-  "prettier.printWidth": 100,
-  "html.format.wrapLineLength": 100,
-  "workbench.colorTheme": "BeardedTheme Black & Ruby",
+  "prettier.printWidth": 90,
+  "html.format.wrapLineLength": 90,
+  "dart.lineLength": 90,
+  "editor.rulers": [
+    90
+  ],
+  "workbench.colorTheme": "Github Light Theme - Gray",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#bebebe",
+    "editor.background": "#f9f9f9"
+  },
   "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "extensions.ignoreRecommendations": true,
   "go.useLanguageServer": true,
   "go.autocompleteUnimportedPackages": true,
+  "go.toolsManagement.autoUpdate": true,
   "python.languageServer": "Pylance",
   "java.project.importOnFirstTimeStartup": "automatic",
   "java.configuration.checkProjectSettingsExclusions": false,
@@ -30,7 +40,6 @@
   "vsicons.dontShowNewVersionMessage": true,
   "explorer.confirmDragAndDrop": false,
   "workbench.sideBar.location": "left",
-  "workbench.iconTheme": "bearded-icons",
   "errorLens.errorColor": "rgba(240,0,0,0.1)",
   "errorLens.errorTextColor": "rgba(240,240,240,0.3)",
   "errorLens.warningColor": "rgba(180,180,0,0.1)",
@@ -76,11 +85,21 @@
     "editor.defaultFormatter": "octref.vetur"
   },
   "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
     "editor.selectionHighlight": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
   },
-  "cmake.configureOnOpen": false
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "dart.showInspectorNotificationsForWidgetErrors": false,
+  "redhat.telemetry.enabled": true,
+  "workbench.iconTheme": "vscode-icons"
 }
