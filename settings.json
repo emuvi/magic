@@ -37,7 +37,6 @@
   "git.confirmSync": false,
   "python.showStartPage": false,
   "explorer.confirmDelete": true,
-  "vsicons.dontShowNewVersionMessage": true,
   "explorer.confirmDragAndDrop": false,
   "workbench.sideBar.location": "left",
   "errorLens.errorColor": "rgba(240,0,0,0.1)",
@@ -87,6 +86,9 @@
   "[dart]": {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
     "editor.selectionHighlight": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
@@ -101,5 +103,6 @@
   ],
   "dart.showInspectorNotificationsForWidgetErrors": false,
   "redhat.telemetry.enabled": true,
-  "workbench.iconTheme": "vscode-icons"
+  "workbench.iconTheme": "vscode-great-icons",
+  "cmake.configureOnOpen": false
 }
