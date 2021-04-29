@@ -1,7 +1,7 @@
 import os
 
 if (__name__ == '__main__'):
-  confirmar = input("Do you realy wanna PUSH all repositories? (y/N) ")
+  confirmar = input("Do you realy wanna PUSH all repositories? (y/N): ")
   if confirmar == "y":
     dirs = os.listdir(".")
     for file in dirs:
