@@ -2,7 +2,6 @@
   "editor.tabSize": 2,
   "editor.fontSize": 15,
   "editor.lineHeight": 27,
-  "editor.minimap.enabled": false,
   "editor.wordWrap": "on",
   "editor.suggestSelection": "first",
   "editor.wrappingIndent": "deepIndent",
