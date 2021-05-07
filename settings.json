@@ -104,5 +104,8 @@
   ],
   "dart.showInspectorNotificationsForWidgetErrors": false,
   "redhat.telemetry.enabled": true,
-  "cmake.configureOnOpen": false
+  "cmake.configureOnOpen": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
