@@ -330,7 +330,7 @@
 		<setting id="org.eclipse.jdt.core.formatter.wrap_non_simple_package_annotation" value="true"/>
 		<setting id="org.eclipse.jdt.core.formatter.wrap_non_simple_parameter_annotation" value="false"/>
 		<setting id="org.eclipse.jdt.core.formatter.wrap_non_simple_type_annotation" value="true"/>
-		<setting id="org.eclipse.jdt.core.formatter.wrap_outer_expressions_when_nested" value="true"/>
-		<setting id="org.eclipse.jdt.core.formatter.wrap_prefer_two_fragments" value="true"/>
+		<setting id="org.eclipse.jdt.core.formatter.wrap_outer_expressions_when_nested" value="false"/>
+		<setting id="org.eclipse.jdt.core.formatter.wrap_prefer_two_fragments" value="false"/>
 	</profile>
 </profiles>
