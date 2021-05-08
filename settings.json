@@ -19,6 +19,12 @@
     "activityBar.background": "#bebebe",
     "editor.background": "#f9f9f9"
   },
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
   "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "extensions.ignoreRecommendations": true,
@@ -27,13 +33,13 @@
   "go.toolsManagement.autoUpdate": true,
   "python.languageServer": "Pylance",
   "java.project.importOnFirstTimeStartup": "automatic",
+  "java.configuration.updateBuildConfiguration": "automatic",
   "java.configuration.checkProjectSettingsExclusions": false,
   "java.semanticHighlighting.enabled": true,
-  "java.refactor.renameFromFileExplorer": "autoApply",
   "java.format.settings.url": "https://github.com/emuvi/dotfiles/raw/master/java-pointel-style.xml",
   "java.format.settings.profile": "PointelStyle",
-  "dart.checkForSdkUpdates": false,
-  "dart.previewLsp": true,
+
+  "redhat.telemetry.enabled": true,
   "git.confirmSync": false,
   "python.showStartPage": false,
   "explorer.confirmDelete": true,
@@ -56,11 +62,17 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
   },
   "[go]" : {
     "editor.defaultFormatter": "golang.go"
@@ -68,6 +80,9 @@
   "[php]": {
     "editor.tabSize": 4,
     "editor.defaultFormatter": "kokororin.vscode-phpfmt",
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
   },
   "[cmake]": {
     "editor.defaultFormatter": "xaver.clang-format"
@@ -77,12 +92,6 @@
   },
   "[c]": {
     "editor.defaultFormatter": "xaver.clang-format"
-  },
-  "[java]": {
-    "editor.defaultFormatter": "xaver.clang-format"
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "octref.vetur"
   },
   "[dart]": {
     "editor.formatOnSave": true,
@@ -96,16 +105,8 @@
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
   },
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
   "dart.showInspectorNotificationsForWidgetErrors": false,
-  "redhat.telemetry.enabled": true,
-  "cmake.configureOnOpen": false,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "dart.checkForSdkUpdates": false,
+  "dart.previewLsp": true,
+  "editor.minimap.enabled": false
 }
