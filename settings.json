@@ -38,7 +38,6 @@
   "java.semanticHighlighting.enabled": true,
   "java.format.settings.url": "https://github.com/emuvi/dotfiles/raw/master/java-pointel-style.xml",
   "java.format.settings.profile": "PointelStyle",
-
   "redhat.telemetry.enabled": true,
   "git.confirmSync": false,
   "python.showStartPage": false,
@@ -82,6 +81,7 @@
     "editor.defaultFormatter": "kokororin.vscode-phpfmt",
   },
   "[java]": {
+    "editor.tabSize": 2,
     "editor.defaultFormatter": "redhat.java"
   },
   "[cmake]": {
