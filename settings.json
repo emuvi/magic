@@ -5,6 +5,8 @@
   "editor.wordWrap": "on",
   "editor.suggestSelection": "first",
   "editor.wrappingIndent": "deepIndent",
+  "editor.minimap.enabled": false,
+  "workbench.iconTheme": "vscode-great-icons",
   "workbench.startupEditor": "none",
   "git.enableSmartCommit": true,
   "prettier.printWidth": 90,
@@ -13,12 +15,6 @@
   "editor.rulers": [
     90
   ],
-  "workbench.iconTheme": "vscode-great-icons",
-  "workbench.colorTheme": "Github Light Theme - Gray",
-  "workbench.colorCustomizations": {
-    "activityBar.background": "#bebebe",
-    "editor.background": "#f9f9f9"
-  },
   "workbench.editorAssociations": [
     {
       "viewType": "jupyter.notebook.ipynb",
@@ -85,13 +81,13 @@
     "editor.defaultFormatter": "redhat.java"
   },
   "[cmake]": {
-    "editor.defaultFormatter": "xaver.clang-format"
+    "editor.defaultFormatter": "ms-vscode.cpptools"
   },
   "[cpp]": {
-    "editor.defaultFormatter": "xaver.clang-format"
+    "editor.defaultFormatter": "ms-vscode.cpptools"
   },
   "[c]": {
-    "editor.defaultFormatter": "xaver.clang-format"
+    "editor.defaultFormatter": "ms-vscode.cpptools"
   },
   "[dart]": {
     "editor.formatOnSave": true,
@@ -108,5 +104,16 @@
   "dart.showInspectorNotificationsForWidgetErrors": false,
   "dart.checkForSdkUpdates": false,
   "dart.previewLsp": true,
-  "editor.minimap.enabled": false
+  "editor.fontFamily": "'Hack', 'monospace', monospace",
+  "githubIssues.queries": [
+    {
+      "label": "My Issues",
+      "query": "default"
+    },
+    {
+      "label": "Created Issues",
+      "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+    }
+  ],
+  "workbench.colorTheme": "GitHub Plus"
 }
