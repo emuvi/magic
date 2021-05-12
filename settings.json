@@ -6,6 +6,8 @@
   "editor.suggestSelection": "first",
   "editor.wrappingIndent": "deepIndent",
   "editor.minimap.enabled": false,
+  "editor.fontWeight": "bold",
+  "workbench.colorTheme": "Snazzy Light",
   "workbench.iconTheme": "vscode-great-icons",
   "workbench.startupEditor": "none",
   "git.enableSmartCommit": true,
@@ -115,5 +117,45 @@
       "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
     }
   ],
-  "workbench.colorTheme": "GitHub Plus"
+  "editor.tokenColorCustomizations": {
+    "keywords": "#EE5555",
+    "functions": "#5555EE",
+    "variables": "#555555",
+    "numbers": "#EE7755",
+    "strings": "#557755",
+    "types": "#EE55EE",
+    "comments": "#CCCCCC",
+    "textMateRules": [
+      {
+        "scope": "punctuation",
+        "settings": {
+          "foreground": "#777777"
+        }
+      },
+      {
+        "scope": "constant.language",
+        "settings": {
+          "foreground": "#FF55FF"
+        }
+      },
+      {
+        "scope": "storage.type.primitive",
+        "settings": {
+          "foreground": "#EE55EE"
+        }
+      },
+      {
+        "scope": "meta.class storage.type",
+        "settings": {
+          "foreground": "#EE55EE"
+        }
+      },
+      {
+        "scope": "keyword.operator",
+        "settings": {
+          "foreground": "#EE5555"
+        }
+      }
+    ]
+  }
 }
