@@ -6,53 +6,34 @@
   "editor.suggestSelection": "first",
   "editor.wrappingIndent": "deepIndent",
   "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
   "editor.fontWeight": "bold",
-  "workbench.colorTheme": "Snazzy Light",
+  "editor.fontFamily": "'Hack', 'monospace', monospace",
+  "workbench.colorTheme": "Primer Light",
   "workbench.iconTheme": "vscode-great-icons",
   "workbench.startupEditor": "none",
   "git.enableSmartCommit": true,
   "prettier.printWidth": 90,
   "html.format.wrapLineLength": 90,
-  "dart.lineLength": 90,
-  "editor.rulers": [
-    90
-  ],
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
+  "editor.rulers": [90],
   "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "extensions.ignoreRecommendations": true,
-  "go.useLanguageServer": true,
-  "go.autocompleteUnimportedPackages": true,
-  "go.toolsManagement.autoUpdate": true,
-  "python.languageServer": "Pylance",
-  "java.project.importOnFirstTimeStartup": "automatic",
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.configuration.checkProjectSettingsExclusions": false,
   "java.semanticHighlighting.enabled": true,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
   "java.format.settings.url": "https://github.com/emuvi/dotfiles/raw/master/java-pointel-style.xml",
   "java.format.settings.profile": "PointelStyle",
-  "redhat.telemetry.enabled": true,
   "git.confirmSync": false,
   "python.showStartPage": false,
   "explorer.confirmDelete": true,
   "explorer.confirmDragAndDrop": false,
-  "workbench.sideBar.location": "left",
-  "errorLens.errorColor": "rgba(240,0,0,0.1)",
-  "errorLens.errorTextColor": "rgba(240,240,240,0.3)",
-  "errorLens.warningColor": "rgba(180,180,0,0.1)",
-  "errorLens.warningTextColor": "rgba(240,240,240,0.3)",
-  "errorLens.hintColor": "rgba(20,140,140,0.1)",
-  "errorLens.hintTextColor": "rgba(240,240,240,0.3)",
-  "errorLens.infoColor": "rgba(0,200,0,0.1)",
-  "errorLens.infoTextColor": "rgba(240,240,240,0.3)",
-  "remote.SSH.remotePlatform": {
-    "LocalServer": "linux"
-  },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -68,55 +49,26 @@
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[vue]": {
-    "editor.defaultFormatter": "octref.vetur"
-  },
-  "[go]" : {
-    "editor.defaultFormatter": "golang.go"
-  },
   "[php]": {
     "editor.tabSize": 4,
-    "editor.defaultFormatter": "kokororin.vscode-phpfmt",
+    "editor.defaultFormatter": "kokororin.vscode-phpfmt"
   },
   "[java]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "redhat.java"
   },
-  "[cmake]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-  "[cpp]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-  "[c]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
   "[dart]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.rulers": [
-      80
-    ],
+    "editor.rulers": [90],
     "editor.selectionHighlight": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
   },
-  "dart.showInspectorNotificationsForWidgetErrors": false,
-  "dart.checkForSdkUpdates": false,
-  "dart.previewLsp": true,
-  "editor.fontFamily": "'Hack', 'monospace', monospace",
-  "githubIssues.queries": [
-    {
-      "label": "My Issues",
-      "query": "default"
-    },
-    {
-      "label": "Created Issues",
-      "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
-    }
-  ],
+  "workbench.colorCustomizations": {
+    "tab.activeBackground": "#3EE2B9",
+    "tab.inactiveBackground": "#DAE9E5"
+  },
   "editor.tokenColorCustomizations": {
     "keywords": "#EE5555",
     "functions": "#5555EE",
@@ -124,7 +76,7 @@
     "numbers": "#EE7755",
     "strings": "#557755",
     "types": "#EE55EE",
-    "comments": "#CCCCCC",
+    "comments": "#A5A5A5",
     "textMateRules": [
       {
         "scope": "punctuation",
@@ -157,5 +109,12 @@
         }
       }
     ]
-  }
+  },
+  "C_Cpp.updateChannel": "Insiders",
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ]
 }
