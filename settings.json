@@ -14,9 +14,11 @@
   "workbench.iconTheme": "vscode-great-icons",
   "workbench.startupEditor": "none",
   "git.enableSmartCommit": true,
+  "editor.rulers": [90],
   "prettier.printWidth": 90,
   "html.format.wrapLineLength": 90,
-  "editor.rulers": [90],
+  "phpfmt.detect_indent": true,
+  "rust-client.rustupPath": "/home/pointel/.cargo/bin/rustup",
   "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "java.configuration.updateBuildConfiguration": "automatic",
@@ -34,6 +36,7 @@
   "python.showStartPage": false,
   "explorer.confirmDelete": true,
   "explorer.confirmDragAndDrop": false,
+  
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -50,11 +53,12 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[php]": {
-    "editor.tabSize": 4,
+    "editor.defaultFormatter": "kokororin.vscode-phpfmt",
+  },
+  "[phtml]": {
     "editor.defaultFormatter": "kokororin.vscode-phpfmt"
   },
   "[java]": {
-    "editor.tabSize": 2,
     "editor.defaultFormatter": "redhat.java"
   },
   "[dart]": {
