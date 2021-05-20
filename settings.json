@@ -22,6 +22,7 @@
   "html.format.wrapLineLength": 90,
   "phpfmt.indent_with_space": 2,
   "phpfmt.psr2": false,
+  "cmake.configureOnOpen": false,
   "C_Cpp.updateChannel": "Insiders",
   "rust-client.rustupPath": "/home/pointel/.cargo/bin/rustup",
   "python.showStartPage": false,
@@ -69,6 +70,12 @@
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format"
   },
   "workbench.colorCustomizations": {
     "tab.activeBackground": "#3EE2B9",
