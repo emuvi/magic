@@ -1,7 +1,7 @@
 {
   "editor.tabSize": 2,
-  "editor.fontSize": 16,
-  "editor.lineHeight": 27,
+  "editor.fontSize": 18,
+  "editor.lineHeight": 33,
   "editor.wordWrap": "on",
   "editor.suggestSelection": "first",
   "editor.wrappingIndent": "deepIndent",
@@ -13,30 +13,31 @@
   "workbench.colorTheme": "Primer Light",
   "workbench.iconTheme": "vscode-great-icons",
   "workbench.startupEditor": "none",
+  "explorer.confirmDelete": true,
+  "explorer.confirmDragAndDrop": false,
   "git.enableSmartCommit": true,
+  "git.confirmSync": false,
   "editor.rulers": [90],
   "prettier.printWidth": 90,
   "html.format.wrapLineLength": 90,
-  "phpfmt.detect_indent": true,
+  "phpfmt.indent_with_space": 2,
+  "phpfmt.psr2": false,
+  "C_Cpp.updateChannel": "Insiders",
   "rust-client.rustupPath": "/home/pointel/.cargo/bin/rustup",
+  "python.showStartPage": false,
   "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.configuration.checkProjectSettingsExclusions": false,
   "java.semanticHighlighting.enabled": true,
+  "java.format.settings.url": "https://github.com/emuvi/dotfiles/raw/master/java-pointel-style.xml",
+  "java.format.settings.profile": "PointelStyle",
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "java.format.settings.url": "https://github.com/emuvi/dotfiles/raw/master/java-pointel-style.xml",
-  "java.format.settings.profile": "PointelStyle",
-  "git.confirmSync": false,
-  "python.showStartPage": false,
-  "explorer.confirmDelete": true,
-  "explorer.confirmDragAndDrop": false,
-  
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -53,7 +54,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[php]": {
-    "editor.defaultFormatter": "kokororin.vscode-phpfmt",
+    "editor.defaultFormatter": "kokororin.vscode-phpfmt"
   },
   "[phtml]": {
     "editor.defaultFormatter": "kokororin.vscode-phpfmt"
@@ -114,7 +115,6 @@
       }
     ]
   },
-  "C_Cpp.updateChannel": "Insiders",
   "workbench.editorAssociations": [
     {
       "viewType": "jupyter.notebook.ipynb",
