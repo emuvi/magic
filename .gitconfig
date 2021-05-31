@@ -1,3 +1,5 @@
 [user]
 	name = Éverton M. Vieira
 	email = everton.muvi@gmail.com
+[credential]
+	helper = manager-core
