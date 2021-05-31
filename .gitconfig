@@ -2,4 +2,7 @@
 	name = Éverton M. Vieira
 	email = everton.muvi@gmail.com
 [credential]
-	helper = manager-core
+	helper = /usr/bin/git-credential-manager-core
+	credentialStore = secretservice
+[credential "https://dev.azure.com"]
+	useHttpPath = true
