@@ -1,7 +1,6 @@
 alefragnani.Bookmarks
 amiralizadeh9480.cpp-helper
 andrewmarkle.primer-light
-batisteo.vscode-django
 bbugh.change-color-format
 bungcip.better-toml
 cheshirekow.cmake-format
@@ -10,7 +9,6 @@ Dart-Code.dart-code
 Dart-Code.flutter
 donjayamanne.python-extension-pack
 emmanuelbeziat.vscode-great-icons
-esbenp.prettier-vscode
 evgeniypeshkov.syntax-highlighter
 felixfbecker.php-debug
 felixfbecker.php-intellisense
@@ -56,6 +54,5 @@ vscjava.vscode-java-dependency
 vscjava.vscode-java-pack
 vscjava.vscode-java-test
 vscjava.vscode-maven
-wholroyd.jinja
 xaver.clang-format
 yzhang.markdown-all-in-one
