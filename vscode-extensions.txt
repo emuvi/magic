@@ -1,5 +1,4 @@
 alefragnani.Bookmarks
-amiralizadeh9480.cpp-helper
 andrewmarkle.primer-light
 bbugh.change-color-format
 bungcip.better-toml
@@ -7,7 +6,6 @@ cheshirekow.cmake-format
 cssho.vscode-svgviewer
 Dart-Code.dart-code
 Dart-Code.flutter
-donjayamanne.python-extension-pack
 emmanuelbeziat.vscode-great-icons
 evgeniypeshkov.syntax-highlighter
 felixfbecker.php-debug
