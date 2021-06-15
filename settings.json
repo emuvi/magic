@@ -113,5 +113,5 @@
       "filenamePattern": "*.ipynb"
     }
   ],
-  "go.toolsManagement.autoUpdate": true
+  "redhat.telemetry.enabled": true
 }

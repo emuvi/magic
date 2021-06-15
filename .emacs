@@ -10,20 +10,19 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(blink-cursor-mode t)
  '(bookmark-save-flag 1)
  '(c-basic-offset 2)
  '(create-lockfiles nil)
  '(delete-selection-mode t)
  '(dired-listing-switches "-lah")
  '(display-fill-column-indicator t)
- '(fill-column 84)
+ '(fill-column 90)
  '(global-linum-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen nil)
+ '(line-spacing 0.36)
  '(lsp-headerline-breadcrumb-enable t)
  '(make-backup-files nil)
- '(menu-bar-mode nil)
  '(org-support-shift-select t)
  '(package-selected-packages
    '(yasnippet-snippets groovy-mode lsp-treemacs python-mode emmet-mode company-web json-mode web-mode php-mode cmake-mode clang-format modern-cpp-font-lock cmake-font-lock vue-mode typescript-mode go-mode dap-firefox dap-chrome dap-node dap-php dap-go dap-lldb dap-python dap-java helm-lsp rainbow-mode yasnippet lsp-java dap-mode lsp-ui lsp-mode company highlight-parentheses beacon telephone-line magit ag helm-swoop helm-ag helm-projectile helm flycheck treemacs-projectile treemacs centaur-tabs expand-region which-key use-package rich-minority projectile popup dashboard auto-package-update async))
@@ -38,13 +37,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "Hack" :foundry "outline" :slant normal :weight normal :height 120 :width normal)))))
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 (set-language-environment 'utf-8)
 (set-selection-coding-system 'utf-8)
 (setq-default buffer-file-coding-system 'utf-8-unix)
+
+(require 'whitespace)
+(setq whitespace-line-column 90)
+(setq whitespace-style '(face lines-tail))
+(global-whitespace-mode +1)
 
 ;; Eval entire buffer with one keybind.
 (global-set-key (kbd "C-x x b") 'eval-buffer)
@@ -194,9 +198,9 @@
   ("M-s n" . flycheck-next-error)
   ("M-s p" . flycheck-previous-error)
   :config
-  (setq flycheck-display-errors-delay 0.1)
+  (setq flycheck-display-errors-delay 2.0)
   (setq flycheck-highlighting-mode 'lines)
-  (setq flycheck-check-syntax-automatically '(save)))
+  (setq flycheck-check-syntax-automatically '(idle-change)))
 
 (use-package magit
   :bind
@@ -238,7 +242,6 @@
         (json-mode. lsp)
         (typescript-mode . lsp)
         (python-mode . lsp)
-        (groovy-mode . lsp)
         (java-mode . lsp)
         (go-mode . lsp)
         (c-mode . lsp)
@@ -330,15 +333,6 @@
   :mode ("\\.py\\'" . python-mode)
   :config
   (setq python-indent-offset 4))
-
-(use-package groovy-mode
-  :mode (("\\.groovy\\'" . groovy-mode)
-         ("\\.gradle\\'" . groovy-mode))
-  :hook
-  (groovy-mode . lsp)
-  :config
-  (setq groovy-indent-offset 2)
-  (setq lsp-groovy-server-file "~/.emacs.d/libs/groovy-language-server-all.jar"))
 
 (use-package lsp-java
   :hook
