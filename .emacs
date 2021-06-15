@@ -2,7 +2,7 @@
 ;;;; Emacs Configuration
 
 ;;;; Commentary:
-;;;; Emuvs Style
+;;;; emuvi Style
 
 ;;;; Code:
 (custom-set-variables
@@ -220,7 +220,7 @@
   :config
   (setq company-echo-delay 0)
   (setq company-idle-delay 1)
-  (setq company-tooltip-limit 12)
+  (setq company-tooltip-limit 9)
   (setq company-minimum-prefix-length 3)
   (setq company-tooltip-align-annotations t)
   (global-company-mode 1)
