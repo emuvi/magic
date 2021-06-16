@@ -42,7 +42,7 @@ def __list_databases():
         else:
             if line.startswith('('):
                 started = False
-            elif not line.startswith('template'):
+            elif not line.startswith('template') and line != "postgres":
                 db_list.append(line)
     return db_list
 

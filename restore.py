@@ -10,12 +10,15 @@ import datetime as dt
 
 
 def __restore_database(file_name):
-    if os.system("pg_restore --clean -U postgres --format tar --verbose " +
-                 " -f " + file_name) == 0:
-        print("Successfully restore database " + file_name)
-    else:
-        print("Fail on restore databse " + file_name)
-        sys.exit(-1)
+    print("Restoring file: " + file_name + "...")
+    dbname = file_name[3:len(file_name)-6]
+    print("Restoring database: " + dbname)
+    os.system('psql -h localhost -U postgres -c "DROP DATABASE '
+              + dbname + '"')
+    os.system('psql -h localhost -U postgres -c "CREATE DATABASE '
+              + dbname + '"')
+    os.system("pg_restore --clean -h localhost -U postgres -d "
+              + dbname + " --format tar -v " + file_name)
 
 
 if __name__ == "__main__":
@@ -24,7 +27,7 @@ if __name__ == "__main__":
         sys.exit(0)
     weekday = str(dt.datetime.today().weekday())
     globalsName = "globals-" + weekday + ".bkp"
-    if os.system("psql -U postgres -f " + globalsName) == 0:
+    if os.system("psql -h localhost -U postgres -f " + globalsName) == 0:
         print("Successfully restore globals.")
     else:
         print("Fail on restore globals.")
