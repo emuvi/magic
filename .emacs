@@ -2,7 +2,7 @@
 ;;;; Emacs Configuration
 
 ;;;; Commentary:
-;;;; emuvi Style
+;;;; Emuvs Style
 
 ;;;; Code:
 (custom-set-variables
@@ -220,7 +220,7 @@
   :config
   (setq company-echo-delay 0)
   (setq company-idle-delay 1)
-  (setq company-tooltip-limit 9)
+  (setq company-tooltip-limit 12)
   (setq company-minimum-prefix-length 3)
   (setq company-tooltip-align-annotations t)
   (global-company-mode 1)
@@ -235,12 +235,11 @@
 (use-package lsp-mode
   :after projectile
   :commands lsp
-  :hook((css-mode . lsp)
+  :hook((typescript-mode . lsp)
+        (json-mode. lsp)
+        (css-mode . lsp)
         (web-mode . lsp)
         (php-mode . lsp)
-        (vue-mode . lsp)
-        (json-mode. lsp)
-        (typescript-mode . lsp)
         (python-mode . lsp)
         (java-mode . lsp)
         (go-mode . lsp)
@@ -280,6 +279,28 @@
 (use-package helm-lsp
   :commands helm-lsp-workspace-symbol)
 
+(use-package typescript-mode
+  :mode (("\\.js\\'" . typescript-mode)
+         ("\\.jsx\\'" . typescript-mode)
+         ("\\.ts\\'" . typescript-mode)
+         ("\\.tsx\\'" . typescript-mode))
+  :hook
+  (typescript-mode . lsp)
+  :config
+  (setq-default typescript-indent-level 2))
+
+(use-package json-mode
+  :mode "\\.json\\'"
+  :hook
+  (json-mode . lsp))
+
+(use-package css-mode
+  :mode "\\.css\\'"
+  :hook
+  (css-mode . lsp)
+  :config
+  (setq css-indent-offset 2))
+
 (use-package web-mode
   :mode (("\\.htm\\'" . web-mode)
          ("\\.html\\'" . web-mode)
@@ -293,41 +314,10 @@
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2))
 
-(use-package css-mode
-  :mode "\\.css\\'"
-  :hook
-  (css-mode . lsp)
-  :config
-  (setq css-indent-offset 2))
-
 (use-package php-mode
   :mode "\\.php\\'"
   :hook
   (php-mode . lsp))
-
-(use-package vue-mode
-  :mode "\\.vue\\'"
-  :hook
-  (vue-mode . lsp))
-
-(add-hook 'mmm-mode-hook
-          (lambda ()
-            (set-face-background 'mmm-default-submode-face nil)))
-
-(use-package json-mode
-  :mode "\\.json\\'"
-  :hook
-  (json-mode . lsp))
-
-(use-package typescript-mode
-  :mode (("\\.js\\'" . typescript-mode)
-         ("\\.jsx\\'" . typescript-mode)
-         ("\\.ts\\'" . typescript-mode)
-         ("\\.tsx\\'" . typescript-mode))
-  :hook
-  (typescript-mode . lsp)
-  :config
-  (setq-default typescript-indent-level 2))
 
 (use-package python-mode
   :mode ("\\.py\\'" . python-mode)
@@ -426,11 +416,10 @@
     (add-to-list 'company-backends '(company-yasnippet)))
 
 (use-package emmet-mode
-  :hook ((css-mode  . emmet-mode)
+  :hook ((typescript-mode . emmet-mode)
+         (css-mode  . emmet-mode)
          (web-mode  . emmet-mode)
-         (php-mode  . emmet-mode)
-         (vue-mode  . emmet-mode)
-         (typescript-mode . emmet-mode)))
+         (php-mode  . emmet-mode)))
 
 (use-package hippie-exp
   :bind ("<C-return>" . hippie-expand)
