@@ -2,6 +2,6 @@
 	name = Éverton M. Vieira
 	email = everton.muvi@gmail.com
 [credential]
-	helper = cache
+	helper = store --file ~/.git-credentials
 [credential "https://github.com"]
 	username = emuvi
