@@ -98,6 +98,17 @@
   ("C-=" . er/expand-region)
   ("C--" . er/contract-region))
 
+(use-package ace-link
+  :ensure t
+  :init
+  (ace-link-setup-default))
+
+(use-package ace-window
+  :ensure t
+  :bind
+  ("C-x o" . ace-window)
+  :diminish  ace-window-mode)
+
 (use-package windmove
   :ensure t
   :bind
