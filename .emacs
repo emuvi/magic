@@ -74,30 +74,32 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(require 'use-package-ensure)
-(setq use-package-always-ensure t)
-
 (use-package auto-package-update
+  :ensure t
   :config
   (setq auto-package-update-delete-old-versions t)
   (setq auto-package-update-interval 4)
   (auto-package-update-maybe))
 
 (use-package leuven-theme
+  :ensure t
   :config
   (load-theme 'leuven t))
 
 (use-package which-key
+  :ensure t
   :config
   (which-key-setup-side-window-right-bottom)
   (which-key-mode))
 
 (use-package expand-region
+  :ensure t
   :bind
   ("C-=" . er/expand-region)
   ("C--" . er/contract-region))
 
 (use-package windmove
+  :ensure t
   :bind
   ("C-x <up>" . windmove-up)
   ("C-x <down>" . windmove-down)
@@ -105,27 +107,33 @@
   ("C-x <right>" . windmove-right))
 
 (use-package beacon
+  :ensure t
   :config
   (beacon-mode t))
 
 (use-package rainbow-mode
+  :ensure t
   :config
   (add-hook 'after-init-hook #'rainbow-mode))
 
 (use-package highlight-parentheses
+  :ensure t
   :config
   (highlight-parentheses-mode t))
 
 (use-package telephone-line
+  :ensure t
   :config
   (telephone-line-mode 1))
 
 (use-package projectile
+  :ensure t
   :config
   (projectile-mode +1)
   (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map))
 
 (use-package treemacs
+  :ensure t
   :after projectile
   :config
   (setq treemacs-is-never-other-window t)
@@ -134,9 +142,11 @@
   ("M-s M-t" . treemacs-select-window))
 
 (use-package treemacs-projectile
+  :ensure t
   :after treemacs)
 
 (use-package dashboard
+  :ensure t
   :after treemacs
   :config
   (setq dashboard-items '((projects . 5)
@@ -147,6 +157,7 @@
   (dashboard-setup-startup-hook))
 
 (use-package centaur-tabs
+  :ensure t
   :after dashboard
   :config
   (setq centaur-tabs-set-bar 'over)
@@ -160,6 +171,7 @@
         ("M-s M-e" . 'centaur-tabs-forward)))
 
 (use-package helm
+  :ensure t
   :init
   (require 'helm-config)
   :config
@@ -178,9 +190,11 @@
          :map helm-map
          ("<tab>" . helm-execute-persistent-action)))
 
-(use-package ag)
+(use-package ag
+  :ensure t)
 
 (use-package helm-ag
+  :ensure t
   :after (ag helm)
   :init (setq helm-ag-fuzzy-match t)
   :bind
@@ -188,11 +202,13 @@
         ("M-s M-g" . helm-ag)))
 
 (use-package helm-projectile
+  :ensure t
   :bind ("M-t" . helm-projectile-find-file)
   :config
   (helm-projectile-on))
 
 (use-package flycheck
+  :ensure t
   :bind
   ("M-s c" . flycheck-mode)
   ("M-s n" . flycheck-next-error)
@@ -203,6 +219,7 @@
   (setq flycheck-check-syntax-automatically '(idle-change)))
 
 (use-package magit
+  :ensure t
   :bind
   ("C-x g x" . magit-checkout)
   ("C-x g l" . magit-pull)
@@ -217,22 +234,25 @@
   ("C-x g r" . magit-rebase-interactive))
 
 (use-package company
+  :ensure t
   :config
   (setq company-echo-delay 0)
   (setq company-idle-delay 1)
-  (setq company-tooltip-limit 12)
+  (setq company-tooltip-limit 9)
   (setq company-minimum-prefix-length 3)
   (setq company-tooltip-align-annotations t)
   (global-company-mode 1)
   (global-set-key (kbd "C-<tab>") 'company-complete))
 
 (use-package company-web
+  :ensure t
   :config
   (add-to-list 'company-backends 'company-web-html)
   (add-to-list 'company-backends 'company-web-jade)
   (add-to-list 'company-backends 'company-web-slim))
 
 (use-package lsp-mode
+  :ensure t
   :after projectile
   :commands lsp
   :hook((typescript-mode . lsp)
@@ -243,9 +263,9 @@
         (python-mode . lsp)
         (java-mode . lsp)
         (go-mode . lsp)
-        (c-mode . lsp)
-        (c++-mode . lsp)
         (cmake-mode . lsp)
+        (c++-mode . lsp)
+        (c-mode . lsp)
         (lsp-mode . lsp-enable-which-key-integration))
   :init
   (setq lsp-keymap-prefix "C-c l")
@@ -258,6 +278,7 @@
               ("C-c l W" . helm-lsp-global-workspace-symbol)))
 
 (use-package lsp-ui
+  :ensure t
   :commands lsp-ui-mode
   :config
   (setq lsp-ui-sideline-enable nil)
@@ -274,12 +295,15 @@
   ("M-s M-M" . lsp-ui-imenu--kill))
 
 (use-package lsp-treemacs
+  :ensure t
   :commands lsp-treemacs-errors-list)
 
 (use-package helm-lsp
+  :ensure t
   :commands helm-lsp-workspace-symbol)
 
 (use-package typescript-mode
+  :ensure t
   :mode (("\\.js\\'" . typescript-mode)
          ("\\.jsx\\'" . typescript-mode)
          ("\\.ts\\'" . typescript-mode)
@@ -290,11 +314,13 @@
   (setq-default typescript-indent-level 2))
 
 (use-package json-mode
+  :ensure t
   :mode "\\.json\\'"
   :hook
   (json-mode . lsp))
 
 (use-package css-mode
+  :ensure t
   :mode "\\.css\\'"
   :hook
   (css-mode . lsp)
@@ -302,6 +328,7 @@
   (setq css-indent-offset 2))
 
 (use-package web-mode
+  :ensure t
   :mode (("\\.htm\\'" . web-mode)
          ("\\.html\\'" . web-mode))
   :hook
@@ -313,18 +340,30 @@
   (setq web-mode-code-indent-offset 2))
 
 (use-package php-mode
-  :mode (("\\.php\\'" . web-mode)
-         ("\\.phtm\\'" . web-mode)
-         ("\\.phtml\\'" . web-mode))
+  :ensure t
+  :mode (("\\.php\\'" . php-mode)
+         ("\\.phtm\\'" . php-mode)
+         ("\\.phtml\\'" . php-mode))
   :hook
   (php-mode . lsp))
 
+(use-package mmm-mode
+  :ensure t
+  :defer t
+  :config
+  (setq mmm-global-mode 'maybe)
+  (mmm-add-mode-ext-class 'html-mode "\\.php\\'" 'html-php)
+  (mmm-add-mode-ext-class 'html-mode "\\.phtm\\'" 'html-php)
+  (mmm-add-mode-ext-class 'html-mode "\\.phtml\\'" 'html-php))
+
 (use-package python-mode
+  :ensure t
   :mode ("\\.py\\'" . python-mode)
   :config
   (setq python-indent-offset 4))
 
 (use-package lsp-java
+  :ensure t
   :hook
   (java-mode . lsp)
   :config
@@ -332,23 +371,28 @@
   (setq lsp-java-format-settings-profile "PointelStyle"))
 
 (use-package go-mode
+  :ensure t
   :mode "\\.go\\'"
   :hook
   (go-mode . lsp))
 
 (use-package cmake-mode
+  :ensure t
   :mode (("CMakeLists\\.txt\\'" . cmake-mode)
          ("\\.cmake\\'" . cmake-mode)))
 
 (use-package cmake-font-lock
+  :ensure t
   :after cmake-mode
   :hook (cmake-mode . cmake-font-lock-activate))
 
 (use-package modern-cpp-font-lock
+  :ensure t
   :hook
   (c++-mode . modern-c++-font-lock-mode))
 
 (use-package dap-mode
+  :ensure t
   :after lsp-mode
   :config
   (dap-auto-configure-mode)
@@ -361,16 +405,16 @@
   ("<C-f8>" . 'dap-step-out))
 
 (use-package dap-firefox
-  :ensure nil)
+  :ensure dap-mode)
 
 (use-package dap-chrome
-  :ensure nil)
+  :ensure dap-mode)
 
 (use-package dap-node
-  :ensure nil)
+  :ensure dap-mode)
 
 (use-package dap-php
-  :ensure nil)
+  :ensure dap-mode)
 
 (use-package dap-python
   :ensure dap-mode
@@ -404,9 +448,11 @@
    (c++-mode . dap-tooltip-mode)))
 
 (use-package yasnippet
+  :ensure t
   :config (yas-global-mode))
 
 (use-package yasnippet-snippets
+  :ensure t
   :after yasnippet
   :demand t
   :config
@@ -416,12 +462,14 @@
     (add-to-list 'company-backends '(company-yasnippet)))
 
 (use-package emmet-mode
+  :ensure t
   :hook ((typescript-mode . emmet-mode)
          (css-mode  . emmet-mode)
          (web-mode  . emmet-mode)
          (php-mode  . emmet-mode)))
 
 (use-package hippie-exp
+  :ensure t
   :bind ("<C-return>" . hippie-expand)
   :config
   (setq-default hippie-expand-try-functions-list
