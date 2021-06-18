@@ -1,0 +1,5 @@
+npm install -g vscode-html-languageserver-bin
+npm install -g vscode-css-languageserver-bin
+npm install -g vscode-json-languageserver
+npm install -g intelephense
+pip install -U python-lsp-server

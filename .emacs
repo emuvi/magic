@@ -303,9 +303,7 @@
 
 (use-package web-mode
   :mode (("\\.htm\\'" . web-mode)
-         ("\\.html\\'" . web-mode)
-         ("\\.phtm\\'" . web-mode)
-         ("\\.phtml\\'" . web-mode))
+         ("\\.html\\'" . web-mode))
   :hook
   (web-mode . lsp)
   :config
@@ -315,7 +313,9 @@
   (setq web-mode-code-indent-offset 2))
 
 (use-package php-mode
-  :mode "\\.php\\'"
+  :mode (("\\.php\\'" . web-mode)
+         ("\\.phtm\\'" . web-mode)
+         ("\\.phtml\\'" . web-mode))
   :hook
   (php-mode . lsp))
 
@@ -328,7 +328,7 @@
   :hook
   (java-mode . lsp)
   :config
-  (setq lsp-java-format-settings-url (lsp--path-to-uri "~/.java-pointel-style.xml"))
+  (setq lsp-java-format-settings-url (lsp--path-to-uri "~/java-pointel-style.xml"))
   (setq lsp-java-format-settings-profile "PointelStyle"))
 
 (use-package go-mode
