@@ -50,14 +50,28 @@
 (setq whitespace-style '(face lines-tail))
 (global-whitespace-mode +1)
 
-;; Eval entire buffer with one keybind.
+(defun eshell-new ()
+  "Creates a new eshell buffer."
+  (interactive)
+  (eshell t))
+
+(defun window-bigger ()
+  "Make window bigger."
+  (interactive)
+  (enlarge-window 3))
+
+(defun window-lesser ()
+  "Make window lesser."
+  (interactive)
+  (enlarge-window -3))
+
 (global-set-key (kbd "C-x x b") 'eval-buffer)
-;; Start eshell or switch to it if it's active.
 (global-set-key (kbd "C-x x e") 'eshell)
-;; Start a new eshell even if one is active.
-(global-set-key (kbd "C-x x x") (lambda () (interactive) (eshell t)))
-;; Start a regular shell if you prefer that.
+(global-set-key (kbd "C-x x x") 'eshell-new)
 (global-set-key (kbd "C-x x s") 'shell)
+(global-set-key (kbd "C-x =") 'balance-windows)
+(global-set-key (kbd "C-x +") 'window-bigger)
+(global-set-key (kbd "C-x -") 'window-lesser)
 
 ;; Shift and click with mouse select the region.
 (define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
