@@ -286,6 +286,7 @@
         (web-mode . lsp)
         (php-mode . lsp)
         (python-mode . lsp)
+        (groovy-mode . lsp)
         (java-mode . lsp)
         (go-mode . lsp)
         (cmake-mode . lsp)
@@ -386,6 +387,12 @@
   :mode ("\\.py\\'" . python-mode)
   :config
   (setq python-indent-offset 4))
+
+(use-package groovy-mode
+  :ensure t
+  :mode ("\\.groovy\\'" . groovy-mode)
+  :hook
+  (groovy-mode . lsp))
 
 (use-package lsp-java
   :ensure t
