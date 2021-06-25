@@ -31,8 +31,10 @@
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.configuration.checkProjectSettingsExclusions": false,
   "java.semanticHighlighting.enabled": true,
-  "java.format.settings.url": "https://github.com/emuvi/dotfiles/raw/master/java-pointel-style.xml",
   "java.format.settings.profile": "PointelStyle",
+  "java.format.settings.url": "https://github.com/emuvi/dotfiles/raw/master/java-pointel-style.xml",
+  "java.project.importOnFirstTimeStartup": "automatic",
+  "redhat.telemetry.enabled": true,
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
@@ -62,17 +64,21 @@
   "[c]": {
     "editor.defaultFormatter": "xaver.clang-format"
   },
+  "errorLens.errorColor": "rgba(240,0,0,0.1)",
+  "errorLens.warningColor": "rgba(180,180,0,0.1)",
+  "errorLens.hintColor": "rgba(20,140,140,0.1)",
+  "errorLens.infoColor": "rgba(0,200,0,0.1)",
   "workbench.colorCustomizations": {
     "tab.activeBackground": "#3EE2B9",
     "tab.inactiveBackground": "#DAE9E5"
   },
   "editor.tokenColorCustomizations": {
-    "keywords": "#EE5555",
-    "functions": "#5555EE",
+    "keywords": "#EE3333",
+    "functions": "#3333EE",
     "variables": "#555555",
     "numbers": "#EE7755",
     "strings": "#557755",
-    "types": "#EE55EE",
+    "types": "#EE33EE",
     "comments": "#A5A5A5",
     "textMateRules": [
       {
@@ -84,31 +90,30 @@
       {
         "scope": "constant.language",
         "settings": {
-          "foreground": "#FF55FF"
+          "foreground": "#EE33EE"
         }
       },
       {
         "scope": "storage.type.primitive",
         "settings": {
-          "foreground": "#EE55EE"
+          "foreground": "#EE33EE"
         }
       },
       {
         "scope": "meta.class storage.type",
         "settings": {
-          "foreground": "#EE55EE"
+          "foreground": "#EE33EE"
         }
       },
       {
         "scope": "keyword.operator",
         "settings": {
-          "foreground": "#EE5555"
+          "foreground": "#EE3333"
         }
       }
     ]
   },
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
-  },
-  "redhat.telemetry.enabled": true
+  }
 }
