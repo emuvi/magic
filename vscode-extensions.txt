@@ -1,6 +1,7 @@
 alefragnani.Bookmarks
 amiralizadeh9480.cpp-helper
 andrewmarkle.primer-light
+ArgyleWolfLabs.vscode-groovy
 batisteo.vscode-django
 bbugh.change-color-format
 bungcip.better-toml
@@ -39,6 +40,7 @@ ms-vscode.cpptools
 ms-vsliveshare.vsliveshare
 ms-vsliveshare.vsliveshare-audio
 msjsdiag.debugger-for-chrome
+NicolasVuillamy.vscode-groovy-lint
 PhilHindle.errorlens
 redhat.fabric8-analytics
 redhat.java
