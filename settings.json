@@ -14,6 +14,9 @@
   "workbench.iconTheme": "vscode-great-icons",
   "workbench.startupEditor": "none",
   "window.restoreWindows": "none",
+  "files.hotExit": "off",
+  "gutterpreview.showImagePreviewOnGutter": false,
+  "cSpell.language": "en,pt,pt_BR",
   "explorer.confirmDelete": true,
   "explorer.confirmDragAndDrop": false,
   "git.enableSmartCommit": true,
@@ -113,7 +116,4 @@
       }
     ]
   },
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  }
-}
+  "wo
