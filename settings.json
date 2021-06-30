@@ -24,11 +24,9 @@
   "editor.rulers": [90],
   "prettier.printWidth": 90,
   "html.format.wrapLineLength": 90,
-  "phpfmt.indent_with_space": 2,
-  "phpfmt.psr2": false,
+  "python.showStartPage": false,
   "cmake.configureOnOpen": false,
   "C_Cpp.updateChannel": "Insiders",
-  "python.showStartPage": false,
   "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "java.configuration.updateBuildConfiguration": "automatic",
@@ -116,4 +114,10 @@
       }
     ]
   },
-  "wo
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "cSpell.userWords": [
+    "varchar"
+  ]
+}
