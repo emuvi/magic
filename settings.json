@@ -11,7 +11,7 @@
   "editor.fontWeight": "bold",
   "editor.fontFamily": "'Hack', 'monospace', monospace",
   "workbench.colorTheme": "Primer Light",
-  "workbench.iconTheme": "vscode-great-icons",
+  "workbench.iconTheme": "bearded-icons",
   "workbench.startupEditor": "none",
   "window.restoreWindows": "none",
   "files.hotExit": "off",
@@ -119,5 +119,5 @@
   },
   "cSpell.userWords": [
     "varchar"
-  ]
-}
+  ],
+ 

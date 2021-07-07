@@ -4,12 +4,12 @@ andrewmarkle.primer-light
 ArgyleWolfLabs.vscode-groovy
 auchenberg.vscode-browser-preview
 bbugh.change-color-format
+BeardedBear.beardedicons
 bungcip.better-toml
 cheshirekow.cmake-format
 cssho.vscode-svgviewer
 Dart-Code.dart-code
 Dart-Code.flutter
-emmanuelbeziat.vscode-great-icons
 evgeniypeshkov.syntax-highlighter
 felixfbecker.php-debug
 felixfbecker.php-pack
@@ -42,6 +42,7 @@ ms-vsliveshare.vsliveshare-audio
 msjsdiag.debugger-for-chrome
 NicolasVuillamy.vscode-groovy-lint
 PhilHindle.errorlens
+rangav.vscode-thunder-client
 redhat.fabric8-analytics
 redhat.java
 redhat.vscode-commons
