@@ -120,4 +120,5 @@
   "cSpell.userWords": [
     "varchar"
   ],
- 
+  "docker.showStartPage": false
+}
