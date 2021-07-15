@@ -15,7 +15,6 @@
   "workbench.startupEditor": "none",
   "window.restoreWindows": "none",
   "files.hotExit": "off",
-  "gutterpreview.showImagePreviewOnGutter": false,
   "cSpell.language": "en,pt,pt_BR",
   "explorer.confirmDelete": true,
   "explorer.confirmDragAndDrop": false,
@@ -118,7 +117,10 @@
     "*.ipynb": "jupyter.notebook.ipynb"
   },
   "cSpell.userWords": [
+    "pointel",
+    "pointto",
     "varchar"
   ],
+  "gutterpreview.showImagePreviewOnGutter": false,
   "docker.showStartPage": false
 }
