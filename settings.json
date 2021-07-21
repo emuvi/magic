@@ -35,13 +35,19 @@
   "java.format.settings.url": "https://github.com/emuvi/dotfiles/raw/master/java-pointel-style.xml",
   "java.project.importOnFirstTimeStartup": "automatic",
   "redhat.telemetry.enabled": true,
+  "groovyLint.enable": false,
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
     "**/.factorypath": true
   },
+  "[py]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "ms-python.python"
+  },
   "[php]": {
+    "editor.tabSize": 4,
     "editor.defaultFormatter": "kokororin.vscode-phpfmt"
   },
   "[phtml]": {
