@@ -16,7 +16,7 @@
   "window.restoreWindows": "none",
   "files.hotExit": "off",
   "cSpell.language": "en,pt,pt_BR",
-  "explorer.confirmDelete": true,
+  "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
@@ -35,12 +35,22 @@
   "java.format.settings.url": "https://github.com/emuvi/dotfiles/raw/master/java-pointel-style.xml",
   "java.project.importOnFirstTimeStartup": "automatic",
   "redhat.telemetry.enabled": true,
-  "groovyLint.enable": false,
+  "gutterpreview.showImagePreviewOnGutter": false,
+  "docker.showStartPage": false,
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
     "**/.factorypath": true
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[py]": {
     "editor.tabSize": 4,
@@ -75,6 +85,7 @@
   "errorLens.hintColor": "rgba(20,140,140,0.1)",
   "errorLens.infoColor": "rgba(0,200,0,0.1)",
   "workbench.colorCustomizations": {
+    "editor.background": "#fffdf5",
     "tab.activeBackground": "#3EE2B9",
     "tab.inactiveBackground": "#DAE9E5"
   },
@@ -120,13 +131,16 @@
     ]
   },
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
+    "*.ipynb": "jupyter-notebook",
+    "*.html": "default"
   },
   "cSpell.userWords": [
     "pointel",
     "pointto",
     "varchar"
   ],
-  "gutterpreview.showImagePreviewOnGutter": false,
-  "docker.showStartPage": false
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  }
 }
