@@ -81,9 +81,13 @@
     "editor.defaultFormatter": "xaver.clang-format"
   },
   "errorLens.errorColor": "rgba(240,0,0,0.1)",
+  "errorLens.errorTextColor": "rgba(240,0,0,0.4)",
   "errorLens.warningColor": "rgba(180,180,0,0.1)",
+  "errorLens.warningTextColor": "rgba(180,180,0,0.4)",
   "errorLens.hintColor": "rgba(20,140,140,0.1)",
+  "errorLens.hintTextColor": "rgba(20,140,140,0.4)",
   "errorLens.infoColor": "rgba(0,200,0,0.1)",
+  "errorLens.infoTextColor": "rgba(0,200,0,0.4)",
   "workbench.colorCustomizations": {
     "editor.background": "#fffdf5",
     "tab.activeBackground": "#3EE2B9",

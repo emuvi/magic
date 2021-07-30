@@ -1,7 +1,6 @@
 alefragnani.Bookmarks
 amiralizadeh9480.cpp-helper
 andrewmarkle.primer-light
-auchenberg.vscode-browser-preview
 bbugh.change-color-format
 BeardedBear.beardedicons
 bungcip.better-toml
