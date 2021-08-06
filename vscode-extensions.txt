@@ -1,10 +1,12 @@
 alefragnani.Bookmarks
 amiralizadeh9480.cpp-helper
 andrewmarkle.primer-light
+auchenberg.vscode-browser-preview
 bbugh.change-color-format
 BeardedBear.beardedicons
 bungcip.better-toml
 cheshirekow.cmake-format
+CoenraadS.bracket-pair-colorizer-2
 cssho.vscode-svgviewer
 Dart-Code.dart-code
 Dart-Code.flutter
@@ -23,7 +25,6 @@ kamikillerto.vscode-colorize
 kisstkondoros.vscode-gutter-preview
 kokororin.vscode-phpfmt
 magicstack.MagicPython
-mrmlnc.vscode-duplicate
 ms-azuretools.vscode-docker
 ms-python.python
 ms-python.vscode-pylance
@@ -49,6 +50,7 @@ rifi2k.format-html-in-php
 rust-lang.rust
 serayuzgur.crates
 shd101wyy.markdown-preview-enhanced
+sleistner.vscode-fileutils
 sohibe.java-generate-setters-getters
 stkb.rewrap
 streetsidesoftware.code-spell-checker
