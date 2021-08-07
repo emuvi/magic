@@ -146,5 +146,8 @@
     "pointel",
     "pointto",
     "varchar"
-  ]
+  ],
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust"
+  }
 }
