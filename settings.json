@@ -9,7 +9,7 @@
   "editor.formatOnSave": false,
   "editor.formatOnType": false,
   "editor.fontWeight": "bold",
-  "editor.fontFamily": "'Hack', 'monospace', monospace",
+  "editor.fontFamily": "Hack",
   "workbench.colorTheme": "Primer Light",
   "workbench.iconTheme": "bearded-icons",
   "workbench.startupEditor": "none",
@@ -138,13 +138,13 @@
     "*.ipynb": "jupyter-notebook",
     "*.html": "default"
   },
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
   "cSpell.userWords": [
     "pointel",
     "pointto",
     "varchar"
-  ],
-  "notebook.cellToolbarLocation": {
-    "default": "right",
-    "jupyter-notebook": "left"
-  }
+  ]
 }
