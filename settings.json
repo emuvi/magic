@@ -49,6 +49,12 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -80,6 +86,9 @@
   "[c]": {
     "editor.defaultFormatter": "xaver.clang-format"
   },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust"
+  },
   "errorLens.errorColor": "rgba(240,0,0,0.1)",
   "errorLens.errorTextColor": "rgba(240,0,0,0.4)",
   "errorLens.warningColor": "rgba(180,180,0,0.1)",
@@ -91,8 +100,20 @@
   "workbench.colorCustomizations": {
     "editor.background": "#fffdf5",
     "tab.activeBackground": "#3EE2B9",
-    "tab.inactiveBackground": "#DAE9E5"
+    "tab.inactiveBackground": "#DAE9E5",
+    "selection.background": "#ff5454",
+    "menu.selectionBackground": "#ff5454",
+    "list.activeSelectionBackground": "#ff5454",
+    "list.inactiveSelectionBackground": "#ffcdcd"
   },
+  "bracket-pair-colorizer-2.colors": [
+    "#8A008A",
+    "#00008A",
+    "#008A8A",
+    "#008A00",
+    "#8A8A00",
+    "#8A0000"
+  ],
   "editor.tokenColorCustomizations": {
     "keywords": "#EE3333",
     "functions": "#3333EE",
@@ -143,11 +164,12 @@
     "jupyter-notebook": "left"
   },
   "cSpell.userWords": [
+    "chdir",
+    "consts",
+    "magick",
     "pointel",
     "pointto",
+    "qinpel",
     "varchar"
-  ],
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust"
-  }
+  ]
 }
