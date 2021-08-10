@@ -23,7 +23,6 @@
   "editor.rulers": [90],
   "prettier.printWidth": 90,
   "html.format.wrapLineLength": 90,
-  "python.showStartPage": false,
   "cmake.configureOnOpen": false,
   "C_Cpp.updateChannel": "Insiders",
   "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
@@ -98,13 +97,15 @@
   "errorLens.infoColor": "rgba(0,200,0,0.1)",
   "errorLens.infoTextColor": "rgba(0,200,0,0.4)",
   "workbench.colorCustomizations": {
-    "editor.background": "#fffdf5",
+    "editor.background": "#FFFDF5",
+    "editor.selectionBackground": "#FFCDCD",
+    "editor.selectionHighlightBackground": "#E9CDFF77",
     "tab.activeBackground": "#3EE2B9",
     "tab.inactiveBackground": "#DAE9E5",
-    "selection.background": "#ff5454",
-    "menu.selectionBackground": "#ff5454",
-    "list.activeSelectionBackground": "#ff5454",
-    "list.inactiveSelectionBackground": "#ffcdcd"
+    "selection.background": "#FF5454",
+    "menu.selectionBackground": "#FF5454",
+    "list.activeSelectionBackground": "#FF5454",
+    "list.inactiveSelectionBackground": "#FFCDCD"
   },
   "bracket-pair-colorizer-2.colors": [
     "#8A008A",
@@ -167,9 +168,4 @@
     "chdir",
     "consts",
     "magick",
-    "pointel",
-    "pointto",
-    "qinpel",
-    "varchar"
-  ]
-}
+    "po
