@@ -168,4 +168,9 @@
     "chdir",
     "consts",
     "magick",
-    "po
+    "pointel",
+    "pointto",
+    "qinpel",
+    "varchar"
+  ]
+}
