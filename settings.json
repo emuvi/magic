@@ -86,7 +86,8 @@
     "editor.defaultFormatter": "xaver.clang-format"
   },
   "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust"
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "rust-lang.rust",
   },
   "errorLens.errorColor": "rgba(240,0,0,0.1)",
   "errorLens.errorTextColor": "rgba(240,0,0,0.4)",
