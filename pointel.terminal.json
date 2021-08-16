@@ -1,0 +1,23 @@
+{
+    "background": "#000000",
+    "black": "#000000",
+    "blue": "#6A00FF",
+    "brightBlack": "#545454",
+    "brightBlue": "#A35CE6",
+    "brightCyan": "#5CE6E6",
+    "brightGreen": "#5CE681",
+    "brightPurple": "#E65CBA",
+    "brightRed": "#E65C5C",
+    "brightWhite": "#FFFFFF",
+    "brightYellow": "#FFFF66",
+    "cursorColor": "#FF6265",
+    "cyan": "#00D0FF",
+    "foreground": "#FFFEF7",
+    "green": "#00FF44",
+    "name": "Pointel",
+    "purple": "#FF0090",
+    "red": "#FF0000",
+    "selectionBackground": "#C0C9FF",
+    "white": "#F5F5F5",
+    "yellow": "#FFB400"
+}

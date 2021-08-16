@@ -37,7 +37,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Hack" :foundry "outline" :slant normal :weight normal :height 120 :width normal)))))
+ '(default ((t (:family "Hack" :foundry "outline" :slant normal :weight bold :height 120 :width normal))))
+ '(centaur-tabs-selected ((t (:background "green" :foreground "blue"))))
+ '(centaur-tabs-unselected ((t (:background "black" :foreground "darkgray"))))
+ '(centaur-tabs-selected-modified ((t (:background "green" :foreground "blue"))))
+ '(centaur-tabs-unselected-modified ((t (:background "black" :foreground "darkgray"))))
+ '(lsp-face-highlight-read ((t (:background "darkgray"))))
+ '(lsp-face-highlight-textual ((t (:background "darkgray"))))
+ '(lsp-face-highlight-write ((t (:background "darkgray"))))
+)
 
 (prefer-coding-system 'utf-8)
 (set-language-environment 'utf-8)
@@ -96,11 +104,6 @@
   (setq auto-package-update-delete-old-versions t)
   (setq auto-package-update-interval 4)
   (auto-package-update-maybe))
-
-(use-package leuven-theme
-  :ensure t
-  :config
-  (load-theme 'leuven t))
 
 (use-package which-key
   :ensure t
@@ -295,6 +298,7 @@
         (groovy-mode . lsp)
         (java-mode . lsp)
         (go-mode . lsp)
+		(rust-mode . lsp)
         (cmake-mode . lsp)
         (c++-mode . lsp)
         (c-mode . lsp)
@@ -413,6 +417,12 @@
   :mode "\\.go\\'"
   :hook
   (go-mode . lsp))
+
+(use-package rust-mode
+  :ensure t
+  :mode "\\.rs\\'"
+  :hook
+  (rust-mode . lsp))
 
 (use-package cmake-mode
   :ensure t
