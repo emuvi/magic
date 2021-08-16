@@ -20,7 +20,6 @@
  '(global-linum-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen nil)
- '(line-spacing 0.36)
  '(lsp-headerline-breadcrumb-enable t)
  '(make-backup-files nil)
  '(org-support-shift-select t)
@@ -37,7 +36,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Hack" :foundry "outline" :slant normal :weight bold :height 120 :width normal))))
+ '(default ((t (:family "Source Code Pro" :weight bold))))
  '(centaur-tabs-selected ((t (:background "green" :foreground "blue"))))
  '(centaur-tabs-unselected ((t (:background "black" :foreground "darkgray"))))
  '(centaur-tabs-selected-modified ((t (:background "green" :foreground "blue"))))
