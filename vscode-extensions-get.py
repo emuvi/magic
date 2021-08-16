@@ -1,4 +1,3 @@
-import os
 
 
 def get_extensions():
@@ -10,4 +9,4 @@ def get_extensions():
 
 if __name__ == "__main__":
     get_extensions()
-    print("Finished to get extensions.")
+    print("Finish to get extensions.")

@@ -48,7 +48,6 @@ serayuzgur.crates
 shd101wyy.markdown-preview-enhanced
 sleistner.vscode-fileutils
 sohibe.java-generate-setters-getters
-statiolake.vscode-rustfmt
 stkb.rewrap
 streetsidesoftware.code-spell-checker
 streetsidesoftware.code-spell-checker-portuguese-brazilian
