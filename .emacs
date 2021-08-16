@@ -40,10 +40,12 @@
  '(default ((t (:family "Hack" :foundry "outline" :slant normal :weight normal :height 120 :width normal)))))
 
 (prefer-coding-system 'utf-8)
-(set-default-coding-systems 'utf-8)
 (set-language-environment 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
-(setq-default buffer-file-coding-system 'utf-8-unix)
+(setq-default buffer-file-coding-system 'utf-8)
+(setq default-process-coding-system '(utf-8 . utf-8))
 
 (require 'whitespace)
 (setq whitespace-line-column 90)
@@ -149,6 +151,10 @@
 (use-package telephone-line
   :ensure t
   :config
+  (setq telephone-line-primary-left-separator 'telephone-line-nil
+      telephone-line-secondary-left-separator 'telephone-line-nil
+      telephone-line-primary-right-separator 'telephone-line-nil
+      telephone-line-secondary-right-separator 'telephone-line-nil)
   (telephone-line-mode 1))
 
 (use-package projectile
