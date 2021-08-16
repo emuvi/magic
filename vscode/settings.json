@@ -9,7 +9,7 @@
   "editor.formatOnSave": false,
   "editor.formatOnType": false,
   "editor.fontWeight": "bold",
-  "editor.fontFamily": "Hack",
+  "editor.fontFamily": "Source Code Pro",
   "workbench.colorTheme": "Primer Light",
   "workbench.iconTheme": "bearded-icons",
   "workbench.startupEditor": "none",

@@ -1,8 +1,8 @@
-;;;; package --- Sumary:
+;;;; package --- Summary:
 ;;;; Emacs Configuration
 
 ;;;; Commentary:
-;;;; Emuvs Style
+;;;; Emuvi Style
 
 ;;;; Code:
 (custom-set-variables
