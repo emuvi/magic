@@ -36,14 +36,22 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Source Code Pro" :weight bold))))
- '(centaur-tabs-selected ((t (:background "green" :foreground "blue"))))
- '(centaur-tabs-unselected ((t (:background "black" :foreground "darkgray"))))
+ '(default ((t (:family "Source Code Pro" :height 140 :weight bold))))
+ '(centaur-tabs-selected ((t (:background "green" :foreground "black"))))
+ '(centaur-tabs-unselected ((t (:background "darkgray" :foreground "black"))))
  '(centaur-tabs-selected-modified ((t (:background "green" :foreground "blue"))))
- '(centaur-tabs-unselected-modified ((t (:background "black" :foreground "darkgray"))))
- '(lsp-face-highlight-read ((t (:background "darkgray"))))
- '(lsp-face-highlight-textual ((t (:background "darkgray"))))
- '(lsp-face-highlight-write ((t (:background "darkgray"))))
+ '(centaur-tabs-unselected-modified ((t (:background "darkgray" :foreground "blue"))))
+ '(font-lock-keyword-face ((t (:foreground "red"))))
+ '(font-lock-type-face ((t (:foreground "magenta"))))
+ '(font-lock-function-name-face ((t (:foreground "blue"))))
+ '(font-lock-variable-name-face ((t (:slant italic))))
+ '(font-lock-string-face ((t (:foreground "darkgreen"))))
+ '(font-lock-constant-face ((t (:foreground "brown"))))
+ '(font-lock-preprocessor-face ((t (:foreground "darkgray"))))
+ '(font-lock-comment-face ((t (:foreground "lightgray"))))
+ '(lsp-face-highlight-read ((t (:background "gray"))))
+ '(lsp-face-highlight-textual ((t (:background "gray"))))
+ '(lsp-face-highlight-write ((t (:background "gray"))))
 )
 
 (prefer-coding-system 'utf-8)
@@ -150,14 +158,10 @@
   :config
   (highlight-parentheses-mode t))
 
-(use-package telephone-line
+(use-package mood-line
   :ensure t
   :config
-  (setq telephone-line-primary-left-separator 'telephone-line-nil
-      telephone-line-secondary-left-separator 'telephone-line-nil
-      telephone-line-primary-right-separator 'telephone-line-nil
-      telephone-line-secondary-right-separator 'telephone-line-nil)
-  (telephone-line-mode 1))
+  (mood-line-mode 1))
 
 (use-package projectile
   :ensure t
