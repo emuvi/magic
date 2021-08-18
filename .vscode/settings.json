@@ -1,7 +1,11 @@
 {
   "cSpell.words": [
     "getenv",
+    "magit",
+    "modeline",
     "popen",
-    "struct"
+    "struct",
+    "treemacs",
+    "windmove"
   ]
 }

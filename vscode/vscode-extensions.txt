@@ -17,11 +17,13 @@ formulahendry.code-runner
 GitHub.vscode-pull-request-github
 Gruntfuggly.todo-tree
 hars.CppSnippets
+imjacobclark.vscode-lisp-formatter
 jeff-hykin.better-cpp-syntax
 kamikillerto.vscode-colorize
 kisstkondoros.vscode-gutter-preview
 kokororin.vscode-phpfmt
 magicstack.MagicPython
+mattn.Lisp
 ms-azuretools.vscode-docker
 ms-python.python
 ms-python.vscode-pylance

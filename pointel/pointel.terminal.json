@@ -171,7 +171,7 @@
             "yellow": "#C18301"
         },
         {
-            "background": "#F7F5F0",
+            "background": "#080807",
             "black": "#000000",
             "blue": "#6000E6",
             "brightBlack": "#4D4D4D",
@@ -184,7 +184,7 @@
             "brightYellow": "#BFBF4D",
             "cursorColor": "#804040",
             "cyan": "#00A7CC",
-            "foreground": "#080807",
+            "foreground": "#F7F5F0",
             "green": "#00BF33",
             "name": "Pointel",
             "purple": "#E60082",

@@ -25,6 +25,7 @@
   "html.format.wrapLineLength": 90,
   "cmake.configureOnOpen": false,
   "C_Cpp.updateChannel": "Insiders",
+  "security.workspace.trust.untrustedFiles": "open",
   "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "java.configuration.updateBuildConfiguration": "automatic",
@@ -167,12 +168,16 @@
   },
   "cSpell.userWords": [
     "chdir",
+    "cmake",
     "cmds",
     "consts",
+    "elisp",
+    "keymap",
     "magick",
     "pointel",
     "pointto",
     "qinpel",
+    "setq",
     "varchar"
   ]
 }
