@@ -52,6 +52,8 @@
 (setq whitespace-style '(face lines-tail))
 (global-whitespace-mode +1)
 
+(setq-default indent-tabs-mode t)
+(setq indent-line-function 'insert-tab)
 (setq-default tab-width 4)
 
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
@@ -434,6 +436,8 @@
   (setq lsp-signature-auto-activate t)
   (setq lsp-signature-doc-lines 1)
   (setq lsp-headerline-breadcrumb-enable nil)
+  (setq lsp-modeline-code-actions-enable nil)
+  (setq lsp-modeline-diagnostics-enable nil)
   :bind (:map lsp-mode-map
               ("C-c l A" . helm-lsp-code-actions)
               ("C-c l w" . helm-lsp-workspace-symbol)
@@ -464,9 +468,7 @@
          ("\\.ts\\'" . typescript-mode)
          ("\\.tsx\\'" . typescript-mode))
   :hook
-  (typescript-mode . lsp)
-  :config
-  (setq-default typescript-indent-level 2))
+  (typescript-mode . lsp))
 
 (use-package json-mode
   :mode "\\.json\\'"
