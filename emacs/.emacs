@@ -503,9 +503,7 @@
   (mmm-add-mode-ext-class 'html-mode "\\.phtml\\'" 'html-php))
 
 (use-package python-mode
-  :mode ("\\.py\\'" . python-mode)
-  :config
-  (setq python-indent-offset 4))
+  :mode ("\\.py\\'" . python-mode))
 
 (use-package groovy-mode
   :mode ("\\.groovy\\'" . groovy-mode)
