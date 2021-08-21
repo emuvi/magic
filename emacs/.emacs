@@ -476,20 +476,13 @@
 (use-package css-mode
   :mode "\\.css\\'"
   :hook
-  (css-mode . lsp)
-  :config
-  (setq css-indent-offset 2))
+  (css-mode . lsp))
 
 (use-package web-mode
   :mode (("\\.htm\\'" . web-mode)
          ("\\.html\\'" . web-mode))
   :hook
-  (web-mode . lsp)
-  :config
-  (setq web-mode-enable-current-element-highlight t)
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-css-indent-offset 2)
-  (setq web-mode-code-indent-offset 2))
+  (web-mode . lsp))
 
 (use-package php-mode
   :mode (("\\.php\\'" . php-mode)
@@ -637,37 +630,3 @@
   (when emmet-mode
     (emmet-expand-line args)))
 
-;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
-;;                                                                             ;;
-;; Code style                                                                  ;;
-;;                                                                             ;;
-;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
-
-(setq c-default-style "linux"
-      c-basic-offset 4)
-
-(add-hook 'c-mode-common-hook (lambda ()
-				(local-set-key (kbd "RET") 'newline-and-indent)))
-
-
-;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
-;;                                                                             ;;
-;; Compiling                                                                   ;;
-;;                                                                             ;;
-; ; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
-
-; Compile command
-(global-set-key "\C-x\C-m" 'compile)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
