@@ -15,7 +15,7 @@
 (add-to-list 'load-path (concat default-directory "magic/elisp"))
 (load-library "pointel-utils")
 
-(setq backup-directory-alist `(("." . (concat default-directory "backups"))))
+(setq backup-directory-alist `(("." . "~/.emacs.d/emacs_backup")))
 (setq backup-by-copying t)
 (setq delete-old-versions t)
 (setq kept-new-versions 6)
@@ -89,6 +89,9 @@
 (set-face-attribute 'font-lock-constant-face nil :foreground "brown")
 (set-face-attribute 'font-lock-preprocessor-face nil :foreground "darkgray")
 (set-face-attribute 'font-lock-comment-face nil :foreground "lightgray")
+(set-face-attribute 'lsp-face-highlight-read nil :foreground "darkblue")
+(set-face-attribute 'lsp-face-highlight-textual nil :foreground "darkblue")
+(set-face-attribute 'lsp-face-highlight-write nil :foreground "darkblue")
 
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                             ;;
@@ -290,7 +293,7 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package doom-themes :defer t)
-(load-theme 'doom-gruvbox t)
+(load-theme 'doom-gruvbox-light t)
 (doom-themes-visual-bell-config)
 
 ;; Use Diminish
