@@ -6,12 +6,16 @@
 
 ;; Change default directory for e.g. find-file [C-x C-f]
 ;; Don't forget to update this if you on another structure.
-(setq default-directory "C:/Code/")
 
-(add-to-list 'load-path "C:/Code/magic/elisp")
+(if (eq system-type 'windows-nt)
+  (setq default-directory "C:/Code/")
+  (setq default-directory "~/Code/")
+)
+
+(add-to-list 'load-path (concat default-directory "magic/elisp"))
 (load-library "pointel-utils")
 
-(setq backup-directory-alist `(("." . "C:/Code/backups")))
+(setq backup-directory-alist `(("." . (concat default-directory "backups"))))
 (setq backup-by-copying t)
 (setq delete-old-versions t)
 (setq kept-new-versions 6)
@@ -24,16 +28,15 @@
 ;;                                                                             ;;
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 
-(setq inhibit-startup-message t)    ; Remove splash screen
+(setq inhibit-startup-message t)   
 (setq visible-bell 1)
+(global-hl-line-mode 1)             
+(menu-bar-mode -1)
+(tooltip-mode -1)
 
-(global-hl-line-mode 1)             ; Highlight current line
-
-(scroll-bar-mode -1)                ; Disable visible scrollbar
-(menu-bar-mode -1)                  ; Disable menubar
-(tool-bar-mode 0)                   ; Disable toolbar
-(tooltip-mode -1)                   ; Disable tooltip mode
-(set-fringe-mode 10)                ; Make more space on the edges
+(when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(when (fboundp 'tool-bar-mode) (tool-bar-mode 0))
+(when (fboundp 'set-fringe-mode) (set-fringe-mode 10))
 
 ;; Line/column numbers
 (global-display-line-numbers-mode t)
@@ -237,7 +240,7 @@
   (setq dashboard-set-heading-icons nil)
   (setq dashboard-set-file-icons nil)
   (setq dashboard-footer-icon "*")
-  (setq dashboard-footer-messages (read-lines "C:/Code/magic/emacs/messages.txt"))
+  (setq dashboard-footer-messages (read-lines (concat default-directory "magic/emacs/messages.txt")))
   (dashboard-setup-startup-hook))
 
 (use-package centaur-tabs
