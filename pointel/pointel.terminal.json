@@ -73,7 +73,43 @@
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure",
                 "startingDirectory": "C:\\Code"
-            }
+            },
+            {
+                "guid": "{71160544-14d8-4194-af25-d05feeac7233}",
+                "name": "MSYS / MSYS2",
+                "commandline": "C:/msys2/msys2_shell.cmd -defterm -here -no-start -msys",
+                "startingDirectory": "C:/Code",
+                "icon": "C:/msys2/msys2.ico",
+                "colorScheme": "Pointel",
+                "cursorShape": "emptyBox",
+                "fontFace": "Source Code Pro",
+                "fontSize": 14,
+                "fontWeight": "bold"
+            },
+            {
+                "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
+                "name": "MINGW64 / MSYS2",
+                "commandline": "C:/msys2/msys2_shell.cmd -defterm -here -no-start -mingw64",
+                "startingDirectory": "C:/Code",
+                "icon": "C:/msys2/mingw64.ico",
+                "colorScheme": "Pointel",
+                "cursorShape": "emptyBox",
+                "fontFace": "Source Code Pro",
+                "fontSize": 14,
+                "fontWeight": "bold"
+                },
+                {
+                "guid": "{2d51fdc4-a03b-4efe-81bc-722b7f6f3820}",
+                "name": "MINGW32 / MSYS2",
+                "commandline": "C:/msys2/msys2_shell.cmd -defterm -here -no-start -mingw32",
+                "startingDirectory": "C:/Code",
+                "icon": "C:/msys2/mingw32.ico",
+                "colorScheme": "Pointel",
+                "cursorShape": "emptyBox",
+                "fontFace": "Source Code Pro",
+                "fontSize": 14,
+                "fontWeight": "bold"
+                }
         ]
     },
     "schemes": 
@@ -171,7 +207,7 @@
             "yellow": "#C18301"
         },
         {
-            "background": "#080807",
+            "background": "#282a36",
             "black": "#000000",
             "blue": "#6000E6",
             "brightBlack": "#4D4D4D",

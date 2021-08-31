@@ -89,9 +89,6 @@
 (set-face-attribute 'font-lock-constant-face nil :foreground "brown")
 (set-face-attribute 'font-lock-preprocessor-face nil :foreground "darkgray")
 (set-face-attribute 'font-lock-comment-face nil :foreground "lightgray")
-(set-face-attribute 'lsp-face-highlight-read nil :foreground "darkblue")
-(set-face-attribute 'lsp-face-highlight-textual nil :foreground "darkblue")
-(set-face-attribute 'lsp-face-highlight-write nil :foreground "darkblue")
 
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                             ;;
@@ -445,6 +442,10 @@
   (setq lsp-headerline-breadcrumb-enable nil)
   (setq lsp-modeline-code-actions-enable nil)
   (setq lsp-modeline-diagnostics-enable nil)
+  :config
+  (set-face-attribute 'lsp-face-highlight-read nil :foreground "darkblue")
+  (set-face-attribute 'lsp-face-highlight-textual nil :foreground "darkblue")
+  (set-face-attribute 'lsp-face-highlight-write nil :foreground "darkblue")
   :bind (:map lsp-mode-map
               ("C-c l A" . helm-lsp-code-actions)
               ("C-c l w" . helm-lsp-workspace-symbol)
