@@ -49,12 +49,6 @@
 		eshell-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
-;; Shows when you have too many columns:
-(require 'whitespace)
-(setq whitespace-line-column 90)
-(setq whitespace-style '(face lines-tail))
-(global-whitespace-mode +1)
-
 (setq-default indent-tabs-mode t)
 (setq indent-line-function 'insert-tab)
 (setq-default tab-width 4)
@@ -82,7 +76,7 @@
 (set-face-attribute 'default nil :font "Source Code Pro" :height 140 :weight 'bold)
 
 (set-face-attribute 'font-lock-keyword-face nil :foreground "red")
-(set-face-attribute 'font-lock-type-face nil :foreground "magenta")
+(set-face-attribute 'font-lock-type-face nil :foreground "darkmagenta")
 (set-face-attribute 'font-lock-function-name-face nil :foreground "blue")
 (set-face-attribute 'font-lock-variable-name-face nil :slant 'italic)
 (set-face-attribute 'font-lock-string-face nil :foreground "darkgreen")
@@ -199,10 +193,6 @@
   ("C-=" . er/expand-region)
   ("C--" . er/contract-region))
 
-(use-package highlight-parentheses
-  :config
-  (highlight-parentheses-mode t))
-
 (use-package doom-modeline
   :config 
   (setq doom-modeline-icon nil)
@@ -289,9 +279,11 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package doom-themes :defer t)
-(load-theme 'doom-gruvbox-light t)
-(doom-themes-visual-bell-config)
+(use-package doom-themes 
+  :defer t
+  :config
+  (load-theme 'doom-one-light t)
+  (doom-themes-visual-bell-config))
 
 ;; Use Diminish
 (use-package diminish)
