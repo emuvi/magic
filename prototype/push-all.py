@@ -1,4 +1,5 @@
 import os
+import sys
 import subprocess
 from threading import Thread
 from multiprocessing import Lock
@@ -10,6 +11,7 @@ lock = Lock()
 def lock_print(msg):
     with lock:
         print(msg)
+        sys.stdout.flush()
 
 
 class Runner(Thread):
