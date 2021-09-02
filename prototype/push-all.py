@@ -1,5 +1,4 @@
 import os
-import sys
 import subprocess
 from threading import Thread
 from multiprocessing import Lock
@@ -11,11 +10,11 @@ lock = Lock()
 def lock_print(origin, result):
     with lock:
         result = result.strip()
-        if result: 
+        if result:
             result = result.replace("\n", " ")
             result = result.replace("\r", "")
             result = result.replace("  ", " ")
-            print("From " + origin +": " + result, flush=True)
+            print("From " + origin + ": " + result, flush=True)
 
 
 class Runner(Thread):
@@ -26,18 +25,21 @@ class Runner(Thread):
 
     def run(self):
         lock_print(self.name, "starting...")
-        
-        result = subprocess.run(["git", "add", "-A"], cwd=self.path, capture_output=True)
+
+        result = subprocess.run(["git", "add", "-A"],
+                                cwd=self.path, capture_output=True)
         result_text = result.stdout.decode("UTF8")
         result_text += " " + result.stderr.decode("UTF8")
         lock_print(self.name, result_text)
 
-        result = subprocess.run(["git", "commit", "-m", "prototype development"], cwd=self.path, capture_output=True)
+        result = subprocess.run(
+            ["git", "commit", "-m", "prototype development"], cwd=self.path, capture_output=True)
         result_text = result.stdout.decode("UTF8")
         result_text += " " + result.stderr.decode("UTF8")
         lock_print(self.name, result_text)
 
-        result = subprocess.run(["git", "push"], cwd=self.path, capture_output=True)
+        result = subprocess.run(
+            ["git", "push"], cwd=self.path, capture_output=True)
         result_text = result.stdout.decode("UTF8")
         result_text += " " + result.stderr.decode("UTF8")
         lock_print(self.name, result_text)
