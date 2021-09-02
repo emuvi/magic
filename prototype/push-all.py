@@ -8,11 +8,14 @@ from multiprocessing import Lock
 lock = Lock()
 
 
-def lock_print(msg):
+def lock_print(origin, result):
     with lock:
-        msg = msg.replace("\n", " ")
-        msg = msg.replace("\r", "")
-        print(msg, flush=True)
+        result = result.strip()
+        if result: 
+            result = result.replace("\n", " ")
+            result = result.replace("\r", "")
+            result = result.replace("  ", " ")
+            print("From " + origin +": " + result, flush=True)
 
 
 class Runner(Thread):
@@ -22,22 +25,22 @@ class Runner(Thread):
         self.path = path
 
     def run(self):
-        lock_print("Starting on " + self.name)
+        lock_print(self.name, "starting...")
         
         result = subprocess.run(["git", "add", "-A"], cwd=self.path, capture_output=True)
         result_text = result.stdout.decode("UTF8")
         result_text += " " + result.stderr.decode("UTF8")
-        lock_print("From " + self.name + ": " + result_text)
+        lock_print(self.name, result_text)
 
         result = subprocess.run(["git", "commit", "-m", "prototype development"], cwd=self.path, capture_output=True)
         result_text = result.stdout.decode("UTF8")
         result_text += " " + result.stderr.decode("UTF8")
-        lock_print("From " + self.name + ": " + result.stdout.decode("UTF8"))
+        lock_print(self.name, result_text)
 
         result = subprocess.run(["git", "push"], cwd=self.path, capture_output=True)
         result_text = result.stdout.decode("UTF8")
         result_text += " " + result.stderr.decode("UTF8")
-        lock_print("From " + self.name + ": " + result_text)
+        lock_print(self.name, result_text)
 
 
 if (__name__ == '__main__'):
