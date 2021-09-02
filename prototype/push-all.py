@@ -10,6 +10,8 @@ lock = Lock()
 
 def lock_print(msg):
     with lock:
+        msg = msg.replace("\n", " ")
+        msg = msg.replace("\r", "")
         print(msg, flush=True)
 
 
