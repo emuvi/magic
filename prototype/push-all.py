@@ -10,8 +10,7 @@ lock = Lock()
 
 def lock_print(msg):
     with lock:
-        print(msg)
-        sys.stdout.flush()
+        print(msg, flush=True)
 
 
 class Runner(Thread):
