@@ -1,6 +1,15 @@
 import os
 import subprocess
 from threading import Thread
+from multiprocessing import Lock
+
+
+lock = Lock()
+
+
+def lock_print(msg):
+    with lock:
+        print(msg)
 
 
 class Runner(Thread):
@@ -10,16 +19,16 @@ class Runner(Thread):
         self.path = path
 
     def run(self):
-        print("Starting on " + self.name)
+        lock_print("Starting on " + self.name)
         with subprocess.Popen(["git", "add", "-A"], cwd=self.path, stdout=subprocess.PIPE) as proc:
             out = proc.stdout.read().decode("utf-8")
-            print("From " + self.name + ": " + out)
+            lock_print("From " + self.name + ": " + out)
         with subprocess.Popen(["git", "commit", "-m", "prototype development"], cwd=self.path, stdout=subprocess.PIPE) as proc:
             out = proc.stdout.read().decode("utf-8")
-            print("From " + self.name + ": " + out)
+            lock_print("From " + self.name + ": " + out)
         with subprocess.Popen(["git", "push"], cwd=self.path, stdout=subprocess.PIPE) as proc:
             out = proc.stdout.read().decode("utf-8")
-            print("From " + self.name + ": " + out)
+            lock_print("From " + self.name + ": " + out)
 
 
 if (__name__ == '__main__'):
