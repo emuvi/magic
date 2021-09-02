@@ -23,18 +23,12 @@ class Runner(Thread):
 
     def run(self):
         lock_print("Starting on " + self.name)
-        with subprocess.Popen(["git", "add", "-A"], cwd=self.path, stdout=subprocess.PIPE) as proc:
-            proc.wait()
-            out = proc.stdout.read().decode("utf-8")
-            lock_print("From " + self.name + ": " + out)
-        with subprocess.Popen(["git", "commit", "-m", "prototype development"], cwd=self.path, stdout=subprocess.PIPE) as proc:
-            proc.wait()
-            out = proc.stdout.read().decode("utf-8")
-            lock_print("From " + self.name + ": " + out)
-        with subprocess.Popen(["git", "push"], cwd=self.path, stdout=subprocess.PIPE) as proc:
-            proc.wait()
-            out = proc.stdout.read().decode("utf-8")
-            lock_print("From " + self.name + ": " + out)
+        output = subprocess.run(["git", "add", "-A"], cwd=self.path, capture_output=True)
+        lock_print("From " + self.name + ": " + output.stdout.decode("UTF8"))
+        output = subprocess.run(["git", "commit", "-m", "prototype development"], cwd=self.path, capture_output=True)
+        lock_print("From " + self.name + ": " + output.stdout.decode("UTF8"))
+        output = subprocess.run(["git", "push"], cwd=self.path, capture_output=True)
+        lock_print("From " + self.name + ": " + output.stdout.decode("UTF8"))
 
 
 if (__name__ == '__main__'):
