@@ -23,12 +23,21 @@ class Runner(Thread):
 
     def run(self):
         lock_print("Starting on " + self.name)
-        output = subprocess.run(["git", "add", "-A"], cwd=self.path, capture_output=True)
-        lock_print("From " + self.name + ": " + output.stdout.decode("UTF8"))
-        output = subprocess.run(["git", "commit", "-m", "prototype development"], cwd=self.path, capture_output=True)
-        lock_print("From " + self.name + ": " + output.stdout.decode("UTF8"))
-        output = subprocess.run(["git", "push"], cwd=self.path, capture_output=True)
-        lock_print("From " + self.name + ": " + output.stdout.decode("UTF8"))
+        
+        result = subprocess.run(["git", "add", "-A"], cwd=self.path, capture_output=True)
+        result_text = result.stdout.decode("UTF8")
+        result_text += " " + result.stderr.decode("UTF8")
+        lock_print("From " + self.name + ": " + result_text)
+
+        result = subprocess.run(["git", "commit", "-m", "prototype development"], cwd=self.path, capture_output=True)
+        result_text = result.stdout.decode("UTF8")
+        result_text += " " + result.stderr.decode("UTF8")
+        lock_print("From " + self.name + ": " + result.stdout.decode("UTF8"))
+
+        result = subprocess.run(["git", "push"], cwd=self.path, capture_output=True)
+        result_text = result.stdout.decode("UTF8")
+        result_text += " " + result.stderr.decode("UTF8")
+        lock_print("From " + self.name + ": " + result_text)
 
 
 if (__name__ == '__main__'):
