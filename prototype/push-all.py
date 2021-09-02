@@ -12,11 +12,14 @@ class Runner(Thread):
     def run(self):
         print("Starting on " + self.name)
         with subprocess.Popen(["git", "add", "-A"], cwd=self.path, stdout=subprocess.PIPE) as proc:
-            print("From " + self.name + ": " + str(proc.stdout.read().decode("utf-8")))
+            out = proc.stdout.read().decode("utf-8")
+            print("From " + self.name + ": " + out)
         with subprocess.Popen(["git", "commit", "-m", "prototype development"], cwd=self.path, stdout=subprocess.PIPE) as proc:
-            print("From " + self.name + ": " + str(proc.stdout.read().decode("utf-8")))
+            out = proc.stdout.read().decode("utf-8")
+            print("From " + self.name + ": " + out)
         with subprocess.Popen(["git", "push"], cwd=self.path, stdout=subprocess.PIPE) as proc:
-            print("From " + self.name + ": " + str(proc.stdout.read().decode("utf-8")))
+            out = proc.stdout.read().decode("utf-8")
+            print("From " + self.name + ": " + out)
 
 
 if (__name__ == '__main__'):
