@@ -8,12 +8,12 @@ lock = Lock()
 
 
 def lock_print(origin, result):
-    with lock:
-        result = result.strip()
-        if result:
-            result = result.replace("\n", " ")
-            result = result.replace("\r", "")
-            result = result.replace("  ", " ")
+    result = result.replace("\r", "")
+    result = result.replace("\n", " ")
+    result = result.replace("  ", " ")
+    result = result.strip()
+    if result:
+        with lock:
             print("From " + origin + ": " + result, flush=True)
 
 
