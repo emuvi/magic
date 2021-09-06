@@ -5,7 +5,6 @@
   "editor.wordWrap": "on",
   "editor.suggestSelection": "first",
   "editor.wrappingIndent": "deepIndent",
-  "editor.minimap.enabled": false,
   "editor.formatOnSave": false,
   "editor.formatOnType": false,
   "editor.fontWeight": "bold",

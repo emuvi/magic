@@ -38,6 +38,7 @@ ms-vsliveshare.vsliveshare
 ms-vsliveshare.vsliveshare-audio
 PhilHindle.errorlens
 rangav.vscode-thunder-client
+rebornix.ruby
 redhat.fabric8-analytics
 redhat.java
 redhat.vscode-commons
@@ -64,5 +65,6 @@ vscjava.vscode-java-dependency
 vscjava.vscode-java-pack
 vscjava.vscode-java-test
 vscjava.vscode-maven
+wingrunr21.vscode-ruby
 xaver.clang-format
 yzhang.markdown-all-in-one
