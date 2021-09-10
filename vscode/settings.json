@@ -1,5 +1,5 @@
 {
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "editor.fontSize": 18,
   "editor.lineHeight": 33,
   "editor.wordWrap": "on",
@@ -9,7 +9,7 @@
   "editor.formatOnType": false,
   "editor.fontWeight": "bold",
   "editor.fontFamily": "Source Code Pro",
-  "workbench.colorTheme": "Primer Light",
+  "workbench.colorTheme": "GitHub Light Default",
   "workbench.iconTheme": "bearded-icons",
   "workbench.startupEditor": "none",
   "window.restoreWindows": "none",
@@ -43,26 +43,27 @@
     "**/.factorypath": true
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "aeschli.vscode-css-formatter"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[py]": {
-    "editor.tabSize": 4,
     "editor.defaultFormatter": "ms-python.python"
   },
   "[php]": {
-    "editor.tabSize": 4,
     "editor.defaultFormatter": "kokororin.vscode-phpfmt"
   },
   "[phtml]": {
@@ -86,7 +87,6 @@
     "editor.defaultFormatter": "xaver.clang-format"
   },
   "[rust]": {
-    "editor.tabSize": 4,
     "editor.defaultFormatter": "rust-lang.rust"
   },
   "errorLens.errorColor": "rgba(240,0,0,0.1)",
@@ -101,7 +101,7 @@
     "editor.background": "#FFFDF5",
     "editor.selectionBackground": "#FFCDCD",
     "editor.selectionHighlightBackground": "#E9CDFF77",
-    "tab.activeBackground": "#3EE2B9",
+    "tab.activeBackground": "#47ffd1",
     "tab.inactiveBackground": "#DAE9E5",
     "selection.background": "#FF5454",
     "menu.selectionBackground": "#FF5454",
@@ -120,33 +120,33 @@
     "keywords": "#EE3333",
     "functions": "#3333EE",
     "variables": "#555555",
-    "numbers": "#EE7755",
+    "numbers": "#db6c4d",
     "strings": "#557755",
-    "types": "#EE33EE",
+    "types": "#AC27AC",
     "comments": "#A5A5A5",
     "textMateRules": [
       {
         "scope": "punctuation",
         "settings": {
-          "foreground": "#777777"
+          "foreground": "#bd2a2a"
         }
       },
       {
         "scope": "constant.language",
         "settings": {
-          "foreground": "#EE33EE"
+          "foreground": "#EE3333"
         }
       },
       {
         "scope": "storage.type.primitive",
         "settings": {
-          "foreground": "#EE33EE"
+          "foreground": "#AC27AC"
         }
       },
       {
         "scope": "meta.class storage.type",
         "settings": {
-          "foreground": "#EE33EE"
+          "foreground": "#AC27AC"
         }
       },
       {
