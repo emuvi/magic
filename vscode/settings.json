@@ -98,7 +98,7 @@
   "errorLens.infoColor": "rgba(0,200,0,0.1)",
   "errorLens.infoTextColor": "rgba(0,200,0,0.4)",
   "workbench.colorCustomizations": {
-    "editor.background": "#FFFDF5",
+    "editor.background": "#FFFEFA",
     "editor.selectionBackground": "#FFCDCD",
     "editor.selectionHighlightBackground": "#E9CDFF77",
     "tab.activeBackground": "#47ffd1",
@@ -166,13 +166,15 @@
     "jupyter-notebook": "left"
   },
   "cSpell.userWords": [
-    "LGPL",
+    "admister",
     "chdir",
     "cmake",
     "cmds",
     "consts",
     "elisp",
+    "favicon",
     "keymap",
+    "LGPL",
     "magick",
     "pointel",
     "pointto",
