@@ -25,6 +25,7 @@
   "cmake.configureOnOpen": false,
   "C_Cpp.updateChannel": "Insiders",
   "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
   "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "java.configuration.updateBuildConfiguration": "automatic",
@@ -98,7 +99,7 @@
   "errorLens.infoColor": "rgba(0,200,0,0.1)",
   "errorLens.infoTextColor": "rgba(0,200,0,0.4)",
   "workbench.colorCustomizations": {
-    "editor.background": "#FFFDF5",
+    "editor.background": "#FFFEFA",
     "editor.selectionBackground": "#FFCDCD",
     "editor.selectionHighlightBackground": "#E9CDFF77",
     "tab.activeBackground": "#47ffd1",
@@ -166,13 +167,15 @@
     "jupyter-notebook": "left"
   },
   "cSpell.userWords": [
-    "LGPL",
+    "admister",
     "chdir",
     "cmake",
     "cmds",
     "consts",
     "elisp",
+    "favicon",
     "keymap",
+    "LGPL",
     "magick",
     "pointel",
     "pointto",
