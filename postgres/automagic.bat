@@ -1,4 +1,4 @@
 @echo off
 D:
 cd D:\Backups
-python backup.py
+python automagic.py

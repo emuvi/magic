@@ -1,40 +1,64 @@
-"""
-This script is used to backup a PostgreSQL globals and databases.
-
-Author: Éverton M. Vieira
-"""
-
 import os
+import sys
 import datetime as dt
+import utils
 
 
-def __backup_globals():
-    newName = "globals-" + weekday + "-new.bkp"
-    if os.path.exists(newName):
-        os.remove(newName)
-    if os.system("pg_dumpall --clean -U postgres -v --globals-only " +
-                 "-f " + newName) == 0:
-        oldName = "globals-" + weekday + "-old.bkp"
-        nowName = "globals-" + weekday + ".bkp"
-        if os.path.exists(oldName):
-            os.remove(oldName)
-        if os.path.exists(nowName):
-            os.rename(nowName, oldName)
-        os.rename(newName, nowName)
+class Backup:
+    target_backup_host = "localhost"
+    target_backup_week = str(dt.datetime.today().weekday())
+    data_relative_to = "periodically"
+
+    def __init__(self,
+                 target_backup_host: str = "",
+                 target_backup_week: str = "",
+                 data_relative_to: str = ""):
+        if target_backup_host:
+            self.target_backup_host = target_backup_host
+        if target_backup_week:
+            self.target_backup_week = target_backup_week
+        if data_relative_to:
+            self.data_relative_to = data_relative_to
+
+
+def backup_globals(backup: Backup):
+    new_name = utils.get_data_path(
+        backup.data_relative_to,
+        "globals-" + backup.target_backup_week + "-new.bkp")
+    if os.path.exists(new_name):
+        os.remove(new_name)
+    if os.system("pg_dumpall -h " + backup.target_backup_host +
+                 " --clean -U postgres -v --globals-only " + "-f " + new_name) == 0:
+        old_name = utils.get_data_path(
+            backup.data_relative_to,
+            "globals-" + backup.target_backup_week + "-old.bkp")
+        now_name = utils.get_data_path(
+            backup.data_relative_to,
+            "globals-" + backup.target_backup_week + ".bkp")
+        if os.path.exists(old_name):
+            os.remove(old_name)
+        if os.path.exists(now_name):
+            os.rename(now_name, old_name)
+        os.rename(new_name, now_name)
         print("Successfully finish to backup of globals")
     else:
-        if os.path.exists(newName):
-            os.remove(newName)
-        print("Fail backup of globals")
+        if os.path.exists(new_name):
+            os.remove(new_name)
+        print("Fail backup the globals.")
+        sys.exit(-1)
 
 
-def __list_databases():
+def list_databases(backup: Backup):
     db_list = []
-    process = os.popen(
-        'psql -U postgres -c "SELECT datname FROM pg_database;"')
-    result = process.read()
+    process = os.popen('psql -h ' + backup.target_backup_host +
+                       ' -U postgres -c "SELECT datname FROM pg_database;"')
+    result_text = process.read()
+    result_code = process.close()
+    if not (result_code == None or result_code == 0):
+        print("Fail to list databases.")
+        sys.exit(-1)
     started = False
-    for line in result.splitlines():
+    for line in result_text.splitlines():
         line = line.strip()
         if not started:
             if line.startswith('-'):
@@ -47,31 +71,40 @@ def __list_databases():
     return db_list
 
 
-def __backup_database(dbname):
-    newName = "db-" + dbname + "-" + weekday + "-new.bkp"
-    if os.path.exists(newName):
-        os.remove(newName)
-    if os.system("pg_dump --clean -d " + dbname + " -U postgres " +
+def backup_database(backup: Backup, db_name: str):
+    new_name = utils.get_data_path(
+        backup.data_relative_to,
+        "db-" + db_name + "-" + backup.target_backup_week + "-new.bkp")
+    if os.path.exists(new_name):
+        os.remove(new_name)
+    if os.system("pg_dump -h " + backup.target_backup_host +
+                 " -d " + db_name + " -U postgres " +
                  "--format tar --blobs --encoding UTF8 --verbose " +
-                 "-f " + newName) == 0:
-        oldName = "db-" + dbname + "-" + weekday + "-old.bkp"
-        nowName = "db-" + dbname + "-" + weekday + ".bkp"
-        if os.path.exists(oldName):
-            os.remove(oldName)
-        if os.path.exists(nowName):
-            os.rename(nowName, oldName)
-        os.rename(newName, nowName)
-        print("Successfully finish to backup database " + dbname)
+                 "-f " + new_name) == 0:
+        old_name = utils.get_data_path(
+            backup.data_relative_to,
+            "db-" + db_name + "-" + backup.target_backup_week + "-old.bkp")
+        now_name = utils.get_data_path(
+            backup.data_relative_to,
+            "db-" + db_name + "-" + backup.target_backup_week + ".bkp")
+        if os.path.exists(old_name):
+            os.remove(old_name)
+        if os.path.exists(now_name):
+            os.rename(now_name, old_name)
+        os.rename(new_name, now_name)
+        print("Successfully finish to backup database " + db_name)
     else:
-        if os.path.exists(newName):
-            os.remove(newName)
-        print("Fail backup database " + dbname)
+        if os.path.exists(new_name):
+            os.remove(new_name)
+        print("Fail backup database " + db_name)
 
 
-weekday = str(dt.datetime.today().weekday())
+def backup_globals_and_databases(backup: Backup):
+    backup_globals(backup)
+    for db_name in list_databases(backup):
+        backup_database(backup, db_name)
+    print("Successfully finish to backup the globals and all databases.")
 
 
 if __name__ == "__main__":
-    __backup_globals()
-    for dbname in __list_databases():
-        __backup_database(dbname)
+    backup_globals_and_databases(Backup())

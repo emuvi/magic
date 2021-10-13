@@ -1,3 +1,4 @@
+aeschli.vscode-css-formatter
 alefragnani.Bookmarks
 amiralizadeh9480.cpp-helper
 bbugh.change-color-format
@@ -6,6 +7,8 @@ bungcip.better-toml
 cheshirekow.cmake-format
 CoenraadS.bracket-pair-colorizer-2
 cssho.vscode-svgviewer
+dbaeumer.vscode-eslint
+emuvi.errcode
 evgeniypeshkov.syntax-highlighter
 felixfbecker.php-debug
 felixfbecker.php-pack
@@ -26,14 +29,14 @@ ms-azuretools.vscode-docker
 ms-python.python
 ms-python.vscode-pylance
 ms-toolsai.jupyter
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
 ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
 ms-vscode-remote.remote-wsl
 ms-vscode.cmake-tools
 ms-vscode.cpptools
-ms-vsliveshare.vsliveshare
-ms-vsliveshare.vsliveshare-audio
 PhilHindle.errorlens
 rangav.vscode-thunder-client
 rebornix.ruby

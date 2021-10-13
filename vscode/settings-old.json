@@ -28,6 +28,8 @@
   "terminal.integrated.defaultProfile.windows": "Command Prompt",
   "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "python.defaultInterpreterPath": "${env:PYTHON_EXEC}",
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.configuration.checkProjectSettingsExclusions": false,
   "java.semanticHighlighting.enabled": true,
@@ -82,10 +84,10 @@
     "editor.wordBasedSuggestions": false
   },
   "[cpp]": {
-    "editor.defaultFormatter": "xaver.clang-format"
+    "editor.defaultFormatter": "ms-vscode.cpptools"
   },
   "[c]": {
-    "editor.defaultFormatter": "xaver.clang-format"
+    "editor.defaultFormatter": "ms-vscode.cpptools"
   },
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust"
@@ -99,6 +101,7 @@
   "errorLens.infoColor": "rgba(0,200,0,0.1)",
   "errorLens.infoTextColor": "rgba(0,200,0,0.4)",
   "workbench.colorCustomizations": {
+    "editor.foreground": "#450000",
     "editor.background": "#FFFEFA",
     "editor.selectionBackground": "#FFCDCD",
     "editor.selectionHighlightBackground": "#E9CDFF77",
@@ -168,19 +171,24 @@
   },
   "cSpell.userWords": [
     "admister",
+    "cfgs",
     "chdir",
     "cmake",
     "cmds",
     "consts",
     "elisp",
     "favicon",
+    "iframes",
     "keymap",
     "LGPL",
     "magick",
     "pointel",
     "pointto",
     "qinpel",
+    "resizer",
+    "scroller",
     "setq",
     "varchar"
-  ]
+  ],
+  "workbench.editor.untitled.hint": "hidden"
 }
