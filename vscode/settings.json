@@ -5,22 +5,26 @@
   "editor.wordWrap": "on",
   "editor.suggestSelection": "first",
   "editor.wrappingIndent": "deepIndent",
+  "editor.minimap.enabled": false,
   "editor.formatOnSave": false,
   "editor.formatOnType": false,
   "editor.fontWeight": "bold",
   "editor.fontFamily": "Source Code Pro",
   "workbench.colorTheme": "GitHub Light Default",
-  "workbench.iconTheme": "bearded-icons",
+  "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "none",
   "window.restoreWindows": "none",
+  "window.title": "${rootName} :: ${activeEditorShort}",
   "files.hotExit": "off",
   "cSpell.language": "en,pt,pt_BR",
   "explorer.confirmDelete": false,
+  "vsicons.dontShowNewVersionMessage": true,
   "explorer.confirmDragAndDrop": false,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
-  "editor.rulers": [90],
-  "prettier.printWidth": 90,
+  "editor.rulers": [
+    90
+  ],
   "html.format.wrapLineLength": 90,
   "cmake.configureOnOpen": false,
   "C_Cpp.updateChannel": "Insiders",
@@ -76,7 +80,9 @@
     "editor.defaultFormatter": "redhat.java"
   },
   "[dart]": {
-    "editor.rulers": [90],
+    "editor.rulers": [
+      90
+    ],
     "editor.selectionHighlight": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
@@ -181,7 +187,10 @@
     "elisp",
     "emuvi",
     "favicon",
+    "Flexpel",
     "iframes",
+    "IFSC",
+    "Incorpel",
     "keymap",
     "LGPL",
     "magick",
@@ -192,6 +201,9 @@
     "resizer",
     "scroller",
     "setq",
+    "Udemy",
+    "Udesc",
+    "Unisul",
     "varchar",
     "Yami"
   ]
