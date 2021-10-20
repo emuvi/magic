@@ -100,6 +100,7 @@
   "errorLens.hintTextColor": "rgba(20,140,140,0.4)",
   "errorLens.infoColor": "rgba(0,200,0,0.1)",
   "errorLens.infoTextColor": "rgba(0,200,0,0.4)",
+  "workbench.editor.untitled.hint": "hidden",
   "workbench.colorCustomizations": {
     "editor.foreground": "#450000",
     "editor.background": "#FFFEFA",
@@ -171,6 +172,7 @@
   },
   "cSpell.userWords": [
     "admister",
+    "automagic",
     "cfgs",
     "chdir",
     "cmake",
@@ -186,10 +188,11 @@
     "pointel",
     "pointto",
     "qinpel",
+    "reqwest",
     "resizer",
     "scroller",
     "setq",
-    "varchar"
-  ],
-  "workbench.editor.untitled.hint": "hidden"
+    "varchar",
+    "Yami"
+  ]
 }

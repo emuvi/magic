@@ -177,6 +177,7 @@
     "cmds",
     "consts",
     "elisp",
+    "emuvi",
     "favicon",
     "iframes",
     "keymap",
