@@ -109,7 +109,7 @@
   "workbench.editor.untitled.hint": "hidden",
   "workbench.colorCustomizations": {
     "editor.foreground": "#450000",
-    "editor.background": "#FFFEFA",
+    "editor.background": "#FFFAEF",
     "editor.selectionBackground": "#FFCDCD",
     "editor.selectionHighlightBackground": "#E9CDFF77",
     "tab.activeBackground": "#47ffd1",
@@ -128,42 +128,48 @@
     "#8A0000"
   ],
   "editor.tokenColorCustomizations": {
-    "keywords": "#EE3333",
-    "functions": "#3333EE",
-    "variables": "#555555",
-    "numbers": "#db6c4d",
+    "keywords": "#BD3D3D",
+    "types": "#9E3D9E",
+    "functions": "#6C3DBD",
+    "variables": "#360045",
+    "numbers": "#BD6C3D",
     "strings": "#557755",
-    "types": "#AC27AC",
     "comments": "#A5A5A5",
     "textMateRules": [
       {
         "scope": "punctuation",
         "settings": {
-          "foreground": "#bd2a2a"
+          "foreground": "#BD3D3D"
         }
       },
       {
         "scope": "constant.language",
         "settings": {
-          "foreground": "#EE3333"
-        }
-      },
-      {
-        "scope": "storage.type.primitive",
-        "settings": {
-          "foreground": "#AC27AC"
-        }
-      },
-      {
-        "scope": "meta.class storage.type",
-        "settings": {
-          "foreground": "#AC27AC"
+          "foreground": "#BD3D3D"
         }
       },
       {
         "scope": "keyword.operator",
         "settings": {
-          "foreground": "#EE3333"
+          "foreground": "#BD3D3D"
+        }
+      },
+      {
+        "scope": "storage.type.primitive",
+        "settings": {
+          "foreground": "#9E3D9E"
+        }
+      },
+      {
+        "scope": "meta.class storage.type",
+        "settings": {
+          "foreground": "#9E3D9E"
+        }
+      },
+      {
+        "scope": "variable.other",
+        "settings": {
+          "foreground": "#360045"
         }
       }
     ]
@@ -184,6 +190,7 @@
     "cmake",
     "cmds",
     "consts",
+    "Deno",
     "elisp",
     "emuvi",
     "favicon",
@@ -201,10 +208,13 @@
     "resizer",
     "scroller",
     "setq",
-    "Udemy",
-    "Udesc",
-    "Unisul",
+    "spacebar",
+    "tahoma",
+    "udemy",
+    "udesc",
+    "unisul",
     "varchar",
-    "Yami"
+    "verdana",
+    "yami"
   ]
 }
