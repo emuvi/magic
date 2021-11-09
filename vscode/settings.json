@@ -49,6 +49,8 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
+  "rufo.exe": "C:\\Ruby\\bin\\rufo.bat",
+  "rufo.useBundler": false,
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
@@ -66,6 +68,10 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[ruby]": {
+    "editor.defaultFormatter": "jnbt.vscode-rufo",
+    "editor.tabSize": 2,
   },
   "[py]": {
     "editor.defaultFormatter": "ms-python.python"
@@ -182,6 +188,9 @@
     "default": "right",
     "jupyter-notebook": "left"
   },
+  "cSpell.enableFiletypes": [
+    "ruby"
+  ],
   "cSpell.userWords": [
     "admister",
     "automagic",
@@ -190,14 +199,16 @@
     "cmake",
     "cmds",
     "consts",
-    "Deno",
+    "dbname",
+    "deno",
     "elisp",
     "emuvi",
     "favicon",
-    "Flexpel",
+    "flexpel",
     "iframes",
     "IFSC",
-    "Incorpel",
+    "incorpel",
+    "jdbc",
     "keymap",
     "LGPL",
     "magick",
