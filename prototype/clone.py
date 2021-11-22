@@ -7,14 +7,15 @@ from multiprocessing import Lock
 lock = Lock()
 
 
-def lock_print(origin, result):
+def lock_print(origin: str, stage: str, result:str):
     result = result.replace("\r", "")
     result = result.replace("\n", " ")
-    result = result.replace("  ", " ")
+    while result.find("  ") > -1:
+        result = result.replace("  ", " ")
     result = result.strip()
     if result:
         with lock:
-            print("From " + origin + ": " + result, flush=True)
+            print("From " + origin + " on " + stage + " : " + result, flush=True)
 
 
 class Runner(Thread):
@@ -23,12 +24,10 @@ class Runner(Thread):
         self.name = name
 
     def run(self):
-        lock_print(self.name, "starting...")
-
         result = subprocess.run(["git", "clone", "https://github.com/emuvi/" + self.name], capture_output=True)
         result_text = result.stdout.decode("UTF8")
         result_text += " " + result.stderr.decode("UTF8")
-        lock_print(self.name, result_text)
+        lock_print(self.name, "clone", result_text)
 
 
 def get_projects():
