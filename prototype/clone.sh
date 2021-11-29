@@ -1,2 +1,2 @@
-#/bin/bash
-python3 clone.py
+#!/bin/bash
+py clone.py

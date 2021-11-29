@@ -1,3 +1,3 @@
 @echo off
-python clone.py
+py clone.py
 pause

@@ -1,2 +1,2 @@
-#/bin/bash
-python3 pull-all.py
+#!/bin/bash
+py pull-all.py

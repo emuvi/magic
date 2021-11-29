@@ -1,2 +1,2 @@
-#/bin/bash
-python3 push-all.py
+#!/bin/bash
+py push-all.py

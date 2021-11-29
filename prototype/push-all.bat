@@ -1,3 +1,3 @@
 @echo off
-python push-all.py
+py push-all.py
 pause

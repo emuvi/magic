@@ -1,3 +1,3 @@
 @echo off
-python pull-all.py
+py pull-all.py
 pause
