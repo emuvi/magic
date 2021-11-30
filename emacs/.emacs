@@ -12,7 +12,7 @@
   (setq default-directory "~/Code/")
 )
 
-(add-to-list 'load-path (concat default-directory "magic/elisp"))
+(add-to-list 'load-path (concat default-directory "magic/emacs"))
 (load-library "pointel-utils")
 
 (setq backup-directory-alist `(("." . "~/.emacs.d/emacs_backup")))
