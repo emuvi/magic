@@ -39,7 +39,7 @@
         "list": 
         [
             {
-                "colorScheme": "Pointel",
+                "colorScheme": "Solarized Light",
                 "commandline": "powershell.exe",
                 "cursorShape": "emptyBox",
                 "fontFace": "Source Code Pro",
@@ -51,7 +51,7 @@
                 "startingDirectory": "C:\\Code"
             },
             {
-                "colorScheme": "Pointel",
+                "colorScheme": "Solarized Light",
                 "commandline": "cmd.exe",
                 "cursorShape": "emptyBox",
                 "fontFace": "Source Code Pro",
@@ -63,7 +63,7 @@
                 "startingDirectory": "C:\\Code"
             },
             {
-                "colorScheme": "Pointel",
+                "colorScheme": "Solarized Light",
                 "cursorShape": "emptyBox",
                 "fontFace": "Source Code Pro",
                 "fontSize": 14,
@@ -80,7 +80,7 @@
                 "commandline": "C:/msys2/msys2_shell.cmd -defterm -here -no-start -msys",
                 "startingDirectory": "C:/Code",
                 "icon": "C:/msys2/msys2.ico",
-                "colorScheme": "Pointel",
+                "colorScheme": "Solarized Light",
                 "cursorShape": "emptyBox",
                 "fontFace": "Source Code Pro",
                 "fontSize": 14,
@@ -92,7 +92,7 @@
                 "commandline": "C:/msys2/msys2_shell.cmd -defterm -here -no-start -mingw64",
                 "startingDirectory": "C:/Code",
                 "icon": "C:/msys2/mingw64.ico",
-                "colorScheme": "Pointel",
+                "colorScheme": "Solarized Light",
                 "cursorShape": "emptyBox",
                 "fontFace": "Source Code Pro",
                 "fontSize": 14,
@@ -104,7 +104,7 @@
                 "commandline": "C:/msys2/msys2_shell.cmd -defterm -here -no-start -mingw32",
                 "startingDirectory": "C:/Code",
                 "icon": "C:/msys2/mingw32.ico",
-                "colorScheme": "Pointel",
+                "colorScheme": "Solarized Light",
                 "cursorShape": "emptyBox",
                 "fontFace": "Source Code Pro",
                 "fontSize": 14,
@@ -253,7 +253,7 @@
             "yellow": "#B58900"
         },
         {
-            "background": "#FDF6E3",
+            "background": "#FFFBED",
             "black": "#002B36",
             "blue": "#268BD2",
             "brightBlack": "#073642",
