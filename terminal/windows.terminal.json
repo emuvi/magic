@@ -39,35 +39,44 @@
         "list": 
         [
             {
-                "colorScheme": "Solarized Light",
+                "colorScheme": "Tango Light",
                 "commandline": "powershell.exe",
                 "cursorShape": "emptyBox",
-                "fontFace": "Source Code Pro",
-                "fontSize": 14,
-                "fontWeight": "bold",
+                "font": 
+                {
+                    "face": "Source Code Pro",
+                    "size": 14,
+                    "weight": "bold"
+                },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell",
                 "startingDirectory": "C:\\Code"
             },
             {
-                "colorScheme": "Solarized Light",
+                "colorScheme": "Tango Light",
                 "commandline": "cmd.exe",
                 "cursorShape": "emptyBox",
-                "fontFace": "Source Code Pro",
-                "fontSize": 14,
-                "fontWeight": "bold",
+                "font": 
+                {
+                    "face": "Source Code Pro",
+                    "size": 14,
+                    "weight": "bold"
+                },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Prompt de comando",
                 "startingDirectory": "C:\\Code"
             },
             {
-                "colorScheme": "Solarized Light",
+                "colorScheme": "Tango Light",
                 "cursorShape": "emptyBox",
-                "fontFace": "Source Code Pro",
-                "fontSize": 14,
-                "fontWeight": "bold",
+                "font": 
+                {
+                    "face": "Source Code Pro",
+                    "size": 14,
+                    "weight": "bold"
+                },
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
                 "hidden": false,
                 "name": "Azure Cloud Shell",
@@ -75,41 +84,50 @@
                 "startingDirectory": "C:\\Code"
             },
             {
-                "guid": "{71160544-14d8-4194-af25-d05feeac7233}",
-                "name": "MSYS / MSYS2",
+                "colorScheme": "Tango Light",
                 "commandline": "C:/msys2/msys2_shell.cmd -defterm -here -no-start -msys",
-                "startingDirectory": "C:/Code",
-                "icon": "C:/msys2/msys2.ico",
-                "colorScheme": "Solarized Light",
                 "cursorShape": "emptyBox",
-                "fontFace": "Source Code Pro",
-                "fontSize": 14,
-                "fontWeight": "bold"
+                "font": 
+                {
+                    "face": "Source Code Pro",
+                    "size": 14,
+                    "weight": "bold"
+                },
+                "guid": "{71160544-14d8-4194-af25-d05feeac7233}",
+                "icon": "C:/msys2/msys2.ico",
+                "name": "MSYS / MSYS2",
+                "startingDirectory": "C:/Code"
             },
             {
-                "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
-                "name": "MINGW64 / MSYS2",
+                "colorScheme": "Tango Light",
                 "commandline": "C:/msys2/msys2_shell.cmd -defterm -here -no-start -mingw64",
-                "startingDirectory": "C:/Code",
-                "icon": "C:/msys2/mingw64.ico",
-                "colorScheme": "Solarized Light",
                 "cursorShape": "emptyBox",
-                "fontFace": "Source Code Pro",
-                "fontSize": 14,
-                "fontWeight": "bold"
-                },
+                "font": 
                 {
-                "guid": "{2d51fdc4-a03b-4efe-81bc-722b7f6f3820}",
-                "name": "MINGW32 / MSYS2",
+                    "face": "Source Code Pro",
+                    "size": 14,
+                    "weight": "bold"
+                },
+                "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
+                "icon": "C:/msys2/mingw64.ico",
+                "name": "MINGW64 / MSYS2",
+                "startingDirectory": "C:/Code"
+            },
+            {
+                "colorScheme": "Tango Light",
                 "commandline": "C:/msys2/msys2_shell.cmd -defterm -here -no-start -mingw32",
-                "startingDirectory": "C:/Code",
-                "icon": "C:/msys2/mingw32.ico",
-                "colorScheme": "Solarized Light",
                 "cursorShape": "emptyBox",
-                "fontFace": "Source Code Pro",
-                "fontSize": 14,
-                "fontWeight": "bold"
-                }
+                "font": 
+                {
+                    "face": "Source Code Pro",
+                    "size": 14,
+                    "weight": "bold"
+                },
+                "guid": "{2d51fdc4-a03b-4efe-81bc-722b7f6f3820}",
+                "icon": "C:/msys2/mingw32.ico",
+                "name": "MINGW32 / MSYS2",
+                "startingDirectory": "C:/Code"
+            }
         ]
     },
     "schemes": 
@@ -207,7 +225,7 @@
             "yellow": "#C18301"
         },
         {
-            "background": "#282a36",
+            "background": "#282A36",
             "black": "#000000",
             "blue": "#6000E6",
             "brightBlack": "#4D4D4D",
