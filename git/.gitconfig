@@ -5,3 +5,5 @@
 	helper = store --file ~/.git-credentials
 [credential "https://github.com"]
 	username = emuvi
+[pull]
+	ff = only
