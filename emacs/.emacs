@@ -75,14 +75,14 @@
 
 (set-face-attribute 'default nil :font "Source Code Pro" :height 140 :weight 'bold)
 
-(set-face-attribute 'font-lock-keyword-face nil :foreground "red")
+(set-face-attribute 'font-lock-keyword-face nil :foreground "darkred")
 (set-face-attribute 'font-lock-type-face nil :foreground "darkmagenta")
-(set-face-attribute 'font-lock-function-name-face nil :foreground "blue")
-(set-face-attribute 'font-lock-variable-name-face nil :slant 'italic)
+(set-face-attribute 'font-lock-function-name-face nil :foreground "darkblue")
+(set-face-attribute 'font-lock-variable-name-face nil :foreground "black")
 (set-face-attribute 'font-lock-string-face nil :foreground "darkgreen")
 (set-face-attribute 'font-lock-constant-face nil :foreground "brown")
 (set-face-attribute 'font-lock-preprocessor-face nil :foreground "darkgray")
-(set-face-attribute 'font-lock-comment-face nil :foreground "lightgray")
+(set-face-attribute 'font-lock-comment-face nil :foreground "gray")
 
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                             ;;
@@ -126,8 +126,8 @@
 (define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
 
 ;; Move lines keybindings
-(global-set-key (kbd "S-C-M-<up>") 'move-line-up)
-(global-set-key (kbd "S-C-M-<down>") 'move-line-down)
+(global-set-key (kbd "M-<up>") 'move-line-up)
+(global-set-key (kbd "M-<down>") 'move-line-down)
 
 
 
@@ -276,8 +276,8 @@
   (add-to-list 'company-backends 'company-web-jade)
   (add-to-list 'company-backends 'company-web-slim))
 
-(use-package rainbow-delimiters
-  :hook (prog-mode . rainbow-delimiters-mode))
+;;(use-package rainbow-delimiters
+;;  :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package doom-themes 
   :defer t
@@ -422,6 +422,7 @@
         (java-mode . lsp)
         (go-mode . lsp)
         (rust-mode . lsp)
+		(lua-mode . lsp)
         (cmake-mode . lsp)
         (c++-mode . lsp)
         (c-mode . lsp)
@@ -435,9 +436,9 @@
   (setq lsp-modeline-code-actions-enable nil)
   (setq lsp-modeline-diagnostics-enable nil)
   :config
-  (set-face-attribute 'lsp-face-highlight-read nil :foreground "darkblue")
-  (set-face-attribute 'lsp-face-highlight-textual nil :foreground "darkblue")
-  (set-face-attribute 'lsp-face-highlight-write nil :foreground "darkblue")
+  (set-face-attribute 'lsp-face-highlight-read nil :background "lightblue")
+  (set-face-attribute 'lsp-face-highlight-textual nil :background "lightblue")
+  (set-face-attribute 'lsp-face-highlight-write nil :background "lightblue")
   :bind (:map lsp-mode-map
               ("C-c l A" . helm-lsp-code-actions)
               ("C-c l w" . helm-lsp-workspace-symbol)
@@ -525,6 +526,11 @@
   :mode "\\.rs\\'"
   :hook
   (rust-mode . lsp))
+
+(use-package lua-mode
+  :mode "\\.lua\\'"
+  :hook
+  (lua-mode . lsp))
 
 (use-package cmake-mode
   :mode (("CMakeLists\\.txt\\'" . cmake-mode)
@@ -630,3 +636,16 @@
   (when emmet-mode
     (emmet-expand-line args)))
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(emmet-mode yasnippet-snippets yasnippet modern-cpp-font-lock cmake-font-lock cmake-mode rust-mode go-mode lsp-java groovy-mode python-mode mmm-mode php-mode web-mode json-mode typescript-mode lsp-treemacs lsp-ui lsp-mode evil-collection evil-commentary evil org-bullets helpful which-key counsel ivy-rich ivy diminish doom-themes rainbow-delimiters company-web company magit centaur-tabs dashboard treemacs-projectile treemacs projectile doom-modeline expand-region auto-package-update use-package)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
