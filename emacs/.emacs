@@ -4,6 +4,7 @@
 ;;                                                                             ;;
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 
+
 ;; Change default directory for e.g. find-file [C-x C-f]
 ;; Don't forget to update this if you on another structure.
 
@@ -22,11 +23,13 @@
 (setq kept-old-versions 2)
 (setq version-control t)
 
+
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                             ;;
 ;; UI settings                                                                 ;;
 ;;                                                                             ;;
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
+
 
 (setq inhibit-startup-message t)   
 (setq visible-bell 1)
@@ -53,11 +56,13 @@
 (setq indent-line-function 'insert-tab)
 (setq-default tab-width 4)
 
+
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                             ;;
 ;; Encoding settings                                                              ;;
 ;;                                                                             ;;
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
+
 
 (prefer-coding-system 'utf-8)
 (set-language-environment 'utf-8)
@@ -67,11 +72,13 @@
 (setq-default buffer-file-coding-system 'utf-8)
 (setq default-process-coding-system '(utf-8 . utf-8))
 
+
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                             ;;
 ;; Theme settings                                                              ;;
 ;;                                                                             ;;
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
+
 
 (set-face-attribute 'default nil :font "Source Code Pro" :height 140 :weight 'bold)
 
@@ -84,15 +91,16 @@
 (set-face-attribute 'font-lock-preprocessor-face nil :foreground "darkgray")
 (set-face-attribute 'font-lock-comment-face nil :foreground "gray")
 
+
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                             ;;
 ;; Keybindings                                                                 ;;
 ;;                                                                             ;;
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 
-;; Make ESC quit prompts
+
+;; General more common keybindings
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-;; 'kbd' means keyboard function
 
 ;; Rebind C-u
     ;; Default for 'universal-argument' is C-u
@@ -122,13 +130,9 @@
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
-;; Shift and click with mouse select the region.
-(define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
-
 ;; Move lines keybindings
 (global-set-key (kbd "M-<up>") 'move-line-up)
 (global-set-key (kbd "M-<down>") 'move-line-down)
-
 
 
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
@@ -136,6 +140,7 @@
 ;; Dired settings                                                              ;;
 ;;                                                                             ;;
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
+
 
 ;; Dired: use 'a' to open file and kill dired buffer:
 (put 'dired-find-alternate-file 'disabled nil)
@@ -146,6 +151,7 @@
 ;; Initialize package sources                                                  ;;
 ;;                                                                             ;;
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
+
 
 (require 'package)                  ;; Initializes the package system
 
@@ -166,11 +172,13 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
+
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                             ;;
 ;; Use Packages                                                                ;;
 ;;                                                                             ;;
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
+
 
 (require 'use-package)
 (setq use-package-always-ensure t)
@@ -181,115 +189,8 @@
   (setq auto-package-update-interval 10)
   (auto-package-update-maybe))
 
-(use-package windmove
-  :bind
-  ("C-x <up>" . windmove-up)
-  ("C-x <down>" . windmove-down)
-  ("C-x <left>" . windmove-left)
-  ("C-x <right>" . windmove-right))
-
-(use-package expand-region
-  :bind
-  ("C-=" . er/expand-region)
-  ("C--" . er/contract-region))
-
-(use-package doom-modeline
-  :config 
-  (setq doom-modeline-icon nil)
-  (setq doom-modeline-major-mode-color-icon nil)
-  (setq doom-modeline-buffer-modification-icon nil)
-  :init 
-  (doom-modeline-mode 1))
-
-(use-package projectile
-  :config
-  (projectile-mode 1)
-  (define-key projectile-mode-map (kbd "C-x p p") 'projectile-command-map))
-
-(use-package treemacs
-  :after projectile
-  :config
-  (setq treemacs-is-never-other-window t)
-  :bind
-  ("<f12>" . treemacs)
-  ("M-s M-t" . treemacs-select-window))
-
-(use-package treemacs-projectile
-  :after treemacs)
-
-(use-package dashboard
-  :init
-  (add-hook 'after-init-hook 'dashboard-refresh-buffer)
-  :config
-  (setq dashboard-banner-logo-title "Welcome to Pointel Emacs Dashboard!")
-  (setq dashboard-items '((agenda . 5)
-                          (bookmarks . 5)
-                          (projects . 5)
-                          (recents  . 5)))
-  (setq dashboard-center-content t)
-  (setq dashboard-set-heading-icons nil)
-  (setq dashboard-set-file-icons nil)
-  (setq dashboard-footer-icon "*")
-  (setq dashboard-footer-messages (read-lines (concat default-directory "magic/emacs/messages.txt")))
-  (dashboard-setup-startup-hook))
-
-(use-package centaur-tabs
-  :after dashboard
-  :config
-  (setq centaur-tabs-set-bar 'over)
-  (setq centaur-tabs-set-modified-marker t)
-  (setq centaur-tabs-modified-marker "&")
-  (centaur-tabs-group-by-projectile-project)
-  (centaur-tabs-mode t)
-  :bind
-  (:map global-map
-        ("M-s M-q" . 'centaur-tabs-backward)
-        ("M-s M-e" . 'centaur-tabs-forward)))
-
-(use-package magit
-  :bind
-  ("C-x g x" . magit-checkout)
-  ("C-x g l" . magit-pull)
-  ("C-x g s" . magit-status)
-  ("C-x g S" . magit-stage)
-  ("C-x g f" . magit-stage-file)
-  ("C-x g m" . magit-stage-modified)
-  ("C-x g u" . magit-stage-untracked)
-  ("C-x g c" . magit-commit)
-  ("C-x g h" . magit-push)
-  ("C-x g e" . magit-ediff-resolve)
-  ("C-x g r" . magit-rebase-interactive))
-
-(use-package company
-  :config
-  (setq company-echo-delay 0)
-  (setq company-idle-delay 0.5)
-  (setq company-minimum-prefix-length 1)
-  (setq company-tooltip-align-annotations t)
-  (setq company-tooltip-limit 9)
-  (global-company-mode 1)
-  (global-set-key (kbd "C-<tab>") 'company-complete))
-
-(use-package company-web
-  :config
-  (add-to-list 'company-backends 'company-web-html)
-  (add-to-list 'company-backends 'company-web-jade)
-  (add-to-list 'company-backends 'company-web-slim))
-
-;;(use-package rainbow-delimiters
-;;  :hook (prog-mode . rainbow-delimiters-mode))
-
-(use-package doom-themes 
-  :defer t
-  :config
-  (load-theme 'doom-one-light t)
-  (doom-themes-visual-bell-config))
-
-;; Use Diminish
 (use-package diminish)
 
-;; Ivy is a generic completion mechanism for Emacs
-;; github.com/abo-abo/swiper
 (use-package ivy 
   :diminish
   :init
@@ -322,19 +223,43 @@
 ;; Connect M-x to ivy-rich
 (use-package counsel
   :bind (("M-x" . counsel-M-x)
-	 ("C-x b" . counsel-ibuffer)
 	 ("C-x C-f" . counsel-find-file)
+	 ("C-x f". counsel-recentf)
+	 ("C-x b" . counsel-ibuffer)
+	 ("C-x w s" . counsel-switch-buffer)
 	 :map minibuffer-local-map
 	 ("C-r" . 'counsel-minibuffer-history))
   :config
   (setq ivy-initial-inputs-alist nil)) ;; Don't start search with ^
 
-;; Give hints for prefixes
+(use-package company
+  :config
+  (setq company-echo-delay 0)
+  (setq company-idle-delay 0.5)
+  (setq company-minimum-prefix-length 1)
+  (setq company-tooltip-align-annotations t)
+  (setq company-tooltip-limit 9)
+  (global-company-mode 1)
+  (global-set-key (kbd "C-<tab>") 'company-complete))
+
+(use-package company-web
+  :config
+  (add-to-list 'company-backends 'company-web-html)
+  (add-to-list 'company-backends 'company-web-jade)
+  (add-to-list 'company-backends 'company-web-slim))
+
 (use-package which-key
   :init (which-key-mode)
   :diminish which-key-mode
   :config
   (setq which-key-idle-delay 1.0))
+
+(use-package windmove
+  :bind
+  ("C-x <up>" . windmove-up)
+  ("C-x <down>" . windmove-down)
+  ("C-x <left>" . windmove-left)
+  ("C-x <right>" . windmove-right))
 
 (use-package helpful
   :custom
@@ -346,7 +271,6 @@
   ([remap describe-variable] . counsel-describe-variable)
   ([remap describe-key] . helpful-key))
 
-;; Org-mode
 (use-package org
   :after evil
   :defer t
@@ -356,11 +280,6 @@
   (evil-define-key '(normal insert visual) org-mode-map (kbd "M-j") 'org-metadown)
   (evil-define-key '(normal insert visual) org-mode-map (kbd "M-k") 'org-metaup))
 
-  ;; (global-set-key (kbd "C-c l") 'org-store-link)
-  ;; (global-set-key (kbd "C-c a") 'org-agenda)
-  ;; (global-set-key (kbd "C-c c") 'org-capture)
-
-;; Add custom bullets in org-mode
 (use-package org-bullets
   :after (org)
   :config
@@ -391,7 +310,6 @@
   :after evil
   :init
   (evil-commentary-mode))
-    ;; https://github.com/linktohack/evil-commentary
     ;; [gcc]  comments out a line
     ;; [gc]   comments out selection
     ;; [gcap] comments out a paragraph
@@ -402,12 +320,67 @@
   :config
   (evil-collection-init))
 
+(use-package doom-themes 
+  :defer t
+  :config
+  (load-theme 'doom-one-light t)
+  (doom-themes-visual-bell-config))
+
+(use-package doom-modeline
+  :config 
+  (setq doom-modeline-icon nil)
+  (setq doom-modeline-major-mode-color-icon nil)
+  (setq doom-modeline-buffer-modification-icon nil)
+  :init 
+  (doom-modeline-mode 1))
+
+(use-package projectile
+  :config
+  (projectile-mode 1)
+  (setq projectile-project-search-path '(default-directory))
+  (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map))
+
+(use-package flymake
+  :bind
+  ("C-x g w" . flymake-show-diagnostics-buffer))
+
+(use-package magit
+  :bind
+  ("C-x g x" . magit-checkout)
+  ("C-x g l" . magit-pull)
+  ("C-x g s" . magit-status)
+  ("C-x g S" . magit-stage)
+  ("C-x g f" . magit-stage-file)
+  ("C-x g m" . magit-stage-modified)
+  ("C-x g u" . magit-stage-untracked)
+  ("C-x g c" . magit-commit)
+  ("C-x g h" . magit-push)
+  ("C-x g e" . magit-ediff-resolve)
+  ("C-x g r" . magit-rebase-interactive))
+
+(use-package dashboard
+  :init
+  (add-hook 'after-init-hook 'dashboard-refresh-buffer)
+  :config
+  (setq dashboard-banner-logo-title "Welcome to Pointel Emacs Dashboard!")
+  (setq dashboard-items '((agenda . 5)
+                          (bookmarks . 5)
+                          (projects . 5)
+                          (recents  . 5)))
+  (setq dashboard-center-content t)
+  (setq dashboard-set-heading-icons nil)
+  (setq dashboard-set-file-icons nil)
+  (setq dashboard-footer-icon "*")
+  (setq dashboard-footer-messages (read-lines (concat default-directory "magic/emacs/messages.txt")))
+  (dashboard-setup-startup-hook))
+
 
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                             ;;
 ;; Language Server Protocol (LSP)                                              ;;
 ;;                                                                             ;;
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
+
 
 (use-package lsp-mode
   :after projectile
@@ -460,9 +433,6 @@
   ("M-s s m" . lsp-ui-imenu)
   ("M-s s M" . lsp-ui-imenu--kill))
 
-(use-package lsp-treemacs
-  :commands lsp-treemacs-errors-list)
-
 (use-package typescript-mode
   :mode (("\\.js\\'" . typescript-mode)
          ("\\.jsx\\'" . typescript-mode)
@@ -514,7 +484,7 @@
   :hook
   (java-mode . lsp)
   :config
-  (setq lsp-java-format-settings-url (lsp--path-to-uri "~/java-pointel-style.xml"))
+  (setq lsp-java-format-settings-url (lsp--path-to-uri (concat default-directory "magic/java-pointel-style.xml")))
   (setq lsp-java-format-settings-profile "PointelStyle"))
 
 (use-package go-mode
@@ -599,11 +569,13 @@
    (c++-mode . dap-ui-mode)
    (c++-mode . dap-tooltip-mode)))
 
+
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                             ;;
 ;; Snippets                                                                    ;;
 ;;                                                                             ;;
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
+
 
 (use-package yasnippet
   :config (yas-global-mode))
@@ -636,13 +608,22 @@
   (when emmet-mode
     (emmet-expand-line args)))
 
+
+;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
+;;                                                                             ;;
+;; Customs                                                                     ;;
+;;                                                                             ;;
+;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(emmet-mode yasnippet-snippets yasnippet modern-cpp-font-lock cmake-font-lock cmake-mode rust-mode go-mode lsp-java groovy-mode python-mode mmm-mode php-mode web-mode json-mode typescript-mode lsp-treemacs lsp-ui lsp-mode evil-collection evil-commentary evil org-bullets helpful which-key counsel ivy-rich ivy diminish doom-themes rainbow-delimiters company-web company magit centaur-tabs dashboard treemacs-projectile treemacs projectile doom-modeline expand-region auto-package-update use-package)))
+   '(emmet-mode yasnippet-snippets yasnippet modern-cpp-font-lock cmake-font-lock cmake-mode lua-mode rust-mode go-mode lsp-java groovy-mode python-mode mmm-mode php-mode web-mode json-mode typescript-mode lsp-ui lsp-mode magit projectile doom-modeline doom-themes evil-collection evil-commentary evil org-bullets helpful which-key company-web company counsel ivy-rich ivy diminish dashboard auto-package-update use-package)))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
