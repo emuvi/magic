@@ -39,7 +39,7 @@
         "list": 
         [
             {
-                "colorScheme": "Tango Light",
+                "colorScheme": "Pointel",
                 "commandline": "powershell.exe",
                 "cursorShape": "emptyBox",
                 "font": 
@@ -54,7 +54,7 @@
                 "startingDirectory": "C:\\Code"
             },
             {
-                "colorScheme": "Tango Light",
+                "colorScheme": "Pointel",
                 "commandline": "cmd.exe",
                 "cursorShape": "emptyBox",
                 "font": 
@@ -69,7 +69,7 @@
                 "startingDirectory": "C:\\Code"
             },
             {
-                "colorScheme": "Tango Light",
+                "colorScheme": "Pointel",
                 "cursorShape": "emptyBox",
                 "font": 
                 {
@@ -84,7 +84,7 @@
                 "startingDirectory": "C:\\Code"
             },
             {
-                "colorScheme": "Tango Light",
+                "colorScheme": "Pointel",
                 "commandline": "C:/msys2/msys2_shell.cmd -defterm -here -no-start -msys",
                 "cursorShape": "emptyBox",
                 "font": 
@@ -99,7 +99,7 @@
                 "startingDirectory": "C:/Code"
             },
             {
-                "colorScheme": "Tango Light",
+                "colorScheme": "Pointel",
                 "commandline": "C:/msys2/msys2_shell.cmd -defterm -here -no-start -mingw64",
                 "cursorShape": "emptyBox",
                 "font": 
@@ -114,7 +114,7 @@
                 "startingDirectory": "C:/Code"
             },
             {
-                "colorScheme": "Tango Light",
+                "colorScheme": "Pointel",
                 "commandline": "C:/msys2/msys2_shell.cmd -defterm -here -no-start -mingw32",
                 "cursorShape": "emptyBox",
                 "font": 
