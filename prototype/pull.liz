@@ -8,8 +8,13 @@ code_root = liz.path_list_dirs(code_path)
 for _, category in ipairs(code_root) do
     projects = liz.path_list_dirs(category)
     for _, project in ipairs(projects) do
+        print("x----------------------------------------x")
         print("Pulling project path: " .. project)
         liz.cmd("git", {"pull"}, project, true, true)
     end
 end
-print("Everything pulled.")
+print("+----------------------------------------+")
+print("|                                        |")
+print("|           Everything pulled.           |")
+print("|                                        |")
+print("+----------------------------------------+")
