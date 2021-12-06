@@ -1,3 +1,3 @@
 @echo off
-py push-all.py
+liz push
 pause

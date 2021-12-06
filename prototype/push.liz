@@ -1,0 +1,17 @@
+code_path = liz.path_parent_find(liz.pwd(), "Code")
+if code_path == "" then
+    print("Could not found the Code parent path.")
+    return
+end
+print("Pushing code path: " .. code_path)
+code_root = liz.path_list_dirs(code_path)
+for _, category in ipairs(code_root) do
+    projects = liz.path_list_dirs(category)
+    for _, project in ipairs(projects) do
+        print("Pushing project path: " .. project)
+        liz.cmd("git", {"add", "-A"}, project, true, false)
+        liz.cmd("git", {"commit", "-m", "prototype development"}, project, true, false)
+        liz.cmd("git", {"push"}, project, true, true)
+    end
+end
+print("Everything pushed.")
