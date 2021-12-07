@@ -385,7 +385,8 @@
 (use-package lsp-mode
   :after projectile
   :commands lsp
-  :hook((typescript-mode . lsp)
+  :hook((markdown-mode .lsp)
+		(typescript-mode . lsp)
         (json-mode. lsp)
         (css-mode . lsp)
         (web-mode . lsp)
@@ -433,6 +434,10 @@
   ("M-s s m" . lsp-ui-imenu)
   ("M-s s M" . lsp-ui-imenu--kill))
 
+(use-package markdown-mode
+  :mode ("\\.\\(m\\(ark\\)?down\\|md\\)$" . markdown-mode)
+  :hook (markdown-mode . lsp))
+  
 (use-package typescript-mode
   :mode (("\\.js\\'" . typescript-mode)
          ("\\.jsx\\'" . typescript-mode)
