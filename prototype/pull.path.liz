@@ -1,0 +1,2 @@
+project = liz.args[1]
+return liz.cmd("git", {"pull"}, project, false, false)

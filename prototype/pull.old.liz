@@ -4,22 +4,14 @@ if code_path == "" then
     return
 end
 print("Pulling code path: " .. code_path)
-all_spawned = {}
 code_root = liz.path_list_dirs(code_path)
 for _, category in ipairs(code_root) do
     projects = liz.path_list_dirs(category)
     for _, project in ipairs(projects) do
-        table.insert(all_spawned, {project, liz.spawn("pull.path", {project})})
+        print("x----------------------------------------------------x")
+        print("Pulling project path: " .. project)
+        liz.cmd("git", {"pull"}, project, true, true)
     end
-end
-for _, spawned in ipairs(all_spawned) do
-    local project = spawned[1]
-    local spawned_results = liz.join(spawned[2])
-    local returned_code = liz.from_returned(spawned_results[1])
-    local returned_output = liz.from_returned(spawned_results[2])
-    print("x----------------------------------------------------x")
-    print("Pulled project path: " .. project)
-    print("[" .. returned_code .. "] - " .. returned_output)
 end
 print("+----------------------------------------------------+")
 print("|                                                    |")

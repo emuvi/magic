@@ -1,0 +1,4 @@
+project = liz.args[1]
+liz.cmd("git", {"add", "-A"}, project, false, false)
+liz.cmd("git", {"commit", "-m", "prototype development"}, project, false, false)
+return liz.cmd("git", {"push"}, project, false, false)
