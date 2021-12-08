@@ -12,17 +12,25 @@ for _, category in ipairs(code_root) do
         table.insert(all_spawned, {project, liz.spawn("push.path", {project})})
     end
 end
+any_is_error = false
 for _, spawned in ipairs(all_spawned) do
     local project = spawned[1]
+    print("x----------------------------------------------------x")
+    print("Pushing project path: " .. project)
     local spawned_results = liz.join(spawned[2])
     local returned_code = liz.from_returned(spawned_results[1])
+    if returned_code ~= 0 then
+        any_is_error = true
+    end
     local returned_output = liz.from_returned(spawned_results[2])
-    print("x----------------------------------------------------x")
-    print("Pushed project path: " .. project)
     print("[" .. returned_code .. "] - " .. returned_output)
 end
 print("+----------------------------------------------------+")
 print("|                                                    |")
+if not any_is_error then
 print("|                 Everything pushed.                 |")
+else
+print("|     There was [ ERROR(s) ] in some project(s)!     |")
+end
 print("|                                                    |")
 print("+----------------------------------------------------+")
