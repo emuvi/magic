@@ -137,17 +137,6 @@
 
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                             ;;
-;; Dired settings                                                              ;;
-;;                                                                             ;;
-;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
-
-
-;; Dired: use 'a' to open file and kill dired buffer:
-(put 'dired-find-alternate-file 'disabled nil)
-
-
-;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
-;;                                                                             ;;
 ;; Initialize package sources                                                  ;;
 ;;                                                                             ;;
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
@@ -271,20 +260,6 @@
   ([remap describe-variable] . counsel-describe-variable)
   ([remap describe-key] . helpful-key))
 
-(use-package org
-  :after evil
-  :defer t
-  :config
-  (evil-define-key '(normal insert visual) org-mode-map (kbd "C-j") 'org-next-visible-heading)
-  (evil-define-key '(normal insert visual) org-mode-map (kbd "C-k") 'org-previous-visible-heading)
-  (evil-define-key '(normal insert visual) org-mode-map (kbd "M-j") 'org-metadown)
-  (evil-define-key '(normal insert visual) org-mode-map (kbd "M-k") 'org-metaup))
-
-(use-package org-bullets
-  :after (org)
-  :config
-  (add-hook 'org-mode-hook 'org-bullets-mode))
-
 (use-package evil
   :init
   (setq evil-want-integration t)
@@ -295,17 +270,19 @@
   :config
   (evil-mode 1)
   (evil-set-undo-system 'undo-redo)
-  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
-  (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
-
-  ;; Use visual line motions even outside of visual-line-mode buffers
+  (define-key evil-insert-state-map (kbd "M-h") 'evil-backward-WORD-end)
+  (define-key evil-insert-state-map (kbd "M-l") 'evil-forward-WORD-begin)
+  (define-key evil-insert-state-map (kbd "M-k") 'evil-backward-sentence-begin)
+  (define-key evil-insert-state-map (kbd "M-j") 'evil-forward-sentence-begin)
+  (define-key evil-normal-state-map (kbd "M-h") 'evil-backward-WORD-end)
+  (define-key evil-normal-state-map (kbd "M-l") 'evil-forward-WORD-begin)
+  (define-key evil-normal-state-map (kbd "M-k") 'evil-backward-sentence-begin)
+  (define-key evil-normal-state-map (kbd "M-j") 'evil-forward-sentence-begin)
   (evil-global-set-key 'motion "j" 'evil-next-visual-line)
   (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
-
   (evil-set-initial-state 'messages-buffer-mode 'normal)
   (evil-set-initial-state 'dashboard-mode 'normal))
 
-;; Evil-commentary, to comment stuff out
 (use-package evil-commentary
   :after evil
   :init
@@ -319,6 +296,15 @@
   :after evil
   :config
   (evil-collection-init))
+
+(use-package org
+  :after evil
+  :defer t
+  :config
+  (evil-define-key '(normal insert visual) org-mode-map (kbd "C-j") 'org-next-visible-heading)
+  (evil-define-key '(normal insert visual) org-mode-map (kbd "C-k") 'org-previous-visible-heading)
+  (evil-define-key '(normal insert visual) org-mode-map (kbd "M-j") 'org-metadown)
+  (evil-define-key '(normal insert visual) org-mode-map (kbd "M-k") 'org-metaup))
 
 (use-package doom-themes 
   :defer t
@@ -357,6 +343,19 @@
   ("C-x g h" . magit-push)
   ("C-x g e" . magit-ediff-resolve)
   ("C-x g r" . magit-rebase-interactive))
+
+(use-package dired
+  :ensure nil
+  :commands (dired dired-jump)
+  :bind (("C-x C-j" . dired-jump))
+  :custom ((dired-listing-switches "-ago --group-directories-first"))
+  :config
+    (put 'dired-find-alternate-file 'disabled nil)
+    (evil-collection-define-key 'normal 'dired-mode-map
+      "h" 'dired-single-up-directory
+      "l" 'dired-single-buffer))
+
+(use-package dired-single)
 
 (use-package dashboard
   :init
@@ -503,7 +502,8 @@
   (rust-mode . lsp))
 
 (use-package lua-mode
-  :mode "\\.lua\\'"
+  :mode (("\\.lua\\'" . lua-mode)
+		 ("\\.liz\\'" . lua-mode))
   :hook
   (lua-mode . lsp))
 
