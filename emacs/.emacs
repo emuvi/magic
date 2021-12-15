@@ -1,4 +1,4 @@
-;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
+; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                             ;;
 ;; Startup                                                                     ;;
 ;;                                                                             ;;
@@ -270,12 +270,12 @@
   :config
   (evil-mode 1)
   (evil-set-undo-system 'undo-redo)
-  (define-key evil-insert-state-map (kbd "M-h") 'evil-backward-WORD-end)
-  (define-key evil-insert-state-map (kbd "M-l") 'evil-forward-WORD-begin)
+  (define-key evil-insert-state-map (kbd "M-h") 'evil-backward-word-begin)
+  (define-key evil-insert-state-map (kbd "M-l") 'evil-forward-word-end)
   (define-key evil-insert-state-map (kbd "M-k") 'evil-backward-sentence-begin)
   (define-key evil-insert-state-map (kbd "M-j") 'evil-forward-sentence-begin)
-  (define-key evil-normal-state-map (kbd "M-h") 'evil-backward-WORD-end)
-  (define-key evil-normal-state-map (kbd "M-l") 'evil-forward-WORD-begin)
+  (define-key evil-normal-state-map (kbd "M-h") 'evil-backward-word-begin)
+  (define-key evil-normal-state-map (kbd "M-l") 'evil-forward-word-end)
   (define-key evil-normal-state-map (kbd "M-k") 'evil-backward-sentence-begin)
   (define-key evil-normal-state-map (kbd "M-j") 'evil-forward-sentence-begin)
   (evil-global-set-key 'motion "j" 'evil-next-visual-line)
