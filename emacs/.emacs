@@ -5,14 +5,7 @@
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 
 
-;; Change default directory for e.g. find-file [C-x C-f]
-;; Don't forget to update this if you on another structure.
-
-(if (eq system-type 'windows-nt)
-  (setq default-directory "C:/Code/")
-  (setq default-directory "~/Code/")
-)
-
+(setq default-directory "~/Code/")
 (add-to-list 'load-path (concat default-directory "cmds/magic/emacs"))
 (load-library "pointel-utils")
 
