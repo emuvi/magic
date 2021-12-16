@@ -40,21 +40,6 @@
         [
             {
                 "colorScheme": "Pointel",
-                "commandline": "powershell.exe",
-                "cursorShape": "emptyBox",
-                "font": 
-                {
-                    "face": "Source Code Pro",
-                    "size": 14,
-                    "weight": "bold"
-                },
-                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "hidden": false,
-                "name": "Windows PowerShell",
-                "startingDirectory": "C:\\Code"
-            },
-            {
-                "colorScheme": "Pointel",
                 "commandline": "cmd.exe",
                 "cursorShape": "emptyBox",
                 "font": 
@@ -65,8 +50,38 @@
                 },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
-                "name": "Prompt de comando",
+                "name": "Command",
                 "startingDirectory": "C:\\Code"
+            },
+            {
+                "colorScheme": "Pointel",
+                "commandline": "powershell.exe",
+                "cursorShape": "emptyBox",
+                "font": 
+                {
+                    "face": "Source Code Pro",
+                    "size": 14,
+                    "weight": "bold"
+                },
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "PowerShell",
+                "startingDirectory": "C:\\Code"
+            },
+            {
+                "colorScheme": "Pointel",
+                "cursorShape": "emptyBox",
+                "font": 
+                {
+                    "face": "Source Code Pro",
+                    "size": 14,
+                    "weight": "bold"
+                },
+                "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
+                "hidden": false,
+                "name": "Debian",
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "/home/pointel"
             },
             {
                 "colorScheme": "Pointel",
@@ -79,9 +94,8 @@
                 },
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
                 "hidden": false,
-                "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure",
-                "startingDirectory": "C:\\Code"
+                "name": "Azure",
+                "source": "Windows.Terminal.Azure"
             },
             {
                 "colorScheme": "Pointel",
@@ -95,7 +109,7 @@
                 },
                 "guid": "{71160544-14d8-4194-af25-d05feeac7233}",
                 "icon": "C:/msys2/msys2.ico",
-                "name": "MSYS / MSYS2",
+                "name": "MSYS",
                 "startingDirectory": "C:/Code"
             },
             {
@@ -110,7 +124,7 @@
                 },
                 "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
                 "icon": "C:/msys2/mingw64.ico",
-                "name": "MINGW64 / MSYS2",
+                "name": "MINGW64",
                 "startingDirectory": "C:/Code"
             },
             {
@@ -125,7 +139,7 @@
                 },
                 "guid": "{2d51fdc4-a03b-4efe-81bc-722b7f6f3820}",
                 "icon": "C:/msys2/mingw32.ico",
-                "name": "MINGW32 / MSYS2",
+                "name": "MINGW32",
                 "startingDirectory": "C:/Code"
             }
         ]
@@ -144,7 +158,7 @@
             "brightRed": "#E74856",
             "brightWhite": "#F2F2F2",
             "brightYellow": "#F9F1A5",
-            "cursorColor": "#FF0000",
+            "cursorColor": "#FFFFFF",
             "cyan": "#3A96DD",
             "foreground": "#CCCCCC",
             "green": "#13A10E",
@@ -225,7 +239,7 @@
             "yellow": "#C18301"
         },
         {
-            "background": "#282A36",
+            "background": "#FAFEEE",
             "black": "#000000",
             "blue": "#6000E6",
             "brightBlack": "#4D4D4D",
@@ -236,9 +250,9 @@
             "brightRed": "#E65C5C",
             "brightWhite": "#FFFFFF",
             "brightYellow": "#BFBF4D",
-            "cursorColor": "#804040",
+            "cursorColor": "#B30000",
             "cyan": "#00A7CC",
-            "foreground": "#F7F5F0",
+            "foreground": "#540000",
             "green": "#00BF33",
             "name": "Pointel",
             "purple": "#E60082",
@@ -271,7 +285,7 @@
             "yellow": "#B58900"
         },
         {
-            "background": "#FFFBED",
+            "background": "#FDF6E3",
             "black": "#002B36",
             "blue": "#268BD2",
             "brightBlack": "#073642",
