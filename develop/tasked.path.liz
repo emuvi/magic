@@ -1,3 +1,12 @@
+project = liz.args[1]
 returned_count = 0
 returned_output = ""
+extensions = {".txt"}
+for _, ext in ipairs(extensions) do
+   local files = liz.path_list_files_ext_subs(project, ext)
+   for _, inside in ipairs(files) do
+	  liz.cmd("git", {"check-ignore", inside}, ".", true, true)
+	  print(inside)
+   end
+end
 return returned_count, returned_output

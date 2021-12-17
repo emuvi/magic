@@ -1,3 +1,4 @@
+project = liz.args[1]
 returned_count = 0
 returned_output = ""
 return returned_count, returned_output
