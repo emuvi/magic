@@ -1,0 +1,26 @@
+code_path = liz.path_parent_find(liz.pwd(), "Code")
+if code_path == "" then
+    print("Could not found the Code parent path.")
+    return
+end
+print("Tasked on code path: " .. code_path)
+all_spawned = {}
+code_root = liz.path_list_dirs(code_path)
+for _, category in ipairs(code_root) do
+    projects = liz.path_list_dirs(category)
+    for _, project in ipairs(projects) do
+        table.insert(all_spawned, {project, liz.spawn("tasked.path", {project})})
+    end
+end
+for _, spawned in ipairs(all_spawned) do
+    local project = spawned[1]
+    local spawned_results = liz.join(spawned[2])
+    local returned_count = liz.from_returned(spawned_results[1])
+    if returned_count > 0 then	   
+	   print("x----------------------------------------------------x")
+	   print("Tasked on project path: " .. project)
+	   local returned_output = liz.from_returned(spawned_results[2])
+	   print(returned_output)
+    end
+end
+print("x----------------------------------------------------x")

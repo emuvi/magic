@@ -361,6 +361,12 @@
 
 (use-package dired-single)
 
+(use-package autorevert
+  :config
+  (setq global-auto-revert-non-file-buffers t)
+  (setq auto-revert-verbose nil)
+  (global-auto-revert-mode))
+
 (use-package dashboard
   :init
   (add-hook 'after-init-hook 'dashboard-refresh-buffer)
@@ -374,6 +380,7 @@
   (setq dashboard-set-heading-icons nil)
   (setq dashboard-set-file-icons nil)
   (setq dashboard-footer-icon "*")
+  (setq dashboard-projects-switch-function 'dired)
   (setq dashboard-footer-messages (read-lines (concat default-directory "cmds/magic/emacs/messages.txt")))
   (dashboard-setup-startup-hook))
 
