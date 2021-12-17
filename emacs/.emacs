@@ -1,4 +1,4 @@
-; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
+;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                             ;;
 ;; Startup                                                                     ;;
 ;;                                                                             ;;
@@ -127,6 +127,10 @@
 (global-set-key (kbd "M-<up>") 'move-line-up)
 (global-set-key (kbd "M-<down>") 'move-line-down)
 
+;; Switch in between code buffers 
+(global-set-key (kbd "C-<next>") 'next-code-buffer)
+(global-set-key (kbd "C-<prior>") 'previous-code-buffer)
+
 
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                             ;;
@@ -242,6 +246,14 @@
   ("C-x <down>" . windmove-down)
   ("C-x <left>" . windmove-left)
   ("C-x <right>" . windmove-right))
+
+(use-package switch-window
+  :bind (:map global-map
+              ("C-x o" . switch-window)
+              ("C-x C-1" . switch-window-then-maximize)
+              ("C-x C-2" . switch-window-then-split-below)
+              ("C-x C-3" . switch-window-then-split-right)
+              ("C-x C-0" . switch-window-then-delete)))
 
 (use-package helpful
   :custom
