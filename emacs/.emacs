@@ -385,10 +385,9 @@
   (add-hook 'after-init-hook 'dashboard-refresh-buffer)
   :config
   (setq dashboard-banner-logo-title "Welcome to Pointel Emacs Dashboard!")
-  (setq dashboard-items '((agenda . 5)
-                          (bookmarks . 5)
-                          (projects . 5)
-                          (recents  . 5)))
+  (setq dashboard-items '((bookmarks . 7)
+                          (projects . 7)
+                          (recents  . 7)))
   (setq dashboard-center-content t)
   (setq dashboard-set-heading-icons nil)
   (setq dashboard-set-file-icons nil)
