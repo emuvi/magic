@@ -1,12 +1,25 @@
 project = liz.args[1]
-returned_count = 0
-returned_output = ""
-extensions = {".txt"}
-for _, ext in ipairs(extensions) do
-   local files = liz.path_list_files_ext_subs(project, ext)
-   for _, inside in ipairs(files) do
-	  liz.cmd("git", {"check-ignore", inside}, ".", true, true)
-	  print(inside)
+result_count = 0
+result_output = ""
+
+all_spawned = {}
+folders = liz.path_list_dirs_subs(project)
+for _, folder in ipairs(folders) do
+   if not liz.git_is_ignored(folder) then
+	  table.insert(all_spawned, {folder, liz.spawn("tasked.path.sub", {folder})})
    end
 end
-return returned_count, returned_output
+
+for _, spawned in ipairs(all_spawned) do
+   local folder = spawned[1]
+   local spawned_results = liz.join(spawned[2])
+   local returned_count = liz.from_returned(spawned_results[1])
+   if returned_count > 0  then
+	  local returned_output = liz.from_returned(spawned_results[2])
+	  result_count = result_count + returned_count
+	  result_output = result_output .. "Founds in folder: " .. folder .. "\n"
+	  result_output = result_output .. returned_output .. "\n"
+   end
+end
+
+return result_count, result_output

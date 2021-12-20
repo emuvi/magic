@@ -20,7 +20,7 @@ for _, spawned in ipairs(all_spawned) do
 	   print("x----------------------------------------------------x")
 	   print("Tasked on project path: " .. project)
 	   local returned_output = liz.from_returned(spawned_results[2])
-	   print(returned_output)
+	   print(liz.text_trim(returned_output))
     end
 end
 print("x----------------------------------------------------x")
