@@ -209,10 +209,11 @@
 ;; Connect M-x to ivy-rich
 (use-package counsel
   :bind (("M-x" . counsel-M-x)
-	 ("C-x C-f" . counsel-find-file)
-	 ("C-x f". counsel-recentf)
+	 ("C-x C-r". counsel-recentf)
+	 ("C-x C-f" . counsel-file-jump)
+	 ("C-x f" . counsel-find-file)
 	 ("C-x b" . counsel-ibuffer)
-	 ("C-x w s" . counsel-switch-buffer)
+	 ("C-x C-b" . counsel-switch-buffer)
 	 :map minibuffer-local-map
 	 ("C-r" . 'counsel-minibuffer-history))
   :config
