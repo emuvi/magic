@@ -1,11 +1,11 @@
 project = liz.args[1]
-result_count = 0
+result_found = false
 result_output = ""
 
 all_spawned = {}
-folders = liz.path_list_dirs_subs(project)
+folders = liz.path_list_dirs(project)
 for _, folder in ipairs(folders) do
-   if not liz.git_is_ignored(folder) then
+   if folder ~= ".git" and not liz.git_is_ignored(folder) then
 	  table.insert(all_spawned, {folder, liz.spawn("tasked.path.sub", {folder})})
    end
 end
@@ -13,13 +13,13 @@ end
 for _, spawned in ipairs(all_spawned) do
    local folder = spawned[1]
    local spawned_results = liz.join(spawned[2])
-   local returned_count = liz.from_returned(spawned_results[1])
-   if returned_count > 0  then
+   local returned_found = liz.from_returned(spawned_results[1])
+   if returned_found  then
 	  local returned_output = liz.from_returned(spawned_results[2])
-	  result_count = result_count + returned_count
+	  result_found = true
 	  result_output = result_output .. "Founds in folder: " .. folder .. "\n"
 	  result_output = result_output .. returned_output .. "\n"
    end
 end
 
-return result_count, result_output
+return result_found, result_output
