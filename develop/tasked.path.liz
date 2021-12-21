@@ -3,6 +3,7 @@ result_found = false
 result_output = ""
 
 all_spawned = {}
+-- table.insert(all_spawned, {project, liz.spawn("tasked.path.sub", {project})})
 folders = liz.path_list_dirs(project)
 for _, folder in ipairs(folders) do
    if folder ~= ".git" and not liz.git_is_ignored(folder) then

@@ -11,7 +11,7 @@ local founds = liz.text_files_find(files, search_for)
 if founds then
 	result_found = true
 	for _, found in ipairs(founds) do
-		result_output = found .. "\n"
+		result_output = result_output .. found .. "\n"
 	end
 end
 return result_found, result_output
