@@ -134,7 +134,7 @@
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 
 
-(require 'package)                  ;; Initializes the package system
+(require 'package)
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
 			 ("melpa-stable" . "https://stable.melpa.org/packages/")
@@ -143,13 +143,11 @@
 
 (package-initialize)
 
-(unless package-archive-contents    ;; Refresh the packages descriptions
+(unless package-archive-contents
   (package-refresh-contents))
 
-(setq package-load-list '(all))     ;; List of packages to load
+(setq package-load-list '(all))
 
-;; 'Use-package' makes it easier to initialize and configurate packages.
-;; Source: github.com/jwiegley/use-package
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
@@ -196,12 +194,10 @@
          ("C-k" . ivy-previous-line)
          ("C-d" . ivy-reverse-i-search-kill)))
 
-;; Add information to M-x
 (use-package ivy-rich
   :init
   (ivy-rich-mode 1))
 
-;; Connect M-x to ivy-rich
 (use-package counsel
   :bind (("M-x" . counsel-M-x)
 	 ("C-x C-r". counsel-recentf)
@@ -212,7 +208,7 @@
 	 :map minibuffer-local-map
 	 ("C-r" . 'counsel-minibuffer-history))
   :config
-  (setq ivy-initial-inputs-alist nil)) ;; Don't start search with ^
+  (setq ivy-initial-inputs-alist nil))
 
 (use-package company
   :config
@@ -488,7 +484,8 @@
   :mode ("\\.py\\'" . python-mode))
 
 (use-package groovy-mode
-  :mode ("\\.groovy\\'" . groovy-mode)
+  :mode (("\\.gvy\\'" . groovy-mode)
+		 ("\\.groovy\\'" . groovy-mode))
   :hook
   (groovy-mode . lsp))
 
