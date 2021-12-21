@@ -43,6 +43,7 @@
   (indent-according-to-mode))
 
 (defun next-code-buffer ()
+  "Switch to the next code buffer."
   (interactive)
   (let ((bread-crumb (buffer-name)))
     (next-buffer)
@@ -53,6 +54,7 @@
       (next-buffer))))
 
 (defun previous-code-buffer ()
+  "Switch to the previous code buffer."
   (interactive)
   (let ((bread-crumb (buffer-name)))
     (previous-buffer)
@@ -62,3 +64,7 @@
          (not (equal bread-crumb (buffer-name))))
       (previous-buffer))))
 
+(defun dashboard-display ()
+  "Switch to the dashboard buffer."
+  (interactive)
+  (display-buffer "*dashboard*"))

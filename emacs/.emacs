@@ -95,12 +95,6 @@
 ;; General more common keybindings
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
-;; Rebind C-u
-    ;; Default for 'universal-argument' is C-u
-    ;; Vim (EvilMode) uses C-u for scrolling
-    ;; Rebind 'universal-argument' to C-M-u
-(global-set-key (kbd "C-M-u") 'universal-argument)
-
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
@@ -127,9 +121,10 @@
 (global-set-key (kbd "M-<up>") 'move-line-up)
 (global-set-key (kbd "M-<down>") 'move-line-down)
 
-;; Switch in between code buffers 
+;; Switch in between buffers 
 (global-set-key (kbd "C-<next>") 'next-code-buffer)
 (global-set-key (kbd "C-<prior>") 'previous-code-buffer)
+(global-set-key (kbd "C-x C-d") 'dashboard-display)
 
 
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
@@ -210,8 +205,8 @@
 (use-package counsel
   :bind (("M-x" . counsel-M-x)
 	 ("C-x C-r". counsel-recentf)
-	 ("C-x C-f" . counsel-file-jump)
-	 ("C-x f" . counsel-find-file)
+	 ("C-x C-f" . counsel-find-file)
+	 ("C-x f" . counsel-file-jump)
 	 ("C-x b" . counsel-ibuffer)
 	 ("C-x C-b" . counsel-switch-buffer)
 	 :map minibuffer-local-map
@@ -276,25 +271,14 @@
   :config
   (evil-mode 1)
   (evil-set-undo-system 'undo-redo)
-
-  (define-key evil-insert-state-map (kbd "M-h") 'evil-backward-word-begin)
-  (define-key evil-insert-state-map (kbd "M-l") 'evil-forward-word-end)
-  (define-key evil-insert-state-map (kbd "M-k") 'evil-backward-sentence-begin)
-  (define-key evil-insert-state-map (kbd "M-j") 'evil-forward-sentence-begin)
-  (define-key evil-normal-state-map (kbd "M-h") 'evil-backward-word-begin)
-  (define-key evil-normal-state-map (kbd "M-l") 'evil-forward-word-end)
-  (define-key evil-normal-state-map (kbd "M-k") 'evil-backward-sentence-begin)
-  (define-key evil-normal-state-map (kbd "M-j") 'evil-forward-sentence-begin)
-
-  (define-key evil-insert-state-map (kbd "M-y") 'evil-backward-WORD-begin)
-  (define-key evil-insert-state-map (kbd "M-o") 'evil-forward-WORD-end)
-  (define-key evil-insert-state-map (kbd "M-i") 'evil-backward-paragraph)
-  (define-key evil-insert-state-map (kbd "M-u") 'evil-forward-paragraph)
-  (define-key evil-normal-state-map (kbd "M-y") 'evil-backward-WORD-begin)
-  (define-key evil-normal-state-map (kbd "M-o") 'evil-forward-WORD-end)
-  (define-key evil-normal-state-map (kbd "M-i") 'evil-backward-paragraph)
-  (define-key evil-normal-state-map (kbd "M-u") 'evil-forward-paragraph)
-
+  (evil-define-key '(normal insert visual) 'global (kbd "M-h") 'evil-backward-word-begin)
+  (evil-define-key '(normal insert visual) 'global (kbd "M-l") 'evil-forward-word-end)
+  (evil-define-key '(normal insert visual) 'global (kbd "M-k") 'evil-backward-sentence-begin)
+  (evil-define-key '(normal insert visual) 'global (kbd "M-j") 'evil-forward-sentence-begin)
+  (evil-define-key '(normal insert visual) 'global (kbd "M-y") 'evil-backward-WORD-begin)
+  (evil-define-key '(normal insert visual) 'global (kbd "M-o") 'evil-forward-WORD-end)
+  (evil-define-key '(normal insert visual) 'global (kbd "M-i") 'evil-backward-paragraph)
+  (evil-define-key '(normal insert visual) 'global (kbd "M-u") 'evil-forward-paragraph)
   (evil-global-set-key 'motion "j" 'evil-next-visual-line)
   (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
   (evil-set-initial-state 'messages-buffer-mode 'normal)
@@ -304,15 +288,16 @@
   :after evil
   :init
   (evil-commentary-mode))
-    ;; [gcc]  comments out a line
-    ;; [gc]   comments out selection
-    ;; [gcap] comments out a paragraph
 
-;; Evil settings for lots of modes
 (use-package evil-collection
   :after evil
   :config
   (evil-collection-init))
+
+(use-package evil-mc
+  :after evil
+  :config
+  (global-evil-mc-mode))
 
 (use-package org
   :after evil
@@ -341,7 +326,7 @@
   :config
   (projectile-mode 1)
   (setq projectile-project-search-path '(default-directory))
-  (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map))
+  (evil-define-key '(normal insert visual) 'global (kbd "C-x p") 'projectile-command-map))
 
 (use-package flymake
   :bind
@@ -511,7 +496,7 @@
   :hook
   (java-mode . lsp)
   :config
-  (setq lsp-java-format-settings-url (lsp--path-to-uri (concat default-directory "magic/java-pointel-style.xml")))
+  (setq lsp-java-format-settings-url (lsp--path-to-uri (concat default-directory "cmds/magic/pointel/java-style.xml")))
   (setq lsp-java-format-settings-profile "PointelStyle"))
 
 (use-package go-mode
@@ -623,19 +608,6 @@
          (web-mode  . emmet-mode)
          (php-mode  . emmet-mode)))
 
-(use-package hippie-exp
-  :bind ("<C-return>" . hippie-expand)
-  :config
-  (setq-default hippie-expand-try-functions-list
-                '(yas-hippie-try-expand
-                  emmet-hippie-try-expand-line)))
-
-(defun emmet-hippie-try-expand-line (args)
-  "Includes another emmet handler with ARGS."
-  (interactive "P")
-  (when emmet-mode
-    (emmet-expand-line args)))
-
 
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                             ;;
@@ -649,8 +621,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(emmet-mode yasnippet-snippets yasnippet modern-cpp-font-lock cmake-font-lock cmake-mode lua-mode rust-mode go-mode lsp-java groovy-mode python-mode mmm-mode php-mode web-mode json-mode typescript-mode lsp-ui lsp-mode magit projectile doom-modeline doom-themes evil-collection evil-commentary evil org-bullets helpful which-key company-web company counsel ivy-rich ivy diminish dashboard auto-package-update use-package)))
+ )
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
