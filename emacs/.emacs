@@ -618,7 +618,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(package-selected-packages
+   '(evil-mc switch-window yasnippet-snippets which-key web-mode use-package typescript-mode rust-mode python-mode projectile php-mode modern-cpp-font-lock mmm-mode magit lua-mode lsp-ui lsp-java json-mode ivy-rich helpful groovy-mode go-mode evil-commentary evil-collection emmet-mode doom-themes doom-modeline dired-single diminish dashboard counsel company-web cmake-font-lock auto-package-update)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

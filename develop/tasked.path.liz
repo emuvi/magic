@@ -3,11 +3,15 @@ result_found = false
 result_output = ""
 
 all_spawned = {}
--- table.insert(all_spawned, {project, liz.spawn("tasked.path.sub", {project})})
-folders = liz.path_list_dirs(project)
-for _, folder in ipairs(folders) do
-   if folder ~= ".git" and not liz.git_is_ignored(folder) then
-	  table.insert(all_spawned, {folder, liz.spawn("tasked.path.sub", {folder})})
+table.insert(all_spawned, {project, liz.spawn("tasked.path.dir", {project})})
+root_dirs = liz.path_list_dirs(project)
+for _, root_dir in ipairs(root_dirs) do
+   if root_dir ~= ".git" and not liz.git_is_ignored(root_dir) then
+	  table.insert(all_spawned, {root_dir, liz.spawn("tasked.path.dir", {root_dir})})
+	  local leaf_dirs = liz.path_list_dirs_subs(root_dir)
+	  for _, leaf_dir in ipairs(leaf_dirs) do
+		 table.insert(all_spawned, {leaf_dir, liz.spawn("tasked.path.dir", {leaf_dir})})
+	  end
    end
 end
 

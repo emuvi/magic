@@ -1,4 +1,4 @@
-sub = liz.args[1]
+dir = liz.args[1]
 result_found = false
 result_output = ""
 extensions = {".txt", ".md", ".xml", ".html", ".htm", ".css", ".js", ".json", ".ts",
@@ -6,7 +6,7 @@ extensions = {".txt", ".md", ".xml", ".html", ".htm", ".css", ".js", ".json", ".
 			  ".jl", ".rs", ".pas", ".hpp", ".cpp", ".h", ".c", ".cmake",
 			  ".el", ".liz", ".lua", ".sh", ".bat" }
 search_for = "// " .. "TODO"
-files = liz.path_list_files_exts_subs(sub, extensions)
+files = liz.path_list_files_exts(dir, extensions)
 local founds = liz.text_files_find(files, search_for)
 if founds then
 	result_found = true
