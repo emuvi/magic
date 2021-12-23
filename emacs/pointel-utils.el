@@ -35,6 +35,7 @@
   (setq c-basic-offset number)
   (setq lua-indent-level number)
   (setq rust-indent-offset number)
+  (setq markdown-list-indent-width number)
   (setq javascript-indent-level number)
   (setq js-indent-level number)
   (setq js2-basic-offset number)
