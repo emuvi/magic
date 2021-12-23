@@ -29,12 +29,18 @@
   (interactive)
   (enlarge-window-horizontally -10))
 
-(defun custom-tab-settings ()
-  "Sets the custom tab settings."
-  (setq indent-tabs-mode t)
-  (setq tab-width 2)
-  (setq indent-line-function 'insert-tab)
-  (setq tab-stop-list (number-sequence 2 180 2)))  
+(defun set-for-code-tab-spaces (number)
+  "Sets the number ARG as tab spaces for all code modes."
+  (setq lisp-indent-offset number)
+  (setq c-basic-offset number)
+  (setq lua-indent-level number)
+  (setq javascript-indent-level number)
+  (setq js-indent-level number)
+  (setq js2-basic-offset number)
+  (setq web-mode-markup-indent-offset number)
+  (setq web-mode-css-indent-offset number)
+  (setq web-mode-code-indent-offset number)
+  (setq css-indent-offset number))
 
 (defun indent-buffer ()
   "Indent the contents of a buffer."

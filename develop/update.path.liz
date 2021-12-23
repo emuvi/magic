@@ -5,7 +5,11 @@ git_status = liz.cmd("git", {"status"}, project, false, false)
 git_status_code = git_status[1]
 git_status_output = git_status[2]
 git_status_output = liz.trim(git_status_output)
+git_no_changes_msg = "nothing to commit, working tree clean"
 if git_status_code == 0 then
+    
+	if not liz.ends_with(git_status_output, git_no_changes_msg)	then
+	  returned_should = true
 	
 end
 return returned_should, returned_status
