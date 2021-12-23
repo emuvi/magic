@@ -1,15 +1,24 @@
 project = liz.args[1]
 returned_should = false
-returned_status = ""
-git_status = liz.cmd("git", {"status"}, project, false, false)
-git_status_code = git_status[1]
-git_status_output = git_status[2]
-git_status_output = liz.trim(git_status_output)
-git_no_changes_msg = "nothing to commit, working tree clean"
-if git_status_code == 0 then
-    
-	if not liz.ends_with(git_status_output, git_no_changes_msg)	then
-	  returned_should = true
-	
+returned_code, returned_status = liz.cmd("git", {"status"},
+                                         project, false, false)
+if returned_code ~= 0 then
+  return returned_should, returned_code, returned_status
+end  
+returned_status = liz.trim(returned_status)
+git_no_changes_end = "nothing to commit, working tree clean"
+if liz.ends_with(returned_status, git_no_changes_end)	then
+  return returned_should, returned_code, returned_status
 end
-return returned_should, returned_status
+returned_code, returned_status = liz.cmd("git", {"add", "-A"},
+                                         project, false, false)
+if returned_code ~= 0 then
+  return returned_should, returned_code, returned_status
+end  
+returned_code, returned_status = liz.cmd("git", {"status"},
+                                         project, false, false)
+if returned_code ~= 0 then
+  return returned_should, returned_code, returned_status
+end  
+returned_should = true
+return returned_should, returned_code, returned_status
