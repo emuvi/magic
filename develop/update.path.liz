@@ -5,20 +5,24 @@ returned_code, returned_status = liz.cmd("git", {"status"},
 if returned_code ~= 0 then
   return returned_should, returned_code, returned_status
 end  
+
 returned_status = liz.trim(returned_status)
 git_no_changes_end = "nothing to commit, working tree clean"
 if liz.ends_with(returned_status, git_no_changes_end)	then
   return returned_should, returned_code, returned_status
 end
+
 returned_code, returned_status = liz.cmd("git", {"add", "-A"},
                                          project, false, false)
 if returned_code ~= 0 then
   return returned_should, returned_code, returned_status
 end  
+
 returned_code, returned_status = liz.cmd("git", {"status"},
                                          project, false, false)
 if returned_code ~= 0 then
   return returned_should, returned_code, returned_status
 end  
+
 returned_should = true
 return returned_should, returned_code, returned_status
