@@ -67,4 +67,4 @@
 (defun dashboard-display ()
   "Switch to the dashboard buffer."
   (interactive)
-  (display-buffer "*dashboard*"))
+  (switch-to-buffer "*dashboard*"))

@@ -1,4 +1,4 @@
 project = liz.args[1]
-returned_count = 0
-returned_output = ""
-return returned_count, returned_output
+returned_should = true
+returned_status = "this is a status"
+return returned_should, returned_status
