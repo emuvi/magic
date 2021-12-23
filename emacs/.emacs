@@ -203,7 +203,7 @@
 	 ("C-x C-r". counsel-recentf)
 	 ("C-x C-f" . counsel-find-file)
 	 ("C-x f" . counsel-file-jump)
-	 ("C-x b" . counsel-ibuffer)
+	 ("C-x b" . ibuffer)
 	 ("C-x C-b" . counsel-switch-buffer)
 	 :map minibuffer-local-map
 	 ("C-r" . 'counsel-minibuffer-history))
@@ -365,9 +365,9 @@
   :init
   (add-hook 'after-init-hook 'dashboard-refresh-buffer)
   :config
-  (setq dashboard-banner-logo-title "Welcome to Pointel Emacs Dashboard!")
-  (setq dashboard-items '((bookmarks . 7)
-                          (projects . 7)
+  (setq dashboard-startup-banner nil)
+  (setq dashboard-items '((projects . 3)
+						  (bookmarks . 5)
                           (recents  . 7)))
   (setq dashboard-center-content t)
   (setq dashboard-set-heading-icons nil)
