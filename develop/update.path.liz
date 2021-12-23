@@ -1,4 +1,11 @@
 project = liz.args[1]
-returned_should = true
-returned_status = "this is a status"
+returned_should = false
+returned_status = ""
+git_status = liz.cmd("git", {"status"}, project, false, false)
+git_status_code = git_status[1]
+git_status_output = git_status[2]
+git_status_output = liz.trim(git_status_output)
+if git_status_code == 0 then
+	
+end
 return returned_should, returned_status

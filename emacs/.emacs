@@ -16,6 +16,10 @@
 (setq kept-old-versions 2)
 (setq version-control t)
 
+(setq-default major-mode 'text-mode)
+(add-hook 'text-mode-hook 'custom-tab-settings)
+(add-hook 'lsp-mode-hook 'custom-tab-settings)
+
 
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                         ;;
@@ -44,10 +48,6 @@
 		shell-mode-hook
 		eshell-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
-
-(setq-default indent-tabs-mode t)
-(setq indent-line-function 'insert-tab)
-(setq-default tab-width 4)
 
 
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
@@ -85,11 +85,11 @@
 (set-face-attribute 'font-lock-comment-face nil :foreground "gray")
 
 
-;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
-;;                                                                         ;;
-;; Keybindings                                                             ;;
-;;                                                                         ;;
-;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
+;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
+;;                                                                       ;;
+;; Keybindings                                                           ;;
+;;                                                                       ;;
+;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 
 
 ;; General more common keybindings
@@ -108,14 +108,14 @@
 
 ;; Window general keybindings
 (global-set-key (kbd "C-x w =") 'balance-windows)
-(global-set-key (kbd "C-x w +") 'window-bigger)
-(global-set-key (kbd "C-x w -") 'window-lesser)
+(global-set-key (kbd "C-x w <up>") 'window-ver-bigger)
+(global-set-key (kbd "C-x w <down>") 'window-ver-lesser)
+(global-set-key (kbd "C-x w <right>") 'window-hor-bigger)
+(global-set-key (kbd "C-x w <left>") 'window-hor-lesser)
 
-;; Window resize keybindings
-(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "S-C-<down>") 'shrink-window)
-(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+;; Code indentention keybindings
+(global-set-key (kbd "S-C-<right>") 'indent-shift-right)
+(global-set-key (kbd "S-C-<left>") 'indent-shift-left)
 
 ;; Move lines keybindings
 (global-set-key (kbd "M-<up>") 'move-line-up)
@@ -218,7 +218,8 @@
   (setq company-tooltip-align-annotations t)
   (setq company-tooltip-limit 9)
   (global-company-mode 1)
-  (global-set-key (kbd "<backtab>") 'counsel-company))
+  (define-key company-mode-map [remap indent-for-tab-command] #'company-manual-begin)
+  (global-set-key (kbd "<backtab>") 'company-abort))
 
 (use-package company-web
   :config
@@ -261,20 +262,20 @@
   :init
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
-  (setq evil-want-C-u-scroll t)
-  (setq evil-want-C-i-jump nil)
+  (setq evil-want-C-u-scroll nil)
+  (setq evil-want-C-i-jump t)
   (setq evil-respect-visual-line-mode t)
   :config
   (evil-mode 1)
   (evil-set-undo-system 'undo-redo)
-  (evil-define-key '(normal insert visual) 'global (kbd "M-h") 'evil-backward-word-begin)
-  (evil-define-key '(normal insert visual) 'global (kbd "M-l") 'evil-forward-word-end)
-  (evil-define-key '(normal insert visual) 'global (kbd "M-k") 'evil-backward-sentence-begin)
-  (evil-define-key '(normal insert visual) 'global (kbd "M-j") 'evil-forward-sentence-begin)
   (evil-define-key '(normal insert visual) 'global (kbd "M-y") 'evil-backward-WORD-begin)
-  (evil-define-key '(normal insert visual) 'global (kbd "M-o") 'evil-forward-WORD-end)
-  (evil-define-key '(normal insert visual) 'global (kbd "M-i") 'evil-backward-paragraph)
   (evil-define-key '(normal insert visual) 'global (kbd "M-u") 'evil-forward-paragraph)
+  (evil-define-key '(normal insert visual) 'global (kbd "M-i") 'evil-backward-paragraph)
+  (evil-define-key '(normal insert visual) 'global (kbd "M-o") 'evil-forward-WORD-and-char)
+  (evil-define-key '(normal insert visual) 'global (kbd "M-h") 'evil-backward-word-begin)
+  (evil-define-key '(normal insert visual) 'global (kbd "M-j") 'evil-forward-sentence-begin)
+  (evil-define-key '(normal insert visual) 'global (kbd "M-k") 'evil-backward-sentence-begin)
+  (evil-define-key '(normal insert visual) 'global (kbd "M-l") 'evil-forward-word-and-char)
   (evil-global-set-key 'motion "j" 'evil-next-visual-line)
   (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
   (evil-set-initial-state 'messages-buffer-mode 'normal)
@@ -359,13 +360,6 @@
   :commands counsel-ag
   :bind (("C-x c" . 'counsel-ag)))
 
-(use-package eshell
-  :ensure nil
-  :defer t
-  :hook (eshell-mode . (lambda ()
-						 (company-mode -1)
-						 (define-key eshell-mode-map (kbd "<tab>") 'completion-at-point))))
-
 (use-package autorevert
   :config
   (setq global-auto-revert-non-file-buffers t)
@@ -378,7 +372,7 @@
   :config
   (setq dashboard-startup-banner nil)
   (setq dashboard-items '((projects . 3)
-						  (bookmarks . 5)
+			  (bookmarks . 5)
                           (recents  . 7)))
   (setq dashboard-center-content t)
   (setq dashboard-set-heading-icons nil)
@@ -400,7 +394,7 @@
   :after projectile
   :commands lsp
   :hook((markdown-mode .lsp)
-		(typescript-mode . lsp)
+	(typescript-mode . lsp)
         (json-mode. lsp)
         (css-mode . lsp)
         (web-mode . lsp)
@@ -410,10 +404,10 @@
         (java-mode . lsp)
         (go-mode . lsp)
         (rust-mode . lsp)
-		(lua-mode . lsp)
-        (cmake-mode . lsp)
         (c++-mode . lsp)
         (c-mode . lsp)
+	(lua-mode . lsp)
+        (cmake-mode . lsp)
         (lsp-mode . lsp-enable-which-key-integration))
   :init
   (setq lsp-keymap-prefix "C-c l")
@@ -496,16 +490,14 @@
 
 (use-package groovy-mode
   :mode (("\\.gvy\\'" . groovy-mode)
-		 ("\\.groovy\\'" . groovy-mode))
+	 ("\\.groovy\\'" . groovy-mode))
   :hook
   (groovy-mode . lsp))
 
 (use-package lsp-java
+  :mode "\\.java\\'"
   :hook
-  (java-mode . lsp)
-  :config
-  (setq lsp-java-format-settings-url (lsp--path-to-uri (concat default-directory "cmds/magic/pointel/java-style.xml")))
-  (setq lsp-java-format-settings-profile "PointelStyle"))
+  (java-mode . lsp))
 
 (use-package go-mode
   :mode "\\.go\\'"
@@ -519,7 +511,7 @@
 
 (use-package lua-mode
   :mode (("\\.lua\\'" . lua-mode)
-		 ("\\.liz\\'" . lua-mode))
+	 ("\\.liz\\'" . lua-mode))
   :hook
   (lua-mode . lsp))
 
@@ -629,8 +621,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(evil-mc switch-window yasnippet-snippets which-key web-mode use-package typescript-mode rust-mode python-mode projectile php-mode modern-cpp-font-lock mmm-mode magit lua-mode lsp-ui lsp-java json-mode ivy-rich helpful groovy-mode go-mode evil-commentary evil-collection emmet-mode doom-themes doom-modeline dired-single diminish dashboard counsel company-web cmake-font-lock auto-package-update)))
+ )
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

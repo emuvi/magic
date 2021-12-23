@@ -9,23 +9,58 @@
   (interactive)
   (eshell t))
 
-(defun window-bigger ()
+(defun window-ver-bigger ()
   "Make window bigger."
   (interactive)
-  (enlarge-window 3))
+  (enlarge-window 5))
 
-(defun window-lesser ()
-  "Make window lesser."
+(defun window-ver-lesser ()
+  "Make window vertically lesser."
   (interactive)
-  (enlarge-window -3))
+  (enlarge-window -5))
+
+(defun window-hor-bigger ()
+  "Make window horizontally bigger."
+  (interactive)
+  (enlarge-window-horizontally 10))
+
+(defun window-hor-lesser ()
+  "Make window horizontally lesser."
+  (interactive)
+  (enlarge-window-horizontally -10))
+
+(defun custom-tab-settings ()
+  "Sets the custom tab settings."
+  (setq indent-tabs-mode t)
+  (setq tab-width 2)
+  (setq indent-line-function 'insert-tab)
+  (setq tab-stop-list (number-sequence 2 180 2)))  
 
 (defun indent-buffer ()
   "Indent the contents of a buffer."
   (interactive)
   (save-excursion
     (delete-trailing-whitespace)
-    (indent-region (point-min) (point-max) nil)
-    (untabify (point-min) (point-max))))
+	(indent-region (point-min) (point-max) nil)
+	(untabify (point-min) (point-max))))
+
+(defun indent-shift-region (distance)
+  "Indents the selected region by the distance ARG."
+  (let ((mark (mark)))
+    (save-excursion
+      (indent-rigidly (region-beginning) (region-end) distance)
+      (push-mark mark t t)
+      (setq deactivate-mark nil))))
+
+(defun indent-shift-right ()
+  "Indents the selected region by +2 characters."
+  (interactive)
+  (indent-shift-region 2))
+
+(defun indent-shift-left ()
+  "Indents the selected region by -2 characters."
+  (interactive)
+  (indent-shift-region -2))
 
 (defun move-line-up ()
   "Move up the current line."
@@ -68,3 +103,15 @@
   "Switch to the dashboard buffer."
   (interactive)
   (switch-to-buffer "*dashboard*"))
+
+(defun evil-forward-WORD-and-char ()
+  "Jumps to the WORD ends plus a char."
+  (interactive)
+  (evil-forward-WORD-end)
+  (evil-forward-char))
+
+(defun evil-forward-word-and-char ()
+  "Jumps to the word ends plus a char."
+  (interactive)
+  (evil-forward-word-end)
+  (evil-forward-char))
