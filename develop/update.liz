@@ -21,8 +21,10 @@ for _, spawned in ipairs(all_spawned) do
   if returned_should then	   
     print("x----------------------------------------------------x")
     print("Update to project path: " .. project)
-    print(returned_status .. "\n")
+    print(returned_status)
+    print("")
     local descriptor = liz.ask("Descriptor: ")
+    print("")
     liz.cmd("git", {"commit", "-m", descriptor}, project, true, true)
     liz.cmd("git", {"push"}, project, true, true)
   elseif returned_code ~= 0 then
