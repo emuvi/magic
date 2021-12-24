@@ -60,13 +60,13 @@
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 
 
-(prefer-coding-system 'utf-8)
 (set-language-environment 'utf-8)
-(set-default-coding-systems 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-selection-coding-system 'utf-8)
-(setq-default buffer-file-coding-system 'utf-8)
-(setq default-process-coding-system '(utf-8 . utf-8))
+(prefer-coding-system 'utf-8-unix)
+(set-default-coding-systems 'utf-8-unix)
+(set-terminal-coding-system 'utf-8-unix)
+(set-selection-coding-system 'utf-8-unix)
+(setq-default buffer-file-coding-system 'utf-8-unix)
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
 
 
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
@@ -624,8 +624,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(emmet-mode yasnippet-snippets yasnippet modern-cpp-font-lock cmake-font-lock cmake-mode lua-mode rust-mode go-mode lsp-java groovy-mode python-mode mmm-mode php-mode web-mode json-mode typescript-mode lsp-ui lsp-mode dashboard ag dired-single magit projectile doom-modeline doom-themes evil-mc evil-collection evil-commentary evil helpful switch-window which-key company-web company counsel ivy-rich ivy diminish auto-package-update use-package)))
+  '(package-selected-packages
+     '(emmet-mode yasnippet-snippets yasnippet modern-cpp-font-lock cmake-font-lock cmake-mode lua-mode rust-mode go-mode lsp-java groovy-mode python-mode mmm-mode php-mode web-mode json-mode typescript-mode lsp-ui lsp-mode dashboard ag dired-single magit projectile doom-modeline doom-themes evil-mc evil-collection evil-commentary evil helpful switch-window which-key company-web company counsel ivy-rich ivy diminish auto-package-update use-package)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
