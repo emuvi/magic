@@ -23,10 +23,14 @@ for _, spawned in ipairs(all_spawned) do
     print("Update to project path: " .. project)
     print(returned_status)
     print("")
-    local descriptor = liz.ask("Descriptor: ")
+    local descriptor = liz.trim(liz.ask("Descriptor: "))
     print("")
-    liz.cmd("git", {"commit", "-m", descriptor}, project, true, true)
-    liz.cmd("git", {"push"}, project, true, true)
+    if descriptor == "" then
+      print("The descriptor can't be empty, skipping to update.")
+    else
+      liz.cmd("git", {"commit", "-m", descriptor}, project, true, true)
+      liz.cmd("git", {"push"}, project, true, true)
+    end
   elseif returned_code ~= 0 then
     print("x----------------------------------------------------x")
     print("Error on project path: " .. project)
