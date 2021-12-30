@@ -1,2 +1,2 @@
 #!/bin/bash
-liz Code/cmds/magic/prototype/pull
+liz Code/sets/magic/prototype/pull
