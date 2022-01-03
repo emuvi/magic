@@ -1,2 +1,2 @@
 #!/bin/bash
-liz Code/sets/magic/develop/tasked
+liz Code/cmds/magic/develop/tasked

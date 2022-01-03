@@ -1,2 +1,2 @@
 #!/bin/bash
-liz Code/sets/magic/develop/update
+liz Code/cmds/magic/develop/update

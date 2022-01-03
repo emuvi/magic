@@ -6,7 +6,7 @@
 
 
 (setq default-directory "~/Code/")
-(add-to-list 'load-path (concat default-directory "sets/magic/emacs"))
+(add-to-list 'load-path (concat default-directory "cmds/magic/emacs"))
 (load-library "pointel-utils")
 
 (setq backup-directory-alist `(("." . "~/.emacs.d/emacs_backup")))
@@ -383,7 +383,7 @@
   (setq dashboard-set-file-icons nil)
   (setq dashboard-footer-icon "*")
   (setq dashboard-projects-switch-function 'dired)
-  (setq dashboard-footer-messages (read-lines (concat default-directory "sets/magic/emacs/messages.txt")))
+  (setq dashboard-footer-messages (read-lines (concat default-directory "cmds/magic/emacs/messages.txt")))
   (dashboard-setup-startup-hook))
 
 
