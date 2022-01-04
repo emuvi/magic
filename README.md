@@ -1,3 +1,3 @@
 # Magic
 
-Magic is a collection of scripts and configuration files.
+Magic is a collection command scripts and configuration files.
