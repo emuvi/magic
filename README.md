@@ -1,5 +1,3 @@
 # Magic
 
-My magic files.
-
-A bunch of script and setup files that makes some jobs done.
+Magic is a collection of scripts and configuration files.
