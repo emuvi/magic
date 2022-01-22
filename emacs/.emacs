@@ -4,6 +4,7 @@
 ;;                                                                         ;;
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 
+;; // TODO - Remover the TAB as completion
 
 (setq default-directory "~/Code/")
 (add-to-list 'load-path (concat default-directory "cmds/magic/emacs"))
@@ -19,7 +20,6 @@
 (setq-default indent-tabs-mode nil)
 (setq indent-line-function 'insert-tab)
 (setq-default tab-width 2)
-(set-for-code-tab-spaces 2)
 
 (setq-default major-mode 'text-mode)
 

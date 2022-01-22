@@ -29,21 +29,6 @@
   (interactive)
   (enlarge-window-horizontally -10))
 
-(defun set-for-code-tab-spaces (number)
-  "Sets the number ARG as tab spaces for all code modes."
-  (setq lisp-indent-offset number)
-  (setq c-basic-offset number)
-  (setq lua-indent-level number)
-  (setq rust-indent-offset number)
-  (setq markdown-list-indent-width number)
-  (setq javascript-indent-level number)
-  (setq js-indent-level number)
-  (setq js2-basic-offset number)
-  (setq web-mode-markup-indent-offset number)
-  (setq web-mode-css-indent-offset number)
-  (setq web-mode-code-indent-offset number)
-  (setq css-indent-offset number))
-
 (defun indent-buffer ()
   "Indent the contents of a buffer."
   (interactive)
