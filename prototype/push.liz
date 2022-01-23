@@ -18,11 +18,11 @@ for _, spawned in ipairs(all_spawned) do
    print("x----------------------------------------------------x")
    print("Pushing project path: " .. project)
    local spawned_results = liz.join(spawned[2])
-   local returned_code = liz.from_returned(spawned_results[1])
+   local returned_code = liz.from_json(spawned_results[1])
    if returned_code ~= 0 then
       any_is_error = true
    end
-   local returned_output = liz.from_returned(spawned_results[2])
+   local returned_output = liz.from_json(spawned_results[2])
    print("[" .. returned_code .. "] - " .. returned_output)
 end
 print("+----------------------------------------------------+")
