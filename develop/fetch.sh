@@ -1,2 +1,3 @@
 #!/bin/bash
-liz Code/cmds/magic/develop/fetch
+cd ~/Code/cmds/magic/develop
+liz fetch

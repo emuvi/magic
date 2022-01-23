@@ -1,42 +1,47 @@
 code_path = liz.path_parent_find(liz.pwd(), "Code")
 if code_path == "" then
-    print("Could not found the Code parent path.")
-    return
+   print("Could not found the Code parent path.")
+   return
 end
 print("Update to code path: " .. code_path)
 all_spawned = {}
 code_root = liz.path_list_dirs(code_path)
 for _, category in ipairs(code_root) do
-  projects = liz.path_list_dirs(category)
-  for _, project in ipairs(projects) do
-    table.insert(all_spawned, {project, liz.spawn("update.path", {project})})
-  end
+   projects = liz.path_list_dirs(category)
+   for _, project in ipairs(projects) do
+      table.insert(all_spawned, {project, liz.spawn("update.path", {project})})
+   end
 end
 for _, spawned in ipairs(all_spawned) do
-  local project = spawned[1]
-  local spawned_results = liz.join(spawned[2])
-  local returned_should = liz.from_returned(spawned_results[1])
-  local returned_code = liz.from_returned(spawned_results[2])
-  local returned_status = liz.from_returned(spawned_results[3])
-  if returned_should then	   
-    print("x----------------------------------------------------x")
-    print("Update to project path: " .. project)
-    print(returned_status)
-    print("")
-    local descriptor = liz.trim(liz.ask("Descriptor: "))
-    print("")
-    if descriptor == "" then
-      print("The descriptor can't be empty, skipping this update.")
-    else
-      liz.cmd("git", {"add", "-A"}, project, true, true)
-      liz.cmd("git", {"commit", "-m", descriptor}, project, true, true)
-      liz.cmd("git", {"push"}, project, true, true)
-    end
-  elseif returned_code ~= 0 then
-    print("x----------------------------------------------------x")
-    print("Error on project path: " .. project)
-    print(returned_status)
-    liz.pause()
-  end
+   local project = spawned[1]
+   local spawned_results = liz.join(spawned[2])
+   
+   print(spawned_results[1])
+   print(spawned_results[2])
+   print(spawned_results[3])
+
+   local returned_should = liz.from_json(spawned_results[1])
+   local returned_code = liz.from_json(spawned_results[2])
+   local returned_status = liz.from_json(spawned_results[3])
+   if returned_should then
+      print("x----------------------------------------------------x")
+      print("Update to project path: " .. project)
+      print(returned_status)
+      print("")
+      local descriptor = liz.trim(liz.ask("Descriptor: "))
+      print("")
+      if descriptor == "" then
+         print("The descriptor can't be empty, skipping this update.")
+      else
+         liz.cmd("git", {"add", "-A"}, project, true, true)
+         liz.cmd("git", {"commit", "-m", descriptor}, project, true, true)
+         liz.cmd("git", {"push"}, project, true, true)
+      end
+   elseif returned_code ~= 0 then
+      print("x----------------------------------------------------x")
+      print("Error on project path: " .. project)
+      print(returned_status)
+      liz.pause()
+   end
 end
 print("x----------------------------------------------------x")

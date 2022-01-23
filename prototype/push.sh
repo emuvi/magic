@@ -1,2 +1,3 @@
 #!/bin/bash
-liz Code/cmds/magic/prototype/push
+cd ~/Code/cmds/magic/prototype
+liz push

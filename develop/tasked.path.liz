@@ -19,9 +19,9 @@ end
 for _, spawned in ipairs(all_spawned) do
    local folder = spawned[1]
    local spawned_results = liz.join(spawned[2])
-   local returned_found = liz.from_returned(spawned_results[1])
+   local returned_found = liz.from_json(spawned_results[1])
    if returned_found  then
-	  local returned_output = liz.from_returned(spawned_results[2])
+	  local returned_output = liz.from_json(spawned_results[2])
 	  result_found = true
 	  result_output = result_output .. "Founds in folder: " .. folder .. "\n"
 	  result_output = result_output .. returned_output .. "\n"

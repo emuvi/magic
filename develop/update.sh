@@ -1,2 +1,3 @@
 #!/bin/bash
-liz Code/cmds/magic/develop/update
+cd ~/Code/cmds/magic/develop
+liz update
