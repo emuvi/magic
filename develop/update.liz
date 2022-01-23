@@ -15,11 +15,6 @@ end
 for _, spawned in ipairs(all_spawned) do
    local project = spawned[1]
    local spawned_results = liz.join(spawned[2])
-   
-   print(spawned_results[1])
-   print(spawned_results[2])
-   print(spawned_results[3])
-
    local returned_should = liz.from_json(spawned_results[1])
    local returned_code = liz.from_json(spawned_results[2])
    local returned_status = liz.from_json(spawned_results[3])
