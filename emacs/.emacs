@@ -77,7 +77,7 @@
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 
 
-(set-face-attribute 'default nil :font "Source Code Pro" :height 140 :weight 'bold)
+(set-face-attribute 'default nil :font "Fira Code" :height 140 :weight 'bold)
 
 (set-face-attribute 'font-lock-keyword-face nil :foreground "darkred")
 (set-face-attribute 'font-lock-type-face nil :foreground "darkmagenta")
@@ -129,6 +129,7 @@
 (global-set-key (kbd "C-<next>") 'next-code-buffer)
 (global-set-key (kbd "C-<prior>") 'previous-code-buffer)
 (global-set-key (kbd "C-x C-d") 'dashboard-display)
+(global-set-key (kbd "C-x C-k") 'kill-this-buffer)
 
 
 ;; ~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
@@ -351,7 +352,6 @@
   :ensure nil
   :commands (dired dired-jump)
   :bind (("C-x C-j" . dired-jump))
-  :custom ((dired-listing-switches "-ago --group-directories-first"))
   :config
     (put 'dired-find-alternate-file 'disabled nil)
     (evil-collection-define-key 'normal 'dired-mode-map

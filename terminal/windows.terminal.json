@@ -44,14 +44,14 @@
                 "cursorShape": "emptyBox",
                 "font": 
                 {
-                    "face": "Source Code Pro",
+                    "face": "Fira Code",
                     "size": 15,
                     "weight": "bold"
                 },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command",
-                "startingDirectory": "C:\\Code"
+                "startingDirectory": "C:\\Pointel"
             },
             {
                 "colorScheme": "Pointel",
@@ -59,21 +59,21 @@
                 "cursorShape": "emptyBox",
                 "font": 
                 {
-                    "face": "Source Code Pro",
+                    "face": "Fira Code",
                     "size": 15,
                     "weight": "bold"
                 },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "PowerShell",
-                "startingDirectory": "C:\\Code"
+                "startingDirectory": "C:\\Pointel"
             },
             {
                 "colorScheme": "Pointel",
                 "cursorShape": "emptyBox",
                 "font": 
                 {
-                    "face": "Source Code Pro",
+                    "face": "Fira Code",
                     "size": 15,
                     "weight": "bold"
                 },
@@ -81,14 +81,14 @@
                 "hidden": false,
                 "name": "Debian",
                 "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "/home/pointel"
+                "startingDirectory": "C:\\Pointel"
             },
             {
                 "colorScheme": "Pointel",
                 "cursorShape": "emptyBox",
                 "font": 
                 {
-                    "face": "Source Code Pro",
+                    "face": "Fira Code",
                     "size": 15,
                     "weight": "bold"
                 },
@@ -103,14 +103,14 @@
                 "cursorShape": "emptyBox",
                 "font": 
                 {
-                    "face": "Source Code Pro",
+                    "face": "Fira Code",
                     "size": 15,
                     "weight": "bold"
                 },
                 "guid": "{71160544-14d8-4194-af25-d05feeac7233}",
                 "icon": "C:/msys2/msys2.ico",
                 "name": "MSYS",
-                "startingDirectory": "C:/Code"
+                "startingDirectory": "C:\\Code"
             },
             {
                 "colorScheme": "Pointel",
@@ -118,14 +118,14 @@
                 "cursorShape": "emptyBox",
                 "font": 
                 {
-                    "face": "Source Code Pro",
+                    "face": "Fira Code",
                     "size": 15,
                     "weight": "bold"
                 },
                 "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
                 "icon": "C:/msys2/mingw64.ico",
                 "name": "MINGW64",
-                "startingDirectory": "C:/Code"
+                "startingDirectory": "C:\\Code"
             },
             {
                 "colorScheme": "Pointel",
@@ -133,14 +133,14 @@
                 "cursorShape": "emptyBox",
                 "font": 
                 {
-                    "face": "Source Code Pro",
+                    "face": "Fira Code",
                     "size": 15,
                     "weight": "bold"
                 },
                 "guid": "{2d51fdc4-a03b-4efe-81bc-722b7f6f3820}",
                 "icon": "C:/msys2/mingw32.ico",
                 "name": "MINGW32",
-                "startingDirectory": "C:/Code"
+                "startingDirectory": "C:\\Code"
             }
         ]
     },
