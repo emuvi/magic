@@ -1,15 +1,25 @@
-code_path = liz.path_parent_find(liz.pwd(), "Code")
-if code_path == "" then
-    print("Could not found the Code parent path.")
-    return
+-- If is in a repository root then tasked it
+
+is_in_repo_root = liz.is_dir("./.git")
+
+-- If is in the Code root then tasked them all
+
+is_in_code_root = liz.is_dir("./Code")
+
+if not is_in_code_root then
+   print("You are not in the Code root.")
+   return
 end
+
+code_path = liz.path_absolute("./Code")
 print("Tasked on code path: " .. code_path)
 all_spawned = {}
 code_root = liz.path_list_dirs(code_path)
 for _, category in ipairs(code_root) do
     projects = liz.path_list_dirs(category)
     for _, project in ipairs(projects) do
-        table.insert(all_spawned, {project, liz.spawn("tasked.path", {project})})
+        local spawn_path = liz.path_join(liz.race_dir, "tasked.path")
+        table.insert(all_spawned, {project, liz.spawn(spawn_path, {project})})
     end
 end
 for _, spawned in ipairs(all_spawned) do
