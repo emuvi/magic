@@ -1,8 +1,8 @@
 version: "3"
 services:
-  start:
+  dev:
     build:
       context: .
       dockerfile: ./Dockerfile
-    image: basic:latest
-    container_name: basic
+    image: dev:latest
+    container_name: dev
