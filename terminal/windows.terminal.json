@@ -35,76 +35,84 @@
     "initialRows": 25,
     "profiles": 
     {
-        "defaults": {},
+        "defaults": 
+        {
+            "colorScheme": "Tango Dark",
+            "font": 
+            {
+                "face": "Fira Code",
+                "size": 14
+            }
+        },
         "list": 
         [
             {
-                "colorScheme": "Pointel",
+                "colorScheme": "Tango Dark",
                 "commandline": "cmd.exe",
                 "cursorShape": "emptyBox",
                 "font": 
                 {
                     "face": "Fira Code",
-                    "size": 15,
+                    "size": 14,
                     "weight": "bold"
                 },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command",
-                "startingDirectory": "C:\\Pointel"
+                "startingDirectory": "C:\\Devs"
             },
             {
-                "colorScheme": "Pointel",
+                "colorScheme": "Tango Dark",
                 "commandline": "powershell.exe",
                 "cursorShape": "emptyBox",
                 "font": 
                 {
                     "face": "Fira Code",
-                    "size": 15,
+                    "size": 14,
                     "weight": "bold"
                 },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "PowerShell",
-                "startingDirectory": "C:\\Pointel"
+                "startingDirectory": "C:\\Devs"
             },
             {
-                "colorScheme": "Pointel",
+                "colorScheme": "Tango Dark",
                 "cursorShape": "emptyBox",
                 "font": 
                 {
                     "face": "Fira Code",
-                    "size": 15,
+                    "size": 14,
                     "weight": "bold"
                 },
                 "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
                 "hidden": false,
                 "name": "Git Bash",
                 "source": "Git",
-                "startingDirectory": "C:\\Pointel"
+                "startingDirectory": "C:\\Devs"
             },
             {
-                "colorScheme": "Pointel",
+                "colorScheme": "Tango Dark",
                 "cursorShape": "emptyBox",
                 "font": 
                 {
                     "face": "Fira Code",
-                    "size": 15,
+                    "size": 14,
                     "weight": "bold"
                 },
                 "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
                 "hidden": false,
                 "name": "Debian",
                 "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "C:\\Pointel"
+                "startingDirectory": "%USERPROFILE%"
             },
             {
-                "colorScheme": "Pointel",
+                "colorScheme": "Tango Dark",
                 "cursorShape": "emptyBox",
                 "font": 
                 {
                     "face": "Fira Code",
-                    "size": 15,
+                    "size": 14,
                     "weight": "bold"
                 },
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
@@ -278,7 +286,7 @@
             "yellow": "#B58900"
         },
         {
-            "background": "#000000",
+            "background": "#1B0000",
             "black": "#000000",
             "blue": "#3465A4",
             "brightBlack": "#555753",
@@ -289,14 +297,14 @@
             "brightRed": "#EF2929",
             "brightWhite": "#EEEEEC",
             "brightYellow": "#FCE94F",
-            "cursorColor": "#FFFFFF",
+            "cursorColor": "#840000",
             "cyan": "#06989A",
-            "foreground": "#D3D7CF",
+            "foreground": "#FFFAF5",
             "green": "#4E9A06",
             "name": "Tango Dark",
             "purple": "#75507B",
             "red": "#CC0000",
-            "selectionBackground": "#FFFFFF",
+            "selectionBackground": "#004284",
             "white": "#D3D7CF",
             "yellow": "#C4A000"
         },
