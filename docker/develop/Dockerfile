@@ -24,7 +24,7 @@ RUN apt-get install -y php-cli php-pgsql php-sqlite3 composer
 
 RUN curl https://sh.rustup.rs -sSf | \
     sh -s -- --default-toolchain stable -y
-RUN /root/.cargo/bin/rustup component add rls
+RUN /root/.cargo/bin/rustup component add rls rust-analysis rust-src
 ENV PATH=/root/.cargo/bin:$PATH
 
 RUN curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
