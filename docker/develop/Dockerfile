@@ -1,4 +1,5 @@
 FROM debian:bullseye-slim
+ENV TERM xterm-256color
 RUN mkdir /Devs
 
 RUN apt-get update
@@ -43,4 +44,3 @@ ENV EDITOR nvim
 RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/git/.gitconfig -o /root/.gitconfig
 
 WORKDIR "/Devs"
-ENV TERM xterm-256color
