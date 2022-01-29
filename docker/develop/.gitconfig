@@ -1,0 +1,11 @@
+[user]
+	name = Éverton M. Vieira
+	email = everton.muvi@gmail.com
+[credential]
+	helper = store --file /Devs/.git-credentials
+[credential "https://github.com"]
+	username = emuvi
+[pull]
+	ff = only
+[core]
+	autocrlf = false
