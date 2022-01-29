@@ -34,7 +34,7 @@ RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs https
 RUN mkdir -p /root/.config/nvim
 RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/vim/init.vim -o /root/.config/nvim/init.vim
 RUN nvim +"PlugInstall --sync" +qa
-RUN nvim -c 'CocInstall -sync coc-git coc-clangd coc-cmake coc-rls coc-tsserver coc-json coc-css coc-html|qa'
+RUN nvim -c 'CocInstall -sync coc-git coc-clangd coc-cmake coc-rls coc-tsserver coc-json coc-css coc-html coc-markdownlint|qa'
 ENV EDITOR nvim
 
 RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/git/.gitconfig -o /root/.gitconfig
