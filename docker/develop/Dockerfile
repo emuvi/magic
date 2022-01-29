@@ -41,6 +41,7 @@ RUN nvim +"PlugInstall --sync" +qa
 RUN nvim -c 'CocInstall -sync coc-docker coc-git coc-clangd coc-cmake coc-rls coc-tsserver coc-json coc-css coc-html coc-markdownlint|qa'
 ENV EDITOR nvim
 
+RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/npm/.npmrc -o /root/.npmrc
 RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/develop/.gitconfig -o /root/.gitconfig
 
 WORKDIR "/Devs"
