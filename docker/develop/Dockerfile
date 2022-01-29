@@ -1,9 +1,5 @@
 FROM debian:bullseye-slim
 
-RUN mkdir /devs
-WORKDIR "/devs"
-ENV TERM xterm-256color
-
 RUN apt-get update
 
 RUN apt-get install -y zip unzip curl git
@@ -23,16 +19,26 @@ RUN apt-get install -y php-cli php-pgsql php-sqlite3 composer
 RUN curl https://sh.rustup.rs -sSf | \
     sh -s -- --default-toolchain stable -y
 RUN /root/.cargo/bin/rustup component add rls
-RUN /root/.cargo/bin/cargo install liz
 ENV PATH=/root/.cargo/bin:$PATH
 
 RUN curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
 RUN bash n lts
+RUN rm n
 RUN npm install --global typescript browserify
+
+RUN curl -L https://github.com/emuvi/liz/releases/download/v0.1.18/lin_64_liz.tar.gz -o /usr/local/bin/liz.tar.gz
+RUN tar -xzf /usr/local/bin/liz.tar.gz -C /usr/local/bin
+RUN rm /usr/local/bin/liz.tar.gz
 
 RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 RUN mkdir -p /root/.config/nvim
 RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/vim/init.vim -o /root/.config/nvim/init.vim
 RUN nvim +"PlugInstall --sync" +qa
-RUN nvim -c 'CocInstall -sync coc-git coc-rls coc-tsserver coc-json coc-css coc-html|qa'
+RUN nvim -c 'CocInstall -sync coc-git coc-clangd coc-cmake coc-rls coc-tsserver coc-json coc-css coc-html|qa'
 ENV EDITOR nvim
+
+RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/git/.gitconfig -o /root/.gitconfig
+
+RUN mkdir /Devs
+WORKDIR "/Devs"
+ENV TERM xterm-256color

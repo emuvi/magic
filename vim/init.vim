@@ -3,8 +3,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-let g:coc_global_extensions = ['coc-git', 'coc-rls', 'coc-tsserver', 'coc-json', 'coc-css', 'coc-html']
-
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
