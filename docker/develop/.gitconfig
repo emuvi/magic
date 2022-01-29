@@ -8,4 +8,5 @@
 [pull]
 	ff = only
 [core]
+	eol = lf
 	autocrlf = false
