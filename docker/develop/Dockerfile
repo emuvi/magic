@@ -4,8 +4,12 @@ RUN mkdir /Devs
 
 RUN apt-get update
 
-RUN apt-get install -y zip unzip curl git
+RUN apt-get install -y tmux zip unzip curl git
+
+RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/bash/.bashrc -o /root/.bashrc
+
 RUN apt-get install -y fish nano neovim ranger
+RUN chsh -s /usr/bin/fish
 
 RUN apt-get install -y build-essential cmake clang clang-tools clangd
 RUN apt-get install -y dos2unix file autoconf automake autotools-dev
