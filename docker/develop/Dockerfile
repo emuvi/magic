@@ -38,7 +38,7 @@ RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/ranger/rifle.co
 RUN mkdir -p /root/.config/nvim
 RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/vim/init.vim -o /root/.config/nvim/init.vim
 RUN nvim +"PlugInstall --sync" +qa
-RUN nvim -c 'CocInstall -sync coc-docker coc-git coc-clangd coc-cmake coc-rls coc-tsserver coc-json coc-css coc-html coc-markdownlint|qa'
+RUN nvim -c 'CocInstall -sync coc-docker coc-git coc-clangd coc-cmake coc-rls coc-tsserver coc-json coc-css coc-html coc-phpls coc-markdownlint|qa'
 ENV EDITOR nvim
 
 RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/npm/.npmrc -o /root/.npmrc
