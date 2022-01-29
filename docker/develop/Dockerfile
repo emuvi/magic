@@ -1,4 +1,5 @@
 FROM debian:bullseye-slim
+RUN mkdir /Devs
 
 RUN apt-get update
 
@@ -6,8 +7,8 @@ RUN apt-get install -y zip unzip curl git
 RUN apt-get install -y fish nano neovim ranger
 
 RUN apt-get install -y build-essential cmake clang clang-tools clangd
-RUN apt-get install -y dos2unix pkg-config ca-certificates openssl libssl-dev 
-RUN apt-get install -y file autoconf automake autotools-dev libtool xutils-dev
+RUN apt-get install -y dos2unix file autoconf automake autotools-dev
+RUN apt-get install -y pkg-config ca-certificates openssl libssl-dev 
 
 RUN apt-get install -y sqlite3 postgresql-client
 
@@ -31,14 +32,15 @@ RUN tar -xzf /usr/local/bin/liz.tar.gz -C /usr/local/bin
 RUN rm /usr/local/bin/liz.tar.gz
 
 RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+RUN mkdir -p /root/.config/ranger
+RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/ranger/rifle.conf -o /root/.config/ranger/rifle.conf
 RUN mkdir -p /root/.config/nvim
 RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/vim/init.vim -o /root/.config/nvim/init.vim
 RUN nvim +"PlugInstall --sync" +qa
-RUN nvim -c 'CocInstall -sync coc-git coc-clangd coc-cmake coc-rls coc-tsserver coc-json coc-css coc-html coc-markdownlint|qa'
+RUN nvim -c 'CocInstall -sync coc-docker coc-git coc-clangd coc-cmake coc-rls coc-tsserver coc-json coc-css coc-html coc-markdownlint|qa'
 ENV EDITOR nvim
 
 RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/git/.gitconfig -o /root/.gitconfig
 
-RUN mkdir /Devs
 WORKDIR "/Devs"
 ENV TERM xterm-256color
