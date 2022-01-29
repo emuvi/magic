@@ -1,3 +1,5 @@
+from ranger.api.commands import *
+
 class shell(Command):
     escape_macros_for_shell = True
 

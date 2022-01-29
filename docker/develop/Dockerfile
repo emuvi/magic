@@ -39,6 +39,7 @@ RUN rm /usr/local/bin/liz.tar.gz
 RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 RUN mkdir -p /root/.config/ranger
 RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/ranger/rifle.conf -o /root/.config/ranger/rifle.conf
+RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/ranger/commands.py -o /root/.config/ranger/commands.py
 RUN mkdir -p /root/.config/nvim
 RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/vim/init.vim -o /root/.config/nvim/init.vim
 RUN nvim +"PlugInstall --sync" +qa
