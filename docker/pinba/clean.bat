@@ -1,4 +1,4 @@
 @echo off
-docker image rm "poibas"
+docker image rm "pinba"
 docker builder prune -f --all
 pause

@@ -4,7 +4,7 @@ RUN pacman --noconfirm -Syu
 RUN pacman --noconfirm -Su
 
 RUN pacman --noconfirm -S zip unzip curl
-RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/poibas/bash/.bashrc -o /root/.bashrc
+RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/pinba/bash/.bashrc -o /root/.bashrc
 RUN chsh -s /bin/bash
 
 RUN pacman --noconfirm -S sqlite postgresql-libs

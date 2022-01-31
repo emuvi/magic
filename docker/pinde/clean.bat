@@ -1,4 +1,4 @@
 @echo off
-docker image rm "poidel"
+docker image rm "pinde"
 docker builder prune -f --all
 pause

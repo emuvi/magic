@@ -5,9 +5,9 @@ RUN pacman --noconfirm -Su
 
 RUN pacman --noconfirm -S zip unzip tmux fish curl git
 RUN mkdir -p /root/.config/fish
-RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/poidel/fish/config.fish -o /root/.config/fish/config.fish
+RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/pinde/fish/config.fish -o /root/.config/fish/config.fish
 RUN chsh -s /usr/bin/fish
-RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/poidel/git/.gitconfig -o /root/.gitconfig
+RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/pinde/git/.gitconfig -o /root/.gitconfig
 
 RUN pacman --noconfirm -S autoconf automake pkgconf
 RUN pacman --noconfirm -S ca-certificates openssl
@@ -36,15 +36,18 @@ RUN rustup component add rls rust-analysis rust-src
 
 RUN pacman --noconfirm -S nodejs npm
 RUN npm install --global typescript browserify
-RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/poidel/npm/.npmrc -o /root/.npmrc
+RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/pinde/npm/.npmrc -o /root/.npmrc
+
+RUN mkdir -p /root/.config/tmux
+RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/pinde/tmux/tmux.conf -o /root/.config/tmux/tmux.conf
 
 RUN mkdir -p /root/.config/ranger
-RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/poidel/ranger/rifle.conf -o /root/.config/ranger/rifle.conf
-RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/poidel/ranger/commands.py -o /root/.config/ranger/commands.py
+RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/pinde/ranger/rifle.conf -o /root/.config/ranger/rifle.conf
+RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/pinde/ranger/commands.py -o /root/.config/ranger/commands.py
 ENV EDITOR=nvim
 
 RUN mkdir -p /root/.config/nvim
-RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/poidel/nvim/init.vim -o /root/.config/nvim/init.vim
+RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/pinde/nvim/init.vim -o /root/.config/nvim/init.vim
 RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 RUN nvim +"PlugInstall --sync" +qa
 RUN nvim -c 'CocInstall -sync coc-docker coc-git coc-clangd coc-cmake coc-rls coc-tsserver coc-json coc-css coc-html coc-phpls|qa'
