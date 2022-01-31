@@ -38,6 +38,8 @@ RUN pacman --noconfirm -S nodejs npm
 RUN npm install --global typescript browserify
 RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/poidel/npm/.npmrc -o /root/.npmrc
 
+RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/poidel/tmux/.tmux.conf -o /root/.tmux.conf
+
 RUN mkdir -p /root/.config/ranger
 RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/poidel/ranger/rifle.conf -o /root/.config/ranger/rifle.conf
 RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/poidel/ranger/commands.py -o /root/.config/ranger/commands.py
