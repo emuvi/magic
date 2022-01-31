@@ -47,7 +47,7 @@ RUN mkdir -p /root/.config/nvim
 RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/poidel/nvim/init.vim -o /root/.config/nvim/init.vim
 RUN curl -fLo /root/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 RUN nvim +"PlugInstall --sync" +qa
-RUN nvim -c 'CocInstall -sync coc-docker coc-git coc-clangd coc-cmake coc-rls coc-tsserver coc-json coc-css coc-html coc-phpls coc-markdownlint|qa'
+RUN nvim -c 'CocInstall -sync coc-docker coc-git coc-clangd coc-cmake coc-rls coc-tsserver coc-json coc-css coc-html coc-phpls|qa'
 
 RUN mkdir /Devs
 WORKDIR "/Devs"
