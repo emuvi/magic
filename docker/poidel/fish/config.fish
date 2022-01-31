@@ -1,2 +1,3 @@
+set HELLO fishing
+
 alias tmux='tmux -u'
-set HELLO testing
