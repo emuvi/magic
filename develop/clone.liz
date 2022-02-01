@@ -14,11 +14,11 @@ function is_web(checker)
    return liz.contains(checker, "webmedia")
 end
 
-liz.mk_dir("Arks")
-liz.mk_dir("Code")
-liz.mk_dir("Code/apps")
-liz.mk_dir("Code/cmds")
-liz.mk_dir("Code/webs")
+liz.mkdir("Arks")
+liz.mkdir("Code")
+liz.mkdir("Code/apps")
+liz.mkdir("Code/cmds")
+liz.mkdir("Code/webs")
 
 failed = {}
 
