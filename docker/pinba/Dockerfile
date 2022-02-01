@@ -3,7 +3,7 @@ ENV TERM xterm-256color
 RUN pacman --noconfirm -Syu
 RUN pacman --noconfirm -Su
 
-RUN pacman --noconfirm -S zip unzip curl
+RUN pacman --noconfirm -S zip unzip curl nano
 RUN curl -L https://raw.githubusercontent.com/emuvi/magic/master/docker/pinba/bash/.bashrc -o /root/.bashrc
 RUN chsh -s /bin/bash
 
