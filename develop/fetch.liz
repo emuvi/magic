@@ -18,8 +18,7 @@ code_root = liz.path_list_dirs(code_path)
 for _, category in ipairs(code_root) do
     projects = liz.path_list_dirs(category)
     for _, project in ipairs(projects) do
-        local spawn_path = liz.path_join(liz.race_dir, "fetch.path")    
-        table.insert(all_spawned, {project, liz.spawn(spawn_path, {project})})
+        table.insert(all_spawned, {project, liz.spawn("fetch.path", {project})})
     end
 end
 any_is_error = false
