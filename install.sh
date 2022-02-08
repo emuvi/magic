@@ -5,7 +5,7 @@ mkdir -p  ~/.config/fish
 rm ~/.config/fish/config.fish
 ln -s ~/Devs/Code/cmds/magic/fish/config.fish ~/.config/fish/config.fish
 rm ~/.npmrc
-ln -s ~/Devs/Code/cmds/magic/npm/.npmrc ~/.npmrc
+cp ~/Devs/Code/cmds/magic/npm/.npmrc ~/.npmrc
 rm ~/.tmux.conf
 ln -s ~/Devs/Code/cmds/magic/tmux/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.config/ranger

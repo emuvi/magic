@@ -8,6 +8,9 @@ call plug#end()
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
 
+" Show line number
+set number
+
 " Set terminal as Fish
 set shell=/usr/bin/fish
 
@@ -19,7 +22,7 @@ set nobackup
 set nowritebackup
 
 " Space for displaying messages.
-set cmdheight=1
+set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
