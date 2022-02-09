@@ -4,8 +4,6 @@
 ;;                                                                         ;;
 ;; ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 
-;; // TODO - Remover the TAB as completion
-
 (setq default-directory "~/Devs/Code/")
 (add-to-list 'load-path (concat default-directory "cmds/magic/emacs"))
 (load-library "pointel-utils")
@@ -221,7 +219,6 @@
   (setq company-tooltip-align-annotations t)
   (setq company-tooltip-limit 9)
   (global-company-mode 1)
-  (define-key company-mode-map [remap indent-for-tab-command] #'company-manual-begin)
   (global-set-key (kbd "<backtab>") 'company-abort))
 
 (use-package company-web
