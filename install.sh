@@ -19,5 +19,6 @@ ln -s ~/Devs/Code/cmds/magic/nvim/init.vim ~/.config/nvim/init.vim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 nvim +"PlugInstall --sync" +qa
-nvim -c 'CocInstall -sync coc-docker coc-git coc-clangd coc-cmake coc-rls coc-tsserver coc-json coc-css coc-html coc-phpls|qa'
+nvim -c 'CocInstall -sync coc-explorer coc-docker coc-git coc-clangd coc-cmake coc-rls coc-tsserver coc-json coc-css coc-html coc-phpls|qa'
+rm ~/.emacs
 ln -s ~/Devs/Code/cmds/magic/emacs/.emacs ~/.emacs

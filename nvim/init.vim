@@ -3,6 +3,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
+" Shortcut to executes this config file
+let $MY_VIMRC = '~/.config/nvim/init.vim'
+nnoremap <Leader>sv :source $MY_VIMRC<CR>
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
@@ -14,6 +17,9 @@ set number
 " Set terminal as Fish
 set shell=/usr/bin/fish
 
+" Shortcut to exit insert mode on terminal
+tnoremap <Esc> <C-\><C-n>
+
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -22,7 +28,7 @@ set nobackup
 set nowritebackup
 
 " Space for displaying messages.
-set cmdheight=2
+set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -178,3 +184,7 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+" Show explorer
+nnoremap <space>x <Cmd>CocCommand explorer<CR>
+" Show closest file on explorer
+nnoremap <space>f <Cmd>call CocAction('runCommand', 'explorer.doAction', 'closest', ['reveal:0'], [['relative', 0, 'file']])<CR>
