@@ -3,9 +3,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-" Shortcut to executes this config file
+" Shortcut to execute this config file
 let $MY_VIMRC = '~/.config/nvim/init.vim'
 nnoremap <Leader>sv :source $MY_VIMRC<CR>
+
+" Shortcut to delete the word ahead
+imap <C-D> X<Esc>lbce
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
