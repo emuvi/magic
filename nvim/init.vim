@@ -191,3 +191,4 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 nnoremap <space>x <Cmd>CocCommand explorer<CR>
 " Show closest file on explorer
 nnoremap <space>f <Cmd>call CocAction('runCommand', 'explorer.doAction', 'closest', ['reveal:0'], [['relative', 0, 'file']])<CR>
+
