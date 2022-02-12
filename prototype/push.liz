@@ -13,13 +13,20 @@ end
 
 code_path = liz.path_absolute("./Code")
 print("Pushing code path: " .. code_path)
+
 all_spawned = {}
 code_root = liz.path_list_dirs(code_path)
 for _, category in ipairs(code_root) do
    projects = liz.path_list_dirs(category)
    for _, project in ipairs(projects) do
       local spawn_path = liz.path_join(liz.race_dir, "push.path")
-      table.insert(all_spawned, {project, liz.spawn(spawn_path, {project})})
+      local spawn_args = {project}
+      if liz.args then
+         for _, arg in pairs(liz.args) do
+            table.insert(spawn_args, arg)
+         end
+      end
+      table.insert(all_spawned, {project, liz.spawn(spawn_path, spawn_args)})
    end
 end
 any_is_error = false
