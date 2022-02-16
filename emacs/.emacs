@@ -349,6 +349,7 @@
   :bind (("C-x C-j" . dired-jump))
   :config
     (put 'dired-find-alternate-file 'disabled nil)
+    (setq dired-listing-switches "-aBhl  --group-directories-first")
     (evil-collection-define-key 'normal 'dired-mode-map
       "h" 'dired-single-up-directory
       "l" 'dired-single-buffer))
