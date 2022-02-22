@@ -1,17 +1,38 @@
 dir = liz.args[1]
 result_found = false
 result_output = ""
-extensions = {".txt", ".md", ".xml", ".html", ".htm", ".css", ".js", ".json", ".ts",
-			  ".dart", ".go", ".cs", ".java", ".gvy", ".clj", ".sc", ".ruby", ".py",
-			  ".jl", ".rs", ".pas", ".hpp", ".cpp", ".h", ".c", ".cmake",
-			  ".el", ".liz", ".lua", ".sh", ".bat" }
-search_for = "// " .. "TODO" .. " - "
+extensions = {".txt", ".md", ".html", ".htm", ".css", ".js", ".json", ".ts", ".rs", ".toml", ".liz", ".lua", ".sh", ".bat", ".el" }
 files = liz.path_list_files_exts(dir, extensions)
-local founds = liz.text_files_find(files, search_for)
+search_for = "[" .. "EVAL" .. "]"
+founds = liz.text_files_find(files, search_for)
 if founds then
 	result_found = true
-	for _, found in ipairs(founds) do
-		result_output = result_output .. found .. "\n"
+	for _, found in pairs(founds) do
+		print(found)
+		local found_parts = liz.text_file_founds(found)
+		print(found_parts)
+		local found_path = found_parts[1]
+		print(found_path)
+		local found_line = found_parts[6]
+		print(found_line)
+		result_output = result_output .. found_line .. " | "
+		print(result_output)
+	end
+end
+search_for = "[" .. "TODO" .. "]"
+founds = liz.text_files_find(files, search_for)
+if founds then
+	result_found = true
+	for _, found in pairs(founds) do
+		print(found)
+		local found_parts = liz.text_file_founds(found)
+		print(found_parts)
+		local found_path = found_parts[1]
+		print(found_path)
+		local found_line = found_parts[6]
+		print(found_line)
+		result_output = result_output .. found_line .. " | "
+		print(result_output)
 	end
 end
 return result_found, result_output
