@@ -510,8 +510,7 @@
   (rust-mode . lsp))
 
 (use-package lua-mode
-  :mode (("\\.lua\\'" . lua-mode)
-	 ("\\.liz\\'" . lua-mode))
+  :mode (("\\.lua\\'" . lua-mode))
   :hook
   (lua-mode . lsp))
 
