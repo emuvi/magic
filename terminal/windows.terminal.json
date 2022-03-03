@@ -37,55 +37,32 @@
     {
         "defaults": 
         {
-            "colorScheme": "Vintage",
+            "colorScheme": "One Half Dark",
             "cursorShape": "emptyBox",
             "font": 
             {
                 "face": "Fira Code",
-                "size": 14
+                "size": 14,
+                    "weight": "bold"
             }
         },
         "list": 
         [
             {
-                "colorScheme": "Vintage",
                 "commandline": "cmd.exe",
-                "cursorShape": "emptyBox",
-                "font": 
-                {
-                    "face": "Fira Code",
-                    "size": 14,
-                    "weight": "bold"
-                },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command",
                 "startingDirectory": "%USERPROFILE%"
             },
             {
-                "colorScheme": "Vintage",
                 "commandline": "powershell.exe",
-                "cursorShape": "emptyBox",
-                "font": 
-                {
-                    "face": "Fira Code",
-                    "size": 14,
-                    "weight": "bold"
-                },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "PowerShell",
                 "startingDirectory": "%USERPROFILE%"
             },
             {
-                "colorScheme": "Vintage",
-                "cursorShape": "emptyBox",
-                "font": 
-                {
-                    "face": "Fira Code",
-                    "size": 14,
-                    "weight": "bold"
-                },
                 "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
                 "hidden": false,
                 "name": "Git Bash",
@@ -93,14 +70,6 @@
                 "startingDirectory": "%USERPROFILE%"
             },
             {
-                "colorScheme": "Vintage",
-                "cursorShape": "emptyBox",
-                "font": 
-                {
-                    "face": "Fira Code",
-                    "size": 14,
-                    "weight": "bold"
-                },
                 "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
                 "hidden": false,
                 "name": "Debian",
@@ -108,14 +77,6 @@
                 "startingDirectory": "%USERPROFILE%"
             },
             {
-                "colorScheme": "Vintage",
-                "cursorShape": "emptyBox",
-                "font": 
-                {
-                    "face": "Fira Code",
-                    "size": 14,
-                    "weight": "bold"
-                },
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
                 "hidden": false,
                 "name": "Azure",
@@ -311,7 +272,7 @@
             "yellow": "#C4A000"
         },
         {
-            "background": "#1B1209",
+            "background": "#000000",
             "black": "#000000",
             "blue": "#000080",
             "brightBlack": "#808080",
@@ -324,7 +285,7 @@
             "brightYellow": "#FFFF00",
             "cursorColor": "#FFFFFF",
             "cyan": "#008080",
-            "foreground": "#E6DCD2",
+            "foreground": "#C0C0C0",
             "green": "#008000",
             "name": "Vintage",
             "purple": "#800080",
