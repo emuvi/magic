@@ -34,6 +34,7 @@
 (global-hl-line-mode 1)             
 (menu-bar-mode -1)
 (tooltip-mode -1)
+(delete-selection-mode t)
 
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (when (fboundp 'tool-bar-mode) (tool-bar-mode 0))
@@ -214,12 +215,13 @@
 (use-package company
   :config
   (setq company-echo-delay 0)
-  (setq company-idle-delay 1)
-  (setq company-minimum-prefix-length 3)
+  (setq company-idle-delay 0)
+  (setq company-minimum-prefix-length 1)
   (setq company-tooltip-align-annotations t)
   (setq company-tooltip-limit 9)
   (global-company-mode 1)
-  (global-set-key (kbd "<backtab>") 'company-abort))
+  (global-set-key (kbd "C-c <escape>") 'company-abort)
+  (global-set-key (kbd "C-c SPC") 'company-manual-begin))
 
 (use-package company-web
   :config
