@@ -310,7 +310,7 @@
 (use-package doom-themes 
   :defer t
   :config
-  (load-theme 'doom-one-light t)
+  (load-theme 'doom-one-dark t)
   (doom-themes-visual-bell-config))
 
 (use-package doom-modeline
