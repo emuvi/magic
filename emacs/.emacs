@@ -444,6 +444,8 @@
   ("M-s s m" . lsp-ui-imenu)
   ("M-s s M" . lsp-ui-imenu--kill))
 
+(use-package prettier)
+
 (use-package markdown-mode
   :mode ("\\.\\(m\\(ark\\)?down\\|md\\)$" . markdown-mode)
   :hook (markdown-mode . lsp))
