@@ -413,7 +413,6 @@
         (lsp-mode . lsp-enable-which-key-integration))
   :init
   (setq lsp-keymap-prefix "C-c l")
-  (setq lsp-enable-snippet t)
   (setq lsp-signature-auto-activate t)
   (setq lsp-signature-doc-lines 1)
   (setq lsp-headerline-breadcrumb-enable nil)
@@ -522,95 +521,6 @@
   :mode (("CMakeLists\\.txt\\'" . cmake-mode)
          ("\\.cmake\\'" . cmake-mode)))
 
-(use-package cmake-font-lock
-  :after cmake-mode
-  :hook (cmake-mode . cmake-font-lock-activate))
-
-(use-package modern-cpp-font-lock
-  :hook
-  (c++-mode . modern-c++-font-lock-mode))
-
-(use-package dap-mode
-  :after lsp-mode
-  :config
-  (dap-auto-configure-mode)
-  :bind
-  ("<f5>" . 'dap-debug-last)
-  ("<C-f5>" . 'dap-disconnect)
-  ("<f6>" . 'dap-continue)
-  ("<f7>" . 'dap-next)
-  ("<f8>" . 'dap-step-in)
-  ("<C-f8>" . 'dap-step-out))
-
-(use-package dap-firefox
-  :ensure dap-mode)
-
-(use-package dap-chrome
-  :ensure dap-mode)
-
-(use-package dap-node
-  :ensure dap-mode)
-
-(use-package dap-php
-  :ensure dap-mode)
-
-(use-package dap-python
-  :ensure dap-mode
-  :hook
-  ((python-mode . dap-mode)
-   (python-mode . dap-ui-mode)
-   (python-mode . dap-tooltip-mode)))
-
-(use-package dap-java
-  :ensure dap-mode
-  :hook
-  ((java-mode . dap-mode)
-   (java-mode . dap-ui-mode)
-   (java-mode . dap-tooltip-mode)))
-
-(use-package dap-go
-  :ensure dap-mode
-  :hook
-  ((go-mode . dap-mode)
-   (go-mode . dap-ui-mode)
-   (go-mode . dap-tooltip-mode)))
-
-(use-package dap-gdb-lldb
-  :ensure dap-mode
-  :hook
-  ((c-mode . dap-mode)
-   (c-mode . dap-ui-mode)
-   (c-mode . dap-tooltip-mode)
-   (c++-mode . dap-mode)
-   (c++-mode . dap-ui-mode)
-   (c++-mode . dap-tooltip-mode)))
-
-
-;; *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
-;;                                                                        ;;
-;; Snippets                                                               ;;
-;;                                                                        ;;
-;; *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
-
-
-(use-package yasnippet
-  :config (yas-global-mode))
-
-(use-package yasnippet-snippets
-  :after yasnippet
-  :demand t
-  :config
-  (yas-reload-all))
-
-(with-eval-after-load 'company-mode
-    (add-to-list 'company-backends '(company-yasnippet)))
-
-(use-package emmet-mode
-  :hook ((typescript-mode . emmet-mode)
-         (css-mode  . emmet-mode)
-         (web-mode  . emmet-mode)
-         (php-mode  . emmet-mode)))
-
 
 ;; *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ;;
 ;;                                                                        ;;
@@ -624,8 +534,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(emmet-mode yasnippet-snippets yasnippet modern-cpp-font-lock cmake-font-lock cmake-mode lua-mode rust-mode go-mode lsp-java groovy-mode python-mode mmm-mode php-mode web-mode json-mode typescript-mode lsp-ui lsp-mode dashboard ag dired-single magit projectile doom-modeline doom-themes evil-mc evil-collection evil-commentary evil helpful switch-window which-key company-web company counsel ivy-rich ivy diminish auto-package-update use-package)))
+ '(package-selected-packages nil))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
