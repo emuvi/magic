@@ -46,20 +46,20 @@
         "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
         "hidden": false,
         "name": "Command",
-        "startingDirectory": "%USERPROFILE%"
+        "startingDirectory": "C:/"
       },
       {
         "guid": "{71160544-14d8-4194-af25-d05feeac7233}",
         "name": "MSYS / MSYS2",
         "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -no-start -msys",
-        "startingDirectory": "C:/msys64/home/%USERNAME%",
+        "startingDirectory": "C:/",
         "icon": "C:/msys64/msys2.ico"
       },
       {
         "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
         "name": "UCRT64 / MSYS2",
         "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -no-start -ucrt64",
-        "startingDirectory": "C:/msys64/home/%USERNAME%",
+        "startingDirectory": "C:/",
         "icon": "C:/msys64/ucrt64.ico"
       },
       {
@@ -67,14 +67,14 @@
         "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
         "hidden": false,
         "name": "PowerShell",
-        "startingDirectory": "%USERPROFILE%"
+        "startingDirectory": "C:/"
       },
       {
         "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
         "hidden": false,
         "name": "Git Bash",
         "source": "Git",
-        "startingDirectory": "%USERPROFILE%"
+        "startingDirectory": "C:/"
       },
       {
         "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
