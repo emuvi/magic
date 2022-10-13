@@ -1,234 +1,147 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-    {
-        "key": "ctrl+b",
-        "command": "workbench.action.tasks.build"
-    },
-    {
-        "key": "ctrl+shift+b",
-        "command": "-workbench.action.tasks.build"
-    },
-    {
-        "key": "ctrl+t",
-        "command": "workbench.action.tasks.test"
-    },
-    {
-        "key": "ctrl+shift+alt+o",
-        "command": "outline.focus"
-    },
-    {
-        "key": "ctrl+o",
-        "command": "workbench.action.gotoSymbol"
-    },
-    {
-        "key": "ctrl+shift+o",
-        "command": "-workbench.action.gotoSymbol"
-    },
-    {
-        "key": "ctrl+alt+o",
-        "command": "workbench.action.files.openFile",
-        "when": "true"
-    },
-    {
-        "key": "ctrl+o",
-        "command": "-workbench.action.files.openFile",
-        "when": "true"
-    },
-    {
-        "key": "ctrl+alt+o",
-        "command": "workbench.action.files.openFileFolder",
-        "when": "isMacNative && openFolderWorkspaceSupport"
-    },
-    {
-        "key": "ctrl+o",
-        "command": "-workbench.action.files.openFileFolder",
-        "when": "isMacNative && openFolderWorkspaceSupport"
-    },
-    {
-        "key": "ctrl+alt+o",
-        "command": "workbench.action.files.openLocalFile",
-        "when": "remoteFileDialogVisible"
-    },
-    {
-        "key": "ctrl+o",
-        "command": "-workbench.action.files.openLocalFile",
-        "when": "remoteFileDialogVisible"
-    },
-    {
-        "key": "ctrl+shift+o",
-        "command": "workbench.action.showAllSymbols"
-    },
-    {
-        "key": "ctrl+t",
-        "command": "-workbench.action.showAllSymbols"
-    },
-    {
-        "key": "ctrl+alt+s",
-        "command": "workbench.action.files.saveAs"
-    },
-    {
-        "key": "ctrl+shift+s",
-        "command": "-workbench.action.files.saveAs"
-    },
-    {
-        "key": "ctrl+alt+s",
-        "command": "markdown-preview-enhanced.syncPreview",
-        "when": "editorLangId == 'markdown'"
-    },
-    {
-        "key": "ctrl+shift+s",
-        "command": "-markdown-preview-enhanced.syncPreview",
-        "when": "editorLangId == 'markdown'"
-    },
-    {
-        "key": "ctrl+alt+s",
-        "command": "workbench.action.files.saveLocalFile",
-        "when": "remoteFileDialogVisible"
-    },
-    {
-        "key": "ctrl+shift+s",
-        "command": "-workbench.action.files.saveLocalFile",
-        "when": "remoteFileDialogVisible"
-    },
-    {
-        "key": "ctrl+shift+s",
-        "command": "workbench.view.extension.bookmarks"
-    },
-    {
-        "key": "ctrl+alt+v",
-        "command": "markdown-preview-enhanced.openPreview",
-        "when": "editorLangId == 'markdown'"
-    },
-    {
-        "key": "ctrl+shift+v",
-        "command": "-markdown-preview-enhanced.openPreview",
-        "when": "editorLangId == 'markdown'"
-    },
-    {
-        "key": "ctrl+alt+v",
-        "command": "markdown.showPreview",
-        "when": "!notebookEditorFocused && editorLangId == 'markdown'"
-    },
-    {
-        "key": "ctrl+shift+v",
-        "command": "-markdown.showPreview",
-        "when": "!notebookEditorFocused && editorLangId == 'markdown'"
-    },
-    {
-        "key": "ctrl+alt+v",
-        "command": "notebook.cell.pasteAbove",
-        "when": "notebookEditorFocused && !inputFocus"
-    },
-    {
-        "key": "ctrl+shift+v",
-        "command": "-notebook.cell.pasteAbove",
-        "when": "notebookEditorFocused && !inputFocus"
-    },
-    {
-        "key": "ctrl+alt+v",
-        "command": "workbench.action.terminal.paste",
-        "when": "terminalFocus && terminalProcessSupported"
-    },
-    {
-        "key": "ctrl+shift+v",
-        "command": "-workbench.action.terminal.paste",
-        "when": "terminalFocus && terminalProcessSupported"
-    },
-    {
-        "key": "ctrl+alt+v",
-        "command": "java.action.clipboardPasteAction",
-        "when": "javaLSReady && editorLangId == 'java'"
-    },
-    {
-        "key": "ctrl+shift+v",
-        "command": "-java.action.clipboardPasteAction",
-        "when": "javaLSReady && editorLangId == 'java'"
-    },
-    {
-        "key": "ctrl+alt+v",
-        "command": "markdown.extension.togglePreview",
-        "when": "!terminalFocus"
-    },
-    {
-        "key": "ctrl+shift+v",
-        "command": "-markdown.extension.togglePreview",
-        "when": "!terminalFocus"
-    },
-    {
-        "key": "ctrl+shift+v",
-        "command": "workbench.view.extension.github-pull-requests"
-    },
-    {
-        "key": "ctrl+alt+k",
-        "command": "editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+k",
-        "command": "-editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+k",
-        "command": "workbench.view.extension.dockerView"
-    },
-    {
-        "key": "ctrl+b",
-        "command": "-markdown.extension.editing.toggleBold",
-        "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
-    },
-    {
-        "key": "ctrl+shift+b",
-        "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "ctrl+b",
-        "command": "-workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "ctrl+alt+t",
-        "command": "workbench.action.reopenClosedEditor"
-    },
-    {
-        "key": "ctrl+shift+t",
-        "command": "-workbench.action.reopenClosedEditor"
-    },
-    {
-        "key": "ctrl+shift+t",
-        "command": "workbench.view.extension.thunder-client-sidebar-view"
-    },
-    {
-        "key": "ctrl+alt+r",
-        "command": "editor.action.refactor",
-        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+r",
-        "command": "-editor.action.refactor",
-        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+alt+r",
-        "command": "rerunSearchEditorSearch",
-        "when": "inSearchEditor"
-    },
-    {
-        "key": "ctrl+shift+r",
-        "command": "-rerunSearchEditorSearch",
-        "when": "inSearchEditor"
-    },
-    {
-        "key": "ctrl+alt+r",
-        "command": "workbench.action.quickOpenNavigatePreviousInRecentFilesPicker",
-        "when": "inQuickOpen && inRecentFilesPicker"
-    },
-    {
-        "key": "ctrl+shift+r",
-        "command": "-workbench.action.quickOpenNavigatePreviousInRecentFilesPicker",
-        "when": "inQuickOpen && inRecentFilesPicker"
-    },
-    {
-        "key": "ctrl+shift+r",
-        "command": "workbench.view.remote"
-    }
+  {
+    "key": "ctrl+b",
+    "command": "workbench.action.tasks.build"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "-workbench.action.tasks.build"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.tasks.test"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "-workbench.action.showAllSymbols"
+  },
+  {
+    "key": "ctrl+alt+w",
+    "command": "workbench.action.reopenClosedEditor"
+  },
+  {
+    "key": "ctrl+shift+alt+t",
+    "command": "workbench.view.extension.thunder-client-sidebar-view"
+  },
+  {
+    "key": "ctrl+alt+r",
+    "command": "editor.action.refactor",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+r",
+    "command": "workbench.view.remote"
+  },
+  {
+    "key": "ctrl+shift+alt+l",
+    "command": "outline.focus"
+  },
+  {
+    "key": "ctrl+alt+d",
+    "command": "editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "workbench.view.extension.todo-tree-container"
+  },
+  {
+    "key": "ctrl+shift+alt+g",
+    "command": "workbench.view.extension.github-pull-requests"
+  },
+  {
+    "key": "ctrl+alt+v",
+    "command": "clipboard.pasteFromClipboard",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-clipboard.pasteFromClipboard",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "workbench.action.showAllSymbols"
+  },
+  {
+    "key": "ctrl+shift+alt+k",
+    "command": "code-runner.runCustomCommand"
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "-code-runner.runCustomCommand"
+  },
+  {
+    "key": "shift+alt+t",
+    "command": "workbench.action.tasks.runTask"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "-expandLineSelection",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "-notebook.centerActiveCell",
+    "when": "notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.gotoSymbol"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "-workbench.action.gotoSymbol"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "-bookmarks.jumpToNext",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k alt+k",
+    "command": "git.stageSelectedRanges",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "ctrl+k ctrl+alt+s",
+    "command": "-git.stageSelectedRanges",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "ctrl+alt+oem_5",
+    "command": "workbench.action.splitEditorDown"
+  },
+  {
+    "key": "ctrl+shift+alt+r",
+    "command": "workbench.view.extension.thunder-client",
+    "when": "viewContainer.workbench.view.extension.thunder-client.enabled"
+  },
+  {
+    "key": "ctrl+shift+r",
+    "command": "-workbench.view.extension.thunder-client",
+    "when": "viewContainer.workbench.view.extension.thunder-client.enabled"
+  },
+  {
+    "key": "ctrl+alt+oem_1",
+    "command": "bookmarks.jumpToNext"
+  },
+  {
+    "key": "ctrl+alt+oem_5",
+    "command": "editor.gotoNextFold"
+  },
+  {
+    "key": "ctrl+alt+oem_6",
+    "command": "editor.gotoPreviousFold"
+  }
 ]
