@@ -165,7 +165,7 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.accessibilitySupport": "off",
-  "git.openRepositoryInParentFolders": "never",
+  "git.openRepositoryInParentFolders": "always",
   "githubPullRequests.createOnPublishBranch": "never",
   "workbench.panel.opensMaximized": "never",
   "zenMode.restore": false,
