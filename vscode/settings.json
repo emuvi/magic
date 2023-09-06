@@ -1,187 +1,187 @@
 {
-  "files.eol": "\n",
-  "editor.tabSize": 2,
-  "editor.fontSize": 18,
-  "editor.lineHeight": 36,
-  "editor.suggestSelection": "first",
-  "editor.wrappingIndent": "none",
-  "editor.fontFamily": "Victor Mono, Fira Code, Noto Mono, Droid Sans Mono,  Courier New, monospace",
-  "editor.fontLigatures": true,
-  "editor.guides.bracketPairs": "active",
-  "editor.scrollbar.verticalScrollbarSize": 14,
-  "editor.tokenColorCustomizations": {
-    "keywords": {
-      "fontStyle": "bold"
-    }
-  },
-  "editor.minimap.enabled": false,
-  "editor.minimap.showSlider": "always",
-  "editor.inlineSuggest.enabled": true,
-  "editor.wordSeparators": "`~!@#$%^&*()_-=+[{]}\\|;:'\",.<>/?",
-  "editor.bracketPairColorization.enabled": true,
-  "editor.formatOnType": false,
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": true
-  },
-  "explorer.confirmDragAndDrop": false,
-  "explorer.confirmDelete": false,
-  "cSpell.language": "en,pt-BR",
-  "git.confirmSync": false,
-  "git.enableSmartCommit": true,
-  "git.inputValidationSubjectLength": 255,
-  "files.hotExit": "off",
-  "files.autoSave": "off",
-  "window.restoreWindows": "none",
-  "window.title": "${rootName} :: ${folderName} :: ${activeEditorShort}",
-  "remote.SSH.remotePlatform": {
-    "pointel.pointto.us": "linux",
-    "192.168.0.50": "linux"
-  },
-  "remoteHub.commitDirectlyWarning": "off",
-  "extensions.ignoreRecommendations": true,
-  "terminal.integrated.copyOnSelection": true,
-  "terminal.integrated.defaultProfile.windows": "cygwin",
-  "terminal.integrated.defaultProfile.linux": "fish",
-  "security.workspace.trust.untrustedFiles": "open",
-  "go.toolsManagement.autoUpdate": true,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "terminal.integrated.enablePersistentSessions": false,
-  "terminal.integrated.persistentSessionReviveProcess": "never",
-  "terminal.integrated.profiles.windows": {
-    "cygwin": {
-      "path": "C:\\cygwin64\\bin\\bash.exe",
-      "args": ["--login", "-i"],
-      "env": { "CHERE_INVOKING": "1" }
-    }
-  },
-  "workbench.editor.untitled.hint": "hidden",
-  "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Dracula",
-  "workbench.iconTheme": "bearded-icons",
-  "todo-tree.regex.regex": "\\[\\s($TAGS)\\s\\]",
-  "todo-tree.tree.labelFormat": "[ ${tag} ${after}",
-  "todo-tree.general.tags": ["EVAL", "TODO"],
-  "prettier.printWidth": 96,
-  "html.format.wrapLineLength": 99,
-  "html.format.preserveNewLines": false,
-  "svg.preview.mode": "svg",
-  "prettier.proseWrap": "always",
-  "redhat.telemetry.enabled": true,
-  "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
-  "julia.symbolCacheDownload": true,
-  "julia.enableTelemetry": true,
-  "java.import.gradle.version": "7.4.2",
-  "java.semanticHighlighting.enabled": true,
-  "java.format.settings.profile": "PointelStyle",
-  "java.format.settings.url": "https://raw.githubusercontent.com/emuvi/magic/master/java/java-pointel-style.xml",
-  "java.project.importOnFirstTimeStartup": "automatic",
-  "java.configuration.updateBuildConfiguration": "automatic",
-  "java.configuration.runtimes": [
-    {
-      "name": "JavaSE-1.8",
-      "path": "C:\\Java\\JDK8"
+    "files.eol": "\n",
+    "editor.tabSize": 2,
+    "editor.fontSize": 18,
+    "editor.lineHeight": 36,
+    "editor.suggestSelection": "first",
+    "editor.wrappingIndent": "none",
+    "editor.fontFamily": "Victor Mono, Fira Code, Noto Mono, Droid Sans Mono,  Courier New, monospace",
+    "editor.fontLigatures": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.scrollbar.verticalScrollbarSize": 14,
+    "editor.tokenColorCustomizations": {
+        "keywords": {
+            "fontStyle": "bold"
+        }
     },
-    {
-      "name": "JavaSE-17",
-      "path": "C:\\Java\\JDK17",
-      "default": true
+    "editor.minimap.enabled": false,
+    "editor.minimap.showSlider": "always",
+    "editor.inlineSuggest.enabled": true,
+    "editor.wordSeparators": "`~!@#$%^&*()_-=+[{]}\\|;:'\",.<>/?",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.formatOnType": false,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "cSpell.language": "en,pt-BR",
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "git.inputValidationSubjectLength": 255,
+    "files.hotExit": "off",
+    "files.autoSave": "off",
+    "window.restoreWindows": "none",
+    "window.title": "${rootName} :: ${folderName} :: ${activeEditorShort}",
+    "remote.SSH.remotePlatform": {
+        "pointel.pointto.us": "linux",
+        "192.168.0.50": "linux"
+    },
+    "remoteHub.commitDirectlyWarning": "off",
+    "extensions.ignoreRecommendations": true,
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.defaultProfile.windows": "cygwin",
+    "terminal.integrated.defaultProfile.linux": "fish",
+    "security.workspace.trust.untrustedFiles": "open",
+    "go.toolsManagement.autoUpdate": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "terminal.integrated.enablePersistentSessions": false,
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "terminal.integrated.profiles.windows": {
+        "cygwin": {
+            "path": "C:\\cygwin64\\bin\\bash.exe",
+            "args": ["--login", "-i"],
+            "env": { "CHERE_INVOKING": "1" }
+        }
+    },
+    "workbench.editor.untitled.hint": "hidden",
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "bearded-icons",
+    "todo-tree.regex.regex": "\\[\\s($TAGS)\\s\\]",
+    "todo-tree.tree.labelFormat": "[ ${tag} ${after}",
+    "todo-tree.general.tags": ["EVAL", "TODO"],
+    "prettier.printWidth": 96,
+    "html.format.wrapLineLength": 99,
+    "html.format.preserveNewLines": false,
+    "svg.preview.mode": "svg",
+    "prettier.proseWrap": "always",
+    "redhat.telemetry.enabled": true,
+    "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": true,
+    "java.import.gradle.version": "7.4.2",
+    "java.semanticHighlighting.enabled": true,
+    "java.format.settings.profile": "PointelStyled",
+    "java.format.settings.url": "https://raw.githubusercontent.com/emuvi/magic/master/java/java-pointel-styled.xml",
+    "java.project.importOnFirstTimeStartup": "automatic",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-1.8",
+            "path": "C:\\Java\\JDK8"
+        },
+        {
+            "name": "JavaSE-17",
+            "path": "C:\\Java\\JDK17",
+            "default": true
+        }
+    ],
+    "Lua.telemetry.enable": true,
+    "Lua.diagnostics.globals": ["Liz"],
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[htm]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[phtml]": {
+        "editor.defaultFormatter": "kokororin.vscode-phpfmt",
+        "editor.tabSize": 4
+    },
+    "[php]": {
+        "editor.defaultFormatter": "kokororin.vscode-phpfmt",
+        "editor.tabSize": 4
+    },
+    "[h]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[hpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[cmake]": {
+        "editor.defaultFormatter": "cheshirekow.cmake-format"
+    },
+    "[rust]": {
+        "editor.defaultFormatter": "statiolake.vscode-rustfmt"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8",
+        "editor.tabSize": 4
+    },
+    "python.formatting.provider": "none",
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
+    "[lua]": {
+        "editor.defaultFormatter": "sumneko.lua"
+    },
+    "google-translate.firstLanguage": "en",
+    "google-translate.secondLanguage": "pt",
+    "google-translate.serverDomain": "https://translate.google.com",
+    "sqltools.useNodeRuntime": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.accessibilitySupport": "off",
+    "git.openRepositoryInParentFolders": "always",
+    "githubPullRequests.createOnPublishBranch": "never",
+    "workbench.panel.opensMaximized": "never",
+    "zenMode.restore": false,
+    "java.jdt.ls.java.home": "C:\\Java\\JDK17",
+    "spring-boot.ls.java.home": "C:\\Java\\JDK17",
+    "rsp-ui.rsp.java.home": "C:\\Java\\JDK17",
+    "rsp-ui.enableStartServerOnActivation": [
+        {
+            "id": "redhat.vscode-community-server-connector",
+            "name": "Community Server Connector",
+            "startOnActivation": true
+        }
+    ],
+    "files.associations": {
+        "*.liz": "lua",
+        "*.giz": "groovy",
+        "*.gvy": "groovy"
     }
-  ],
-  "Lua.telemetry.enable": true,
-  "Lua.diagnostics.globals": ["Liz"],
-  "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[htm]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "[phtml]": {
-    "editor.defaultFormatter": "kokororin.vscode-phpfmt",
-    "editor.tabSize": 4
-  },
-  "[php]": {
-    "editor.defaultFormatter": "kokororin.vscode-phpfmt",
-    "editor.tabSize": 4
-  },
-  "[h]": {
-    "editor.defaultFormatter": "xaver.clang-format"
-  },
-  "[c]": {
-    "editor.defaultFormatter": "xaver.clang-format"
-  },
-  "[hpp]": {
-    "editor.defaultFormatter": "xaver.clang-format"
-  },
-  "[cpp]": {
-    "editor.defaultFormatter": "xaver.clang-format"
-  },
-  "[cmake]": {
-    "editor.defaultFormatter": "cheshirekow.cmake-format"
-  },
-  "[rust]": {
-    "editor.defaultFormatter": "statiolake.vscode-rustfmt"
-  },
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.autopep8",
-    "editor.tabSize": 4
-  },
-  "python.formatting.provider": "none",
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java"
-  },
-  "[lua]": {
-    "editor.defaultFormatter": "sumneko.lua"
-  },
-  "google-translate.firstLanguage": "en",
-  "google-translate.secondLanguage": "pt",
-  "google-translate.serverDomain": "https://translate.google.com",
-  "sqltools.useNodeRuntime": true,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-  "editor.accessibilitySupport": "off",
-  "git.openRepositoryInParentFolders": "always",
-  "githubPullRequests.createOnPublishBranch": "never",
-  "workbench.panel.opensMaximized": "never",
-  "zenMode.restore": false,
-  "java.jdt.ls.java.home": "C:\\Java\\JDK17",
-  "spring-boot.ls.java.home": "C:\\Java\\JDK17",
-  "rsp-ui.rsp.java.home": "C:\\Java\\JDK17",
-  "rsp-ui.enableStartServerOnActivation": [
-    {
-      "id": "redhat.vscode-community-server-connector",
-      "name": "Community Server Connector",
-      "startOnActivation": true
-    }
-  ],
-  "files.associations": {
-    "*.liz": "lua",
-    "*.giz": "groovy",
-    "*.gvy": "groovy"
-  }
 }
