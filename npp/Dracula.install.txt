@@ -1,0 +1,14 @@
+Activating theme
+Open File Explorer and navigate to your Notepad++ themes folder:
+
+Press Win + R, type %AppData%\Notepad++\themes and press Enter
+
+Or manually go to: C:\Users\YourUsername\AppData\Roaming\Notepad++\themes
+
+If you have a portable installation, go to your Notepad++ folder and open the themes folder
+
+Copy the downloaded theme file (Dracula.xml or Alucard.xml) into this themes folder
+
+Restart Notepad++
+
+Go to Settings > Style Configurator > Theme and select your theme from the dropdown menu, then click "Save & Close". 💜
