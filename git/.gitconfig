@@ -19,4 +19,4 @@
 [safe]
 	directory = *
 [init]
-	defaultBranch = master
+	defaultBranch = main
